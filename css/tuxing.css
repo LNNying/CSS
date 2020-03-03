@@ -1,0 +1,71 @@
+.cha {
+    position: absolute;
+  }
+
+  .cha::before, .cha::after {
+    content: '';
+    height: 50%;
+    width: 50%;
+    position: absolute;
+    top: 22%;
+    left: 25%;
+    background: #f39800;
+  }
+
+  .cha::before {
+    transform: rotate(45deg);
+    /*进行旋转*/
+  }
+
+  .cha::after {
+    transform: rotate(-45deg);
+    /*进行旋转*/
+  }
+
+  .square {
+    position: absolute;
+  }
+
+  .square::before {
+    content: '';
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    top: 22%;
+    left: 25%;
+    background: #21f8ff;
+  }
+
+  .triangle {
+    position: absolute;
+  }
+
+  .triangle::before {
+    content: '';
+    position: absolute;
+    top: -2%;
+    left: 5%;
+    display: block;
+    width: 50%;
+    height: 50%;
+    border-width: 8px 8px 8px 8px;
+    border-style: solid;
+    border-color: transparent transparent #ff4d4d transparent;
+  }
+
+  .circle {
+    position: absolute;
+  }
+
+  .circle::before {
+    content: '';
+    height: 50%;
+    width: 50%;
+    position: absolute;
+    top: 22%;
+    left: 25%;
+    -webkit-border-radius: 50% 50%;
+    -moz-border-radius: 50% 50%;
+    border-radius: 50% 50%;
+    background: #ff3d89;
+  }
