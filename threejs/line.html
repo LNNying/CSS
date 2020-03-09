@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+<script src="../three.js-master/build/three.js"></script>
+<script src="./OrbitControls.js"></script>
+<script>
+    let scene = new THREE.Scene()
+
+    let camera = new THREE.PerspectiveCamera(45, window.innerWidth /window.innerHeight, 1, 500)
+    camera.position.set(100, 300, 100)
+    camera.lookAt(0, 0, 0)
+
+    let renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setClearColor(0x00ff00)
+    document.body.appendChild(renderer.domElement)
+
+    
+    let g = new THREE.Geometry();
+    g.vertices.push(new THREE.Vector3(10, 0, 0))
+    g.vertices.push(new THREE.Vector3(0, 10, 0))
+    g.vertices.push(new THREE.Vector3(0, 0, 10))
+    // let text = new THREE.TextGeometry();
+
+    let material = new THREE.LineBasicMaterial({color: 0x0000ff})
+
+    let mesh = new THREE.Line(g, material)
+
+    scene.add(mesh)
+
+    renderer.render(scene, camera);
+</script>
+</html>
