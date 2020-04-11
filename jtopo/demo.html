@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jtopo-实例1 </title>
+</head>
+<body>
+    <canvas id="canvas" width="500" height="500" style="background-color: red;"></canvas>
+    <script src="./js/jtopo-0.4.8-min.js"></script>
+    <script>
+          var canvas = document.getElementById('canvas'); 
+            var stage = new JTopo.Stage(canvas); // 创建一个舞台对象
+            var scene = new JTopo.Scene(stage); // 创建一个场景对象
+            
+            var node = new JTopo.Node("Hello");    // 创建一个节点
+            var node1 = new JTopo.Node("world")
+            node1.setLocation(200,200)
+            node.setLocation(300,300);    // 设置节点坐标 
+            node.fontColor = '#ff00ff'    
+            node.selected = true
+            node.dragable = true             
+            scene.add(node); // 放入到场景中
+            scene.add(node1);
+            // 可以从事件target中的x,y获取真正的实际坐标
+            node1.addEventListener('click', (evnt) => {
+                console.log(evnt.target)
+            })
+            node.addEventListener('click', (evnt) => {
+                console.log(evnt.target)
+            })
+    </script>
+</body>
+</html>
