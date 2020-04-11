@@ -24,10 +24,13 @@
             scene.add(node1);
             // 可以从事件target中的x,y获取真正的实际坐标
             node1.addEventListener('click', (evnt) => {
-                console.log(evnt.target)
+                console.log(evnt.target.x + '-' + evnt.target.y)
             })
             node.addEventListener('click', (evnt) => {
-                console.log(evnt.target)
+                console.log(evnt.target.x + '-' + evnt.target.y)
+            })
+            stage.addEventListener('click', (event) => {
+                console.log(event)
             })
     </script>
 </body>
