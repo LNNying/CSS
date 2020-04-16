@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Translate</title>
+    <style>
+        .demo1 {
+            width: 100px;
+            height: 120px;
+            transform: translate(0, -130%);
+            transition: 5s; /*过度事件*/
+            background: red;
+        }
+        .demo1:target { /*锚事件*/
+            /*transform: translateX(50px) translateX(100px); !**叠加  同时x,y translateX() translateY() translate(x, y)*!*/
+            /**
+            像素 是页面的坐标
+            百分比 是对于本身元素的长宽的百分比
+            使用translate 使元素居中 如demo3
+            translateZ
+            translate3d(x, y, z) 必填 否者为0
+             */
+            transform: translate(0, 0);
+        }
+        #demo2 {
+            width: 100px;
+            height: 120px;
+            background: #00aaff;
+        }
+        .demo3 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100px;
+            height: 120px;
+            background: green;
+            transform: translate(-50%, -50%);
+        }
+        .demo4 {
+            width: 100px;
+            height: 120px;
+            position: absolute;
+            top: 120px;
+            left: 10px;
+            overflow: hidden;
+            background: #00bb00;
+            border: solid 5px silver;
+        }
+        .demo4::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            height: 2px;
+            bottom: 0;
+            width: 100%;
+            background: linear-gradient(to right, white, #1abc9c, #f1c40f, #e74c3c, white);
+            transform: translateX(-100%);
+            transition: 2s;
+        }
+        .demo4:hover::before {
+            transform: translateX(100%);
+        }
+        /*.demo4:hover{*/
+            /*background: linear-gradient(to right, white, #1abc9c, #f1c40f, #e74c3c, white);*/
+        /*}*/
+        /*.demo4:hover{*/
+            /*transform: translate3d(100px, 130px, 200px);*/
+        /*}*/
+
+        /**
+        缩放
+         */
+        .demo5 {
+            position: absolute;
+            top: 20px;
+            right: 0px;
+            background: #00ff78;
+            width: 100px;
+            height: 120px;
+            transform: scaleX(.5);
+        }
+    </style>
+</head>
+<body>
+<a href="#demo1">click</a>
+<div class="demo1" id="demo1"></div>
+<div id="demo2"></div>
+<div class="demo3"></div>
+<div class="demo4"></div>
+<div class="demo5"></div>
+<script>
+    let currentX = 0
+    let currentY = 0
+    setInterval(() => {
+
+        let demo2 = document.getElementById('demo2')
+        // currentX = currentX + 1
+        // if (currentX <= 0) {
+        //     currentX++
+        // } else if (currentX >= 10) {
+        //     currentX--
+        // }
+        currentX++
+        currentY++
+        demo2.style.transform = `translate(${currentX}px, ${currentY}px)`
+        // demo2.style.transform = ``
+        console.log(currentX)
+    }, 100)
+</script>
+</body>
+</html>
