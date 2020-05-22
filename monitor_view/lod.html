@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/three.js"></script>
+    <!--鼠标控制-->
+    <script src="js/OrbitControls.js"></script>
+    <script src="js/TrackballControls.js"></script>
+    <!--加载obj材料-->
+    <script src="js/MTLLoader.js"></script>
+    <!--Obj加载类型-->
+    <script src="js/OBJLoader.js"></script>
+    <script src="js/ColladaLoader.js"></script>
+    <script src="js/stats.min.js"></script>
+    <script src="js/query.js"></script>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<script>
+    let scene, camera, render, stat, light,
+        light1, light2, light3, light4, webglRender,
+        controls, raycaster, intersects, mouse, cube, saveClick;
+
+    $(function () {
+        init();
+    })
+
+    function init() {
+        var scene = new THREE.Scene();
+// 创建一个多细节层次模型对象LOD
+        var lod = new THREE.LOD();
+
+// 近距离——高面数网格模型球体
+        var geometry1 = new THREE.SphereGeometry(50, 25, 25)
+        var material1 = new THREE.MeshPhongMaterial({
+            color: 0xff0000,//使用红色标记高面数网格模型
+        });
+        var mesh1 = new THREE.Mesh(geometry1, material1);
+// 细节层级距离100,距离相机比近显示该网格模型
+        lod.addLevel(mesh1, 100);
+// 中距离——中面数网格模型球体
+        var geometry2 = new THREE.SphereGeometry(50, 20, 20)
+        var material2 = new THREE.MeshPhongMaterial({
+            color: 0x00ff00, //使用绿色标记中面数网格模型
+        });
+        var mesh2 = new THREE.Mesh(geometry2, material2);
+// 细节层级距离300,距离相机中等距离显示该网格模型
+        lod.addLevel(mesh2, 300);
+// 远距离——低面数网格模型球体
+        var geometry3 = new THREE.SphereGeometry(50, 15, 15)
+        var material3 = new THREE.MeshPhongMaterial({
+            color: 0x0000ff, //使用蓝色标记低面数网格模型
+        });
+        var mesh3 = new THREE.Mesh(geometry3, material3);
+// 细节层级距离500,距离相机比较远显示该网格模型
+        lod.addLevel(mesh3, 500);
+// 控制台查看多细节层次模型对象Lod
+// 你可以看到Lod对象的.children属性包含了上面.addLevel方法插入的三个网格模型mesh1，mesh2，mesh3
+        console.log(lod)
+// 改变物体距离相机不同距离，可以看到不同面数的网格模型Mesh，
+// 可以改变z的值进行测试，上面三个不同面数的球体网格模型使用了不同的颜色进行标记，便与测试
+// 设置z的值改变球体网格模型的位置，注意相机参数  200  -100 -300
+//         lod.position.z = -300
+// 把多层次细节模型对象lod插入到场景中，lod虽然包含多个子对象网格模型，通常显示一个
+// 注意渲染函数render中执行lod的更新方法.update(camera)
+        scene.add(lod);
+
+        webglRender = new THREE.WebGLRenderer( {antialias: true, alpha: true} ); // antialias 抗锯齿
+        webglRender.setSize(window.innerWidth, window.innerHeight);
+        webglRender.setClearColor("#f9f3e7", 1.0); // 0xeeeeee
+        render = webglRender;
+        render.shadowMap.enabled = true; // 允许阴影投射
+        document.body.appendChild(render.domElement);
+        // 页面重置
+        // window.addEventListener('resize', onWindowResize, false);
+
+        let axisHelper = new THREE.AxisHelper(10000)
+        scene.add(axisHelper)
+
+        camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 60000);
+        camera.position.x = 200;
+        camera.position.y = 100;
+        camera.position.z = 160;
+        let target = new THREE.Vector3(0, 0 , 0);
+        camera.lookAt(scene.position);
+
+        let light = new THREE.HemisphereLight(0xffffbb, 0x080820, 1);
+        scene.add( light );
+        light2 = new THREE.DirectionalLight(0xffffff, 1, 1000);
+        light2.castShadow = true;
+        light2.position.set(-30,-25,-30);
+        scene.add( light1 );
+
+        controls = new THREE.OrbitControls(camera, render.domElement);
+        renderScene();
+        function renderScene() {
+            // intersects = raycaster.intersectObjects(scene.children);
+            // raycaster.setFromCamera(mouse, camera);
+            // 计算物体和射线的焦点
+            // if (intersects.length > 0) {
+            //     if (saveClick !== intersects[0].object) {
+            //         saveClick = intersects[0].object
+            //         if (saveClick) {
+            //             intersects[0].object.material.color.set('#ff4095');
+            //         }
+            //     } else {
+            //         if (saveClick) {
+            //             saveClick = null
+            //             // saveClick.material.color.set(currentColor);
+            //         } else {
+            //             saveClick = null
+            //         }
+            //     }
+            // }
+            controls.update();
+            render.render(scene, camera);
+            // if (window.carList.length !== 0) {
+            // }
+
+            requestAnimationFrame(renderScene);
+        }
+    }
+
+</script>
+</body>
+</html>

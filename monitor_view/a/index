@@ -1,0 +1,15 @@
+箱子的加载
+            // let boxGeometry = new THREE.BoxGeometry(20, 20, 20);
+            // //读取纹理贴图的数据 版本70以上用法
+            // let texture = new THREE.TextureLoader().load("img/box.jpg");
+            // let mat = new THREE.MeshBasicMaterial({
+            //     side: THREE.DoubleSide, // 单双面
+            // });
+            // mat.map = texture;//将读取的数据赋值给材质的map属性
+            // let mesh = new THREE.Mesh(boxGeometry, mat);//将带有的贴图的材质应用到几何对象上
+            // mesh.scale.z = 4.5;
+            // mesh.scale.x = 4.7;
+            // mesh.scale.y = 3.5;
+            // window.box = mesh;
+            // console.log('箱子加载完成');
+            // resolve('箱子加载完成')
