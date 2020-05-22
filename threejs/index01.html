@@ -12,9 +12,9 @@
     </style>
 </head>
 <body>
-    
+
 </body>
-<script src="../three.js-master/build/three.js"></script>
+<script src="./three.js"></script>
 <script src="./OrbitControls.js"></script>
 <script>
     /**
@@ -22,11 +22,11 @@
      * MeshBasicMaterial 基本材质
      * MeshlambertMaterial lambert网格材质  与光照影响 漫反射
      * MeshPhongMaterial 与光照有反应 高光材质
-     * 
+     *
     */
     /**
      * 光源
-     * 
+     *
     */
 
     // 场景
@@ -49,7 +49,7 @@
     let mesh = new THREE.Mesh(geometry, material)
 //    沿X轴平移
     // mesh.translateX(250)
-    scene.add(mesh) 
+    scene.add(mesh)
 
     // 设置点光源
     let point = new THREE.PointLight(0xFFFFCC)

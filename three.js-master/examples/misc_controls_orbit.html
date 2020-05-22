@@ -60,8 +60,8 @@
 				renderer = new THREE.WebGLRenderer();
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize( window.innerWidth, window.innerHeight );
-
-				var container = document.getElementById( 'container' );
+                console.log(renderer.info);
+                var container = document.getElementById( 'container' );
 				container.appendChild( renderer.domElement );
 
 				camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 1000 );
@@ -83,22 +83,38 @@
 
 				controls.maxPolarAngle = Math.PI / 2;
 
+                controls.keys = {
+                    LEFT: 37, //left arrow
+                    UP: 38, // up arrow
+                    RIGHT: 39, // right arrow
+                    BOTTOM: 40 // down arrow
+                }
+
 				// world
 
-				var geometry = new THREE.CylinderGeometry( 0, 10, 30, 4, 1 );
-				var material = new THREE.MeshPhongMaterial( { color: 0xffffff, flatShading: true } );
+				if (!localStorage.getItem('scene')) {
+                    var geometry = new THREE.CylinderGeometry( 0, 10, 30, 4, 1 );
+                    var material = new THREE.MeshPhongMaterial( { color: 0xffffff, flatShading: true } );
 
-				for ( var i = 0; i < 500; i ++ ) {
+                    for ( var i = 0; i < 500; i ++ ) {
 
-					var mesh = new THREE.Mesh( geometry, material );
-					mesh.position.x = Math.random() * 1600 - 800;
-					mesh.position.y = 0;
-					mesh.position.z = Math.random() * 1600 - 800;
-					mesh.updateMatrix();
-					mesh.matrixAutoUpdate = false;
-					scene.add( mesh );
-
+                        var mesh = new THREE.Mesh( geometry, material );
+                        mesh.position.x = Math.random() * 1600 - 800;
+                        mesh.position.y = 0;
+                        mesh.position.z = Math.random() * 1600 - 800;
+                        mesh.updateMatrix();
+                        mesh.matrixAutoUpdate = false;
+                        scene.add( mesh );
+                        console.log(scene.toJSON());
+                        localStorage.setItem("scene", JSON.stringify(scene.toJSON()))
+                    }
+				} else {
+                    var parsedGeom = JSON.parse(localStorage.getItem('scene'));
+                    var loader = new THREE.ObjectLoader();
+                    var loaddedScene = loader.parse(parsedGeom);
+                    scene = loaddedScene;
 				}
+
 
 				// lights
 
@@ -117,11 +133,11 @@
 
 				window.addEventListener( 'resize', onWindowResize, false );
 
-			}
+            }
 
 			function onWindowResize() {
 
-				camera.aspect = window.innerWidth / window.innerHeight;
+                camera.aspect = window.innerWidth / window.innerHeight;
 				camera.updateProjectionMatrix();
 
 				renderer.setSize( window.innerWidth, window.innerHeight );

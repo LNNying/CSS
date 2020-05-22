@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小车模型</title>
+    <style>
+        body{
+            margin: 0;
+            overflow: hidden;
+            background-color: #10a6ac;
+        }
+        #stat{
+            width: 100px;
+            height: 200px;
+            position: absolute;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="stat"></div>
+    <script src="http://www.yanhuangxueyuan.com/3D/example/three.min.js"></script>
+    <script src="../three.js-master/examples/js/controls/OrbitControls.js"></script>
+    <script src="../three.js-master/examples/js/libs/stats.min.js"></script>
+    <script>
+        // 场景
+        let scene = new THREE.Scene()
+
+        // 车组
+        let carGroup = new THREE.Group()
+
+        // 车顶
+        let plane = new THREE.PlaneGeometry(40, 40)
+        let planeMat = new THREE.MeshBasicMaterial({
+            color: new THREE.Color('#bebebe'),
+            side: THREE.DoubleSide
+        });
+        let planeMesh = new THREE.Mesh(plane, planeMat)
+        planeMesh.position.set(0, 7.7, 0)
+        planeMesh.rotateX(Math.PI/2)
+        carGroup.add(planeMesh)
+        let carTop = new THREE.BoxGeometry(40,1,40);//创建一个立方体几何对象
+        let mats = []
+        for(let i = 0;i<carTop.faces.length;i++){
+            let material;
+            if (i === 2) {
+                material= new THREE.MeshBasicMaterial({
+                    color: new THREE.Color('#fff')
+                });
+            } else {
+                material= new THREE.MeshBasicMaterial({ color: new THREE.Color('#ff1b6f')});
+            }
+            mats.push(material);
+        }
+        let carMeshTop = new THREE.Mesh(carTop,mats);//网格模型对象
+        carMeshTop.position.set(0, 7, 0);
+        carGroup.add(carMeshTop);
+
+        // 车顶与车体连接
+        let bodyConTop = new THREE.CylinderGeometry(10, 10, 4, 100, 100);
+        let bodyConTopMar = new THREE.MeshLambertMaterial({color: '#ffe8ea', side: THREE.DoubleSide})
+        let bodyConTopMesh = new THREE.Mesh(bodyConTop, bodyConTopMar);
+        bodyConTopMesh.position.set(0, 5, 0);
+        carGroup.add(bodyConTopMesh);
+        // 轮子
+        let leftWheelG = new THREE.TorusGeometry(2,1,0,1000)
+        let leftMat = new THREE.MeshBasicMaterial({color: '#eee' })
+        let leftWheel = new THREE.Mesh(leftWheelG,leftMat)
+        leftWheel.position.set(12, -4.5, 0)
+        leftWheel.rotateY(Math.PI/2)
+        carGroup.add(leftWheel)
+        //
+        let rightWheelG = new THREE.TorusGeometry(2,1,0, 1000)
+        let rightMat = new THREE.MeshBasicMaterial({color: '#eee' })
+        let rightWheel = new THREE.Mesh(rightWheelG,rightMat)
+        rightWheel.position.set(-12, -4.5, 0)
+        carGroup.add(rightWheel)
+        // 前轮
+        let frontWheelG = new THREE.TorusGeometry(2,1,0,1000)
+        let frontMat = new THREE.MeshBasicMaterial({color: '#eee' })
+        let frontWheel = new THREE.Mesh(frontWheelG,frontMat)
+        frontWheel.position.set(0, -4.5, 12)
+        rightWheel.rotateY(Math.PI/2)
+        carGroup.add(frontWheel)
+        // 后轮
+        let afterWheelG = new THREE.TorusGeometry(2,1,0,1000)
+        let afterMat = new THREE.MeshBasicMaterial({color: '#eee' })
+        let afterWheel = new THREE.Mesh(afterWheelG,afterMat)
+        afterWheel.position.set(0, -4.5, -12)
+        // afterWheel.rotateY(Math.PI/2)
+        carGroup.add(afterWheel)
+
+        // 车头
+        // let head = new THREE.BoxGeometry(30, 2, 2)
+        // let headMat = new THREE.MeshBasicMaterial({color: '#CC3300'})
+        // let headMesh = new THREE.Mesh(head, headMat)
+        // headMesh.position.set(0, 5, 25)
+        // carGroup.add(headMesh)
+
+        // 显示屏
+        // let plan = new THREE.PlaneGeometry(15, 7)
+        // let planMat = new THREE.MeshBasicMaterial( {color: '#CCCCFF', side: THREE.DoubleSide} );
+        // let planMesh = new THREE.Mesh(plan, planMat)
+        // planMesh.position.set(10, -0.5, -26)
+        // carGroup.add(planMesh)
+
+        // 文字
+        let word = new THREE.PlaneGeometry(15, 7)
+        let wordMat = new THREE.MeshBasicMaterial( {
+             map: new THREE.CanvasTexture(getTextCanvas('LNN')),
+             side: THREE.DoubleSide
+            } )
+        let wordMesh = new THREE.Mesh(word, wordMat)
+        wordMesh.position.set(10, -0.5, -37)
+        wordMesh.rotateY(Math.PI)
+        carGroup.add(wordMesh)
+
+        // 车体
+        let carBody = new THREE.BoxGeometry(50,10,60);//创建一个立方体几何对象
+        let bodyMaterial = new THREE.MeshLambertMaterial({color: '#ff311b'});//材质对象
+        let bodyMesh = new THREE.Mesh(carBody,bodyMaterial);//网格模型对象
+
+        carGroup.add(bodyMesh)
+        carGroup.rotation.y = -Math.PI / 2
+
+        scene.add(carGroup)
+        // scene.add(carTop)
+
+
+    var point=new THREE.PointLight(0xffffff);
+    point.position.set(400,200,300);//点光源位置
+    scene.add(point);//点光源添加到场景中
+    //环境光
+    var ambient=new THREE.AmbientLight(0x444444);
+    scene.add(ambient);
+    /**
+     * 相机设置
+     */
+    var width = window.innerWidth;//窗口宽度
+    var height = window.innerHeight;//窗口高度
+    camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 10000);
+        camera.position.set(0, 10, 200);
+        camera.lookAt(new THREE.Vector3(0, 0, 0));
+    /**
+     * 创建渲染器对象
+     */
+    var renderer=new THREE.WebGLRenderer({
+        antialias:true, // 这两个属性消除锯齿边缘
+        alpha:true
+    });
+    renderer.setSize(width,height);
+    renderer.setClearColor(0xb9d3ff,1);//设置背景颜色
+    document.body.appendChild(renderer.domElement);//body元素中插入canvas对象
+    let stat = document.getElementById('stat')
+    let stats = new Stats()
+    stat.appendChild(stats.dom)
+    //执行渲染操作
+
+    function render() {
+        renderer.render(scene,camera);//执行渲染操作
+        requestAnimationFrame(render);//请求再次执行渲染函数render
+    }
+    function animate () {
+        stats.begin()
+        render()
+        stats.end()
+    }
+    animate()
+    var controls = new THREE.OrbitControls(camera);//创建控件对象
+
+    // 生成文字
+    function getTextCanvas(text){
+        var width=512, height=256;
+        var canvas = document.createElement('canvas');
+        canvas.width = width;
+        canvas.height = height;
+        var ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#C3C3C3';
+        ctx.fillRect(0, 0, width, height);
+        ctx.font = 50+'px " bold';
+        ctx.fillStyle = '#2891FF';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        // ctx.rotate(Math.PI);
+        ctx.fillText(text, width/2,height/2);
+        return canvas;
+ }
+    </script>
+</body>
+</html>

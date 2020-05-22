@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <title>Translate</title>
     <style>
+        body {
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
         .demo1 {
             width: 100px;
             height: 120px;
@@ -77,7 +82,43 @@
             background: #00ff78;
             width: 100px;
             height: 120px;
-            transform: scaleX(.5);
+            transform-style: preserve-3d;
+            /* transform: scaleX(.5); */
+        }
+        .demo5:hover {
+            transform: scale(0, 0);
+        }
+        .demo6 {
+            position: absolute;
+            top: 50px;
+            right: 0;
+            /* overflow: hidden; */
+            display: flex;
+            justify-self: center;
+            justify-items: center;
+        }
+        .demo6 div{
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-self: center;
+            justify-items: center;
+            background: white;
+            overflow: hidden;
+            border: 3px solid #555555;
+            transform: scale(0.4);
+            filter: blur(2px);
+        }
+        img {
+            height: 100%;
+        }
+        /* .demo6:hover div{
+            transform: scale(0.8) translateY(-20px); */
+        /* } */
+        .demo6 div:hover {
+            transform: scale(1.6);
+            filter: blur(9px);
+            cursor: pointer;
         }
     </style>
 </head>
@@ -88,6 +129,10 @@
 <div class="demo3"></div>
 <div class="demo4"></div>
 <div class="demo5"></div>
+<div class="demo6">
+    <div><img src="../image/小小老虎.jpg"/></div>
+    <div><img src="../image/小老虎.jpg"/></div>
+</div>
 <script>
     let currentX = 0
     let currentY = 0

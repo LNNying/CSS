@@ -14,6 +14,14 @@
 </head>
 <body>
 <script>
+
+//         var radius = 20,  // 圆
+// segments = 360,
+// material = new THREE.LineBasicMaterial({ color: 0x0000ff }),
+// geometry = new THREE.CircleGeometry(radius, segments);
+// geometry.vertices.shift();
+// carGroup.add(new THREE.Line(geometry, material))
+
     /**
      * 创建场景对象
      */
@@ -21,10 +29,16 @@
     /**
      * 创建网格模型
      */
-    var box=new THREE.BoxGeometry(100,100,100);//创建一个立方体几何对象
-    var material=new THREE.MeshLambertMaterial({color:0x0000ff});//材质对象
+    for (let i = 0; i < 50; i++) {
+        for (let j = 0; j < 50; j++) {
+            var box=new THREE.BoxGeometry(1,1,1);//创建一个立方体几何对象
+    var material=new THREE.MeshLambertMaterial({color:0x0000ff * j});//材质对象
     var mesh=new THREE.Mesh(box,material);//网格模型对象
-    scene.add(mesh);//网格模型添加到场景中
+    mesh.position.set(i, j, 1)
+    scene.add(mesh);
+        }
+    }
+    //网格模型添加到场景中
     /**
      * 光源设置
      */
