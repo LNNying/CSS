@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8e70cf82-207c-4040-ba9d-c1346e0db725" name="Default Changelist" comment="" />
+    <list default="true" id="8e70cf82-207c-4040-ba9d-c1346e0db725" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/jinshu.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/jinshu1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/mtl/podjin.mtl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/mtl/tishengji.mtl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/mtl/work.mtl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/podjin.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/tishengji.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/work.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index1.html" beforeDir="false" afterPath="$PROJECT_DIR$/index1.html" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -57,15 +69,78 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="149004204">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="mtl" value="3" />
+          <entry key="obj" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="PLAIN_TEXT" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="html" value="244" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="HTML" value="244" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2">
-              <caret line="348" column="37" selection-start-line="348" selection-start-column="37" selection-end-line="348" selection-end-column="37" />
+            <state relative-caret-position="434">
+              <caret line="536" column="30" selection-start-line="536" selection-start-column="30" selection-end-line="536" selection-end-column="30" />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/obj/work.obj">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/obj/mtl/work.mtl">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/obj/tishengji.obj">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/obj/mtl/tishengji.mtl">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/obj/podjin.obj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-798" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/obj/mtl/podjin.mtl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1596" />
           </provider>
         </entry>
       </file>
@@ -111,7 +186,11 @@
       <find>lod</find>
       <find>createTrack</find>
       <find>objTrack</find>
+      <find>tiobj</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -133,17 +212,17 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+    <option name="x" value="371" />
+    <option name="y" value="25" />
+    <option name="width" value="1440" />
+    <option name="height" value="765" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -181,26 +260,27 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="D:/project/WebstormProjects/iwcs_web_front" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\vscode\monitor_view\obj" />
-      <recent name="D:\vscode\monitor_view\obj\mtl" />
-      <recent name="D:\vscode\monitor_view" />
-      <recent name="D:\vscode\monitor_view\js" />
-      <recent name="D:\vscode\monitor_view\img" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\vscode\monitor_view\obj\mtl" />
       <recent name="D:\vscode\monitor_view\obj" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\vscode\CSS\monitor_view\obj\mtl" />
+      <recent name="D:\vscode\CSS\monitor_view\obj" />
+      <recent name="D:\vscode\CSS\monitor_view\img" />
+      <recent name="D:\vscode\monitor_view\obj" />
+      <recent name="D:\vscode\monitor_view\obj\mtl" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -236,11 +316,12 @@
       <workItem from="1589958293625" duration="9734000" />
       <workItem from="1590029141393" duration="9734000" />
       <workItem from="1590109588745" duration="16826000" />
+      <workItem from="1590296753085" duration="5375000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146273000" />
+    <option name="totallyTimeSpent" value="151648000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
@@ -291,9 +372,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/stats.min.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/obj/mtl/car.mtl" />
     <entry file="file://$PROJECT_DIR$/obj/mtl/singe_pod.mtl" />
     <entry file="file://$PROJECT_DIR$/obj/mtl/threePod.mtl" />
@@ -345,12 +423,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/obj/mtl/jiazi.mtl">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/obj/jiazi.obj">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/obj/mtl/jiazi.mtl" />
+    <entry file="file://$PROJECT_DIR$/obj/jiazi.obj" />
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6954">
@@ -423,25 +497,45 @@
     <entry file="file://$PROJECT_DIR$/obj/mtl/carstepObj.mtl">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/index_c.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/obj/mtl/untitled.mtl">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/obj/double.mtl">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/obj/double.mtl" />
     <entry file="file://$PROJECT_DIR$/obj/mtl/double.mtl">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/obj/double.obj">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/index_c.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/obj/podjin.obj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-798" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/obj/mtl/podjin.mtl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1596" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/obj/tishengji.obj">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/obj/mtl/tishengji.mtl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/obj/work.obj">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/obj/mtl/work.mtl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/index1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2">
-          <caret line="348" column="37" selection-start-line="348" selection-start-column="37" selection-end-line="348" selection-end-column="37" />
+        <state relative-caret-position="434">
+          <caret line="536" column="30" selection-start-line="536" selection-start-column="30" selection-end-line="536" selection-end-column="30" />
         </state>
       </provider>
     </entry>

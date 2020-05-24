@@ -95,15 +95,18 @@
         let pod = new Promise((resolve, reject) => {
             // 加载货架
             let carMtl = new THREE.MTLLoader();
-            carMtl.load('obj/mtl/pod1.mtl', function (materail) {
+            carMtl.load('obj/mtl/podjin.mtl', function (materail) {
                 materail.preload();
                 let carObj = new THREE.OBJLoader();
                 carObj.setMaterials(materail);
-                carObj.load('obj/pod1.obj', function (obj) {
+                carObj.load('obj/podjin.obj', function (obj) {
                     obj.traverse(function (child) {
                         if (child instanceof THREE.Mesh) {
                             child.material.side = THREE.DoubleSide;  // 添加子项双面
                             child.material.receiveShadow = true; // 添加物体接收光
+                            child.material.map = THREE.ImageUtils.loadTexture( 'img/jinshu.jpg');
+                            child.material.needsUpdate = true;
+
                         }
                     });
                     obj.rotation.y = Math.PI / 2;
@@ -149,6 +152,62 @@
                 })
             })
         });
+        // 提升机
+        let tishengji = new Promise((resolve, reject) => {
+            let tiMtl = new THREE.MTLLoader();
+            tiMtl.load('obj/mtl/tishengji.mtl', function (materail) {
+                materail.preload();
+                let tiObj = new THREE.OBJLoader();
+                tiObj.setMaterials(materail);
+                tiObj.load('obj/tishengji.obj', function (obj) {
+                    obj.traverse(function (child) {
+                        if (child instanceof THREE.Mesh) {
+                            child.material.side = THREE.DoubleSide;  // 添加子项双面
+                            child.material.receiveShadow = true; // 添加物体接收光
+                        }
+                    });
+                    obj.scale.z = 3;
+                    obj.scale.x = 3;
+                    obj.scale.y = 3;
+                    // obj.scale.z = 0.04;
+                    // obj.scale.x = 0.04;
+                    // obj.scale.y = 0.04;
+                    // obj.rotation.x = Math.PI / 2
+                    window.tishengji = obj;
+                    console.log('加载提升机完成');
+                    resolve("提升机成功")
+                })
+            })
+        });
+        // 工作台
+        let workbench = new Promise((resolve, reject) => {
+            let workMtl = new THREE.MTLLoader();
+            workMtl.load('obj/mtl/work.mtl', function (materail) {
+                materail.preload();
+                let workObj = new THREE.OBJLoader();
+                workObj.setMaterials(materail);
+                workObj.load('obj/work.obj', function (obj) {
+                    obj.traverse(function (child) {
+                        if (child instanceof THREE.Mesh) {
+                            child.material.side = THREE.DoubleSide;  // 添加子项双面
+                            child.material.receiveShadow = true; // 添加物体接收光
+                            child.material.map = THREE.ImageUtils.loadTexture( 'img/jinshu.jpg');
+                            child.material.needsUpdate = true;
+                        }
+                    });
+                    obj.scale.z = 3;
+                    obj.scale.x = 3;
+                    obj.scale.y = 3;
+                    // obj.scale.z = 0.04;
+                    // obj.scale.x = 0.04;
+                    // obj.scale.y = 0.04;
+                    // obj.rotation.x = Math.PI / 2
+                    window.work = obj;
+                    console.log('加载工作台完成');
+                    resolve("工作台成功")
+                })
+            })
+        });
         // 加载单项轨道
         let track = new Promise((resolve, reject) => {
             let trackMtl = new THREE.MTLLoader();
@@ -190,6 +249,8 @@
                         if (child instanceof THREE.Mesh) {
                             child.material.side = THREE.DoubleSide;  // 添加子项双面
                             child.material.receiveShadow = true; // 添加物体接收光
+                            child.material.map = THREE.ImageUtils.loadTexture( 'img/jinshu.jpg');
+                            child.material.needsUpdate = true;
                         }
                     });
                     obj.scale.z = 3;
@@ -208,7 +269,7 @@
             })
         });
 
-        Promise.all([pallet, car, pod, boxP, track, aisle]).then((result) => {
+        Promise.all([pallet, car, pod, boxP, track, aisle, tishengji, workbench]).then((result) => {
             init();
         }).catch(error => {
             console.log(error);
@@ -272,7 +333,7 @@
     /** 创建网格平面 */
     function createPlan () {
         let planeGeometry = new THREE.PlaneGeometry(50000, 50000);//新建长方形平面
-        let planeMaterial = new THREE.MeshPhongMaterial({color: '#f9f6ff', side: THREE.DoubleSide});//新建平面使用的材质
+        let planeMaterial = new THREE.MeshPhongMaterial({color: '#eed2cd', side: THREE.DoubleSide});//新建平面使用的材质
         let plane = new THREE.Mesh(planeGeometry, planeMaterial);//新建网格对象
         plane.rotation.x = -0.5 * Math.PI;//设置平面的旋转角度
         plane.position.x = -10;//设置长方形平面的位置
@@ -353,20 +414,37 @@
         lod.addLevel(obj, 10000);
         scene.add(lod);
     }
-
+    /** 提升机 */
+    function createTi(aisle) {
+        let obj = null
+        obj = window.tishengji.clone();
+        obj.position.x = aisle.x - 180;
+        obj.position.y = aisle.y;
+        obj.position.z = aisle.z - 520;
+        // obj.position.x = aisle.x + 5;
+        // obj.position.y = aisle.y;
+        // obj.position.z = aisle.z - 80;
+        lod.addLevel(obj, 10000);
+        scene.add(lod);
+    }
+    /** 工作台 */
+    function createWork(aisle) {
+        let obj = null
+        obj = window.work.clone();
+        obj.position.x = aisle.x - 180;
+        obj.position.y = aisle.y;
+        obj.position.z = aisle.z - 520;
+        // obj.position.x = aisle.x + 5;
+        // obj.position.y = aisle.y;
+        // obj.position.z = aisle.z - 80;
+        lod.addLevel(obj, 10000);
+        scene.add(lod);
+    }
     /** 获取点位信息*/
     function getStorageInfo () {
-        let data = [
-            {"locCode": "01-01-01-01-01-001", "stgTypCode": "K001", "locTypCode": "P", "cooX": 0.000, "cooY": 0.000, "cooZ": 1.000},
-            {"locCode": "01-01-02-01-01-001", "stgTypCode": "K001", "locTypCode": "R", "cooX": 1.000, "cooY": 0.000, "cooZ": 1.000},
-            {"locCode": "01-01-03-01-01-001", "stgTypCode": "K001", "locTypCode": "P", "cooX": 0.000, "cooY": 1.000, "cooZ": 1.000},
-            {"locCode": "01-01-04-00", "stgTypCode": "K001", "locTypCode": "R", "cooX": 1.000, "cooY": 1.000, "cooZ": 1.000},
-            {"locCode": "01-01-05-00", "stgTypCode": "K001", "locTypCode": "P", "cooX": 0.000, "cooY": 2.000, "cooZ": 1.000},
-            {"locCode": "01-01-06-00", "stgTypCode": "K001", "locTypCode": "R", "cooX": 1.000, "cooY": 2.000, "cooZ": 1.000}
-            ];
         $.ajax({
             type: 'post',
-            url: 'http://192.168.89.115:8088/api/wms_storage_loc/getMapInfoBy3D',
+            url: 'http://localhost:8088/api/wms_storage_loc/getMapInfoBy3D',
             async: false,
             dataType: 'json',
             success: function (data) {
@@ -387,7 +465,8 @@
                                 y: y,
                                 z: z,
                                 id: i,
-                                type: list[i].locTypCode
+                                type: list[i].locTypCode,
+                                type3d: list[i].way3dType
                             }
                             createModal(dataList);
                         }
@@ -412,19 +491,6 @@
                     //         }
                     //     }
                     // }
-                        // for (let i = list.length - 1; i >= 0; i--) {
-                        //     let x = list[i].cooX;
-                        //     let y = list[i].cooY;
-                        //     let z = list[i].cooZ;
-                        //     let dataList = {
-                        //         code: list[i].locCode,
-                        //         x: x,
-                        //         y: y,
-                        //         z: z,
-                        //         type: list[i].locTypCode
-                        //     }
-                        //     createModal(dataList);
-                        // }
                     } else {
                         console.log('获取数据为空');
                     }
@@ -452,9 +518,24 @@
                 createBox(data);
                 createPallet(data);
                 break;
-            case 'R': // 双向通道
+            case 'R': // 通道
                 createAisle(data);
                 // createTrack(data);
+                break;
+            case 'L': // 提升机
+                if (data.type3d === 't') {
+                    createTi(data);
+                }
+                break;
+            case 'I': // 提升机
+                if (data.type3d === 'I') {
+                    createWork(data);
+                }
+                break;
+            case 'O': // 提升机
+                if (data.type3d === 'O') {
+                    createWork(data);
+                }
                 break;
             default:
                 console.log('未知库位类型');
@@ -513,10 +594,15 @@
         // 半球光
         let light = new THREE.HemisphereLight(0xffffbb, 0x080820, 1);
         scene.add( light );
-        light2 = new THREE.DirectionalLight(0xffffff, 1, 1000);
-        light2.castShadow = true;
-        light2.position.set(-30,-25,-30);
-        scene.add( light1 );
+        // light2 = new THREE.DirectionalLight(0xffffff, 1, 1000);
+        // light2.castShadow = true;
+        // light2.position.set(-30,-25,-30);
+        // scene.add( light1 );
+        var ambient = new THREE.AmbientLight('#86827c');
+        scene.add(ambient);
+        // var pointLight = new THREE.SpotLight(0xffffff,1,0);
+        // pointLight.position.set(0,3000,0);
+        // scene.add(pointLight);
     }
 
 
