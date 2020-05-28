@@ -11,8 +11,10 @@
     <script src="js/TrackballControls.js"></script>
     <!--加载obj材料-->
     <script src="js/MTLLoader.js"></script>
+    <script src="js/DDSLoader.js"></script>
     <!--Obj加载类型-->
     <script src="js/OBJLoader.js"></script>
+    <script src="js/GLTFLoader.js"></script>
     <script src="js/ColladaLoader.js"></script>
     <script src="js/stats.min.js"></script>
     <script src="js/query.js"></script>
@@ -29,9 +31,30 @@
 <script type="text/javascript">
     let scene, camera, render, stat, light,
         light1, light2, light3, light4, webglRender,
-        controls, raycaster, intersects, mouse, lod, clock;
+        controls, raycaster, intersects, mouse, lod, clock,
+        podGeometry, podGeo = [];
+
+    let onProgress = function ( xhr ) {
+
+        if ( xhr.lengthComputable ) {
+
+            var percentComplete = xhr.loaded / xhr.total * 100;
+            console.log( Math.round( percentComplete, 2 ) + '% downloaded' );
+
+        }
+
+    };
+
+    let onError = function ( xhr ) { };
 
     $(function() {
+        /** 生成场景对象 */
+        scene = new THREE.Scene();
+        clock = new THREE.Clock();
+        lod = new THREE.LOD();
+        podGeometry = new THREE.BufferGeometry();
+
+        THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
         let pallet = new Promise((resolve,reject) => {
             // 托盘
             let podMtl = new THREE.MTLLoader();
@@ -47,17 +70,13 @@
                         }
                     });
                     obj.rotateY(Math.PI / 2);
-                    obj.scale.z = 3;
-                    obj.scale.x = 3.5;
-                    obj.scale.y = 3;
-                    // obj.rotateZ(Math.PI / 2);
-                    // obj.scale.z = 0.055;
-                    // obj.scale.x = 0.075;
-                    // obj.scale.y = 0.065;
+                    // obj.scale.z = 3;
+                    // obj.scale.x = 3.5;
+                    // obj.scale.y = 3;
                     window.objPallet = obj;
                     console.log('加载托盘完成');
                     resolve("托盘成功")
-                })
+                }, onProgress, onError)
             })
         })
         let car = new Promise((resolve, reject) => {
@@ -73,15 +92,9 @@
                         if (child instanceof THREE.Mesh) {
                             child.material.side = THREE.DoubleSide;  // 添加子项双面
                             child.material.receiveShadow = true; // 添加物体接收光
-                            // child.geometry.computeBoundingBox();
-                            // child.geometry.computeBoundingBox();
-                            // child.geometry.boundingBox.getCenter(center);
-                            // child.geometry.center();
-                            // child.position.copy(center);
                         }
 
                     });
-                    // obj.children[0].geometry.center();
                     obj.scale.z = 0.04;
                     obj.scale.x = 0.04;
                     obj.scale.y = 0.035;
@@ -89,41 +102,12 @@
                     window.objCar = obj;
                     console.log('加载小车完成');
                     resolve("小车成功")
-                })
+                }, onProgress, onError)
             })
         })
         let pod = new Promise((resolve, reject) => {
             // 加载货架
-            let carMtl = new THREE.MTLLoader();
-            carMtl.load('obj/mtl/podjin.mtl', function (materail) {
-                materail.preload();
-                let carObj = new THREE.OBJLoader();
-                carObj.setMaterials(materail);
-                carObj.load('obj/podjin.obj', function (obj) {
-                    obj.traverse(function (child) {
-                        if (child instanceof THREE.Mesh) {
-                            child.material.side = THREE.DoubleSide;  // 添加子项双面
-                            child.material.receiveShadow = true; // 添加物体接收光
-                            child.material.map = THREE.ImageUtils.loadTexture( 'img/jinshu.jpg');
-                            child.material.needsUpdate = true;
 
-                        }
-                    });
-                    obj.rotation.y = Math.PI / 2;
-                    // obj.rotation.x = Math.PI / 2;
-                    // obj.rotation.z = Math.PI / 2;
-                    obj.scale.z = 3.5;
-                    obj.scale.x = 3.5;
-                    obj.scale.y = 3.5;
-                    // obj.scale.z = 1.5;
-                    // obj.scale.x = 1.5;
-                    // obj.scale.y = 1.5;
-                    // obj.rotation.z = Math.PI / 2
-                    window.objPod = obj;
-                    console.log('加载货架完成');
-                    resolve("货架成功")
-                })
-            })
         });
         // 箱子 货物
         let boxP = new Promise((resolve, reject) => {
@@ -139,17 +123,13 @@
                             child.material.receiveShadow = true; // 添加物体接收光
                         }
                     });
-                    obj.scale.z = 3;
-                    obj.scale.x = 3;
-                    obj.scale.y = 3;
-                    // obj.scale.z = 0.04;
-                    // obj.scale.x = 0.04;
-                    // obj.scale.y = 0.04;
-                    // obj.rotation.x = Math.PI / 2
+                    // obj.scale.z = 3;
+                    // obj.scale.x = 3;
+                    // obj.scale.y = 3;
                     window.box = obj;
                     console.log('加载通道完成');
                     resolve("通道成功")
-                })
+                }, onProgress, onError)
             })
         });
         // 提升机
@@ -166,17 +146,13 @@
                             child.material.receiveShadow = true; // 添加物体接收光
                         }
                     });
-                    obj.scale.z = 3;
-                    obj.scale.x = 3;
-                    obj.scale.y = 3;
-                    // obj.scale.z = 0.04;
-                    // obj.scale.x = 0.04;
-                    // obj.scale.y = 0.04;
-                    // obj.rotation.x = Math.PI / 2
+                    // obj.scale.z = 3;
+                    // obj.scale.x = 3;
+                    // obj.scale.y = 3;
                     window.tishengji = obj;
                     console.log('加载提升机完成');
                     resolve("提升机成功")
-                })
+                }, onProgress, onError)
             })
         });
         // 工作台
@@ -195,17 +171,13 @@
                             child.material.needsUpdate = true;
                         }
                     });
-                    obj.scale.z = 3;
-                    obj.scale.x = 3;
-                    obj.scale.y = 3;
-                    // obj.scale.z = 0.04;
-                    // obj.scale.x = 0.04;
-                    // obj.scale.y = 0.04;
-                    // obj.rotation.x = Math.PI / 2
+                    // obj.scale.z = 3;
+                    // obj.scale.x = 3;
+                    // obj.scale.y = 3;
                     window.work = obj;
                     console.log('加载工作台完成');
                     resolve("工作台成功")
-                })
+                }, onProgress, onError)
             })
         });
         // 加载单项轨道
@@ -222,19 +194,10 @@
                             child.material.receiveShadow = true; // 添加物体接收光
                         }
                     });
-                    obj.scale.z = 3;
-                    obj.scale.x = 3;
-                    obj.scale.y = 3;
-                    // obj.scale.z = 0.5;
-                    // obj.scale.x = 0.5;
-                    // obj.scale.y = 0.5;
-                    // obj.rotation.y = Math.PI * 2;
-                    // obj.rotation.x = Math.PI / 2;
-                    // obj.rotation.z = Math.PI / 2;
                     window.objTrack = obj;
                     console.log('加单向载通道完成');
                     resolve("单向通道成功")
-                })
+                }, onProgress, onError)
             })
         });
         // 双向通道
@@ -253,23 +216,14 @@
                             child.material.needsUpdate = true;
                         }
                     });
-                    obj.scale.z = 3;
-                    obj.scale.x = 3;
-                    obj.scale.y = 3;
-                    // obj.scale.z = 1.5;
-                    // obj.scale.x = 1.5;
-                    // obj.scale.y = 1.5;
-                    // obj.rotation.y = Math.PI * 2;
-                    // obj.rotation.x = Math.PI / 2;
-                    // obj.rotation.z = Math.PI / 2;
                     window.objAisle = obj;
                     console.log('加载双向通道完成');
                     resolve("双向通道成功")
-                })
+                }, onProgress, onError)
             })
         });
 
-        Promise.all([pallet, car, pod, boxP, track, aisle, tishengji, workbench]).then((result) => {
+        Promise.all([pallet, car, boxP, track, aisle, tishengji, workbench]).then((result) => {
             init();
         }).catch(error => {
             console.log(error);
@@ -282,10 +236,6 @@
         window.carList = [];
         window.boxList = [];
 
-        /** 生成场景对象 */
-        scene = new THREE.Scene();
-        clock = new THREE.Clock();
-        lod = new THREE.LOD();
         /** 加载统计对象 */
         initStat();
         /** 加载渲染器 */
@@ -297,8 +247,9 @@
         createAmbientLight();
         initRay();
         renderScene();
-        getStorageInfo();
+        // getStorageInfo();
         createPlan();
+        createPod();
         // testData();
         lod.position.z = -6000;
         lod.position.x = 1000;
@@ -337,7 +288,7 @@
         let plane = new THREE.Mesh(planeGeometry, planeMaterial);//新建网格对象
         plane.rotation.x = -0.5 * Math.PI;//设置平面的旋转角度
         plane.position.x = -10;//设置长方形平面的位置
-        plane.position.y = -400;
+        // plane.position.y = -400;
         plane.position.z = -2;
         plane.receiveShadow =true;
         lod.addLevel(plane, 10000);
@@ -358,15 +309,37 @@
         scene.add(lod);
     }
     /** 货架 */
-    function createPod(pod) {
-        let obj = null
-        obj = window.objPod.clone();
-        obj.position.x = pod.x;
-        obj.position.y = pod.y;
-        obj.position.z = pod.z;
-        // window.podList[pod.id] = obj;
-        lod.addLevel(obj, 10000);
-        scene.add(lod);
+    function createPod() {
+        // if (localStorage.getItem('podObj')) {
+        //     console.log(JSON.parse(localStorage.getItem('podObj')));
+        //     scene.add(localStorage.getItem('podObj'))
+        // } else {
+            let carMtl = new THREE.MTLLoader();
+            carMtl.load('obj/mtl/全库一体.mtl', function (materail) {
+                materail.preload();
+                let carObj = new THREE.OBJLoader();
+                carObj.setMaterials(materail);
+                carObj.load('obj/全库一体.obj', function (obj) {
+                    obj.traverse(function (child) {
+                        if (child instanceof THREE.Mesh) {
+                            child.material.side = THREE.DoubleSide;  // 添加子项双面
+                            child.material.receiveShadow = true; // 添加物体接收光
+                            child.material.map = THREE.ImageUtils.loadTexture( 'img/jinshu.jpg');
+                            child.material.needsUpdate = true;
+                        }
+                    });
+                    obj.rotation.y = Math.PI / 2;
+                    obj.position.z = -150;
+                    obj.position.x = 100;
+                    obj.position.y = 5;
+                    console.log(obj);
+                    // let result = obj.toJSON();
+                    // localStorage.setItem("podObj", JSON.stringify(result));
+                    scene.add(obj);
+                    console.log('加载货架完成');
+                }, onProgress, onError)
+            })
+        // }
     }
     /** 小车*/
     function createCar(car) {
@@ -408,9 +381,6 @@
         obj.position.x = aisle.x - 180;
         obj.position.y = aisle.y;
         obj.position.z = aisle.z - 520;
-        // obj.position.x = aisle.x + 5;
-        // obj.position.y = aisle.y;
-        // obj.position.z = aisle.z - 80;
         lod.addLevel(obj, 10000);
         scene.add(lod);
     }
@@ -421,9 +391,6 @@
         obj.position.x = aisle.x - 180;
         obj.position.y = aisle.y;
         obj.position.z = aisle.z - 520;
-        // obj.position.x = aisle.x + 5;
-        // obj.position.y = aisle.y;
-        // obj.position.z = aisle.z - 80;
         lod.addLevel(obj, 10000);
         scene.add(lod);
     }
@@ -434,9 +401,6 @@
         obj.position.x = aisle.x - 180;
         obj.position.y = aisle.y;
         obj.position.z = aisle.z - 520;
-        // obj.position.x = aisle.x + 5;
-        // obj.position.y = aisle.y;
-        // obj.position.z = aisle.z - 80;
         lod.addLevel(obj, 10000);
         scene.add(lod);
     }
@@ -444,7 +408,7 @@
     function getStorageInfo () {
         $.ajax({
             type: 'post',
-            url: 'http://localhost:8088/api/wms_storage_loc/getMapInfoBy3D',
+            url: 'http://192.168.89.115:8088/api/wms_storage_loc/getMapInfoBy3D',
             async: false,
             dataType: 'json',
             success: function (data) {
@@ -456,9 +420,9 @@
                      * x:51  y: 43
                      **/
                         for (let i = list.length - 1; i >=0; i--) {
-                            let x = 7650 - (list[i].cooY * 350);
-                            let y = (list[i].cooZ - 1) * 685;
-                            let z = 9030 - (list[i].cooX * 420);
+                            let x = 6650 - (list[i].cooY * 300);
+                            let y = (list[i].cooZ - 1) * 10;
+                            let z = 8030 - (list[i].cooX * 370);
                             let dataList = {
                                 code: list[i].locCode,
                                 x: x,
@@ -466,7 +430,8 @@
                                 z: z,
                                 id: i,
                                 type: list[i].locTypCode,
-                                type3d: list[i].way3dType
+                                type3d: list[i].way3dType,
+                                indEmp: list[i].indEmp
                             }
                             createModal(dataList);
                         }
@@ -501,7 +466,11 @@
             error: function (err) {
                 console.log(err);
             }
-        })
+        });
+
+        // let material = new THREE.MeshLambertMaterial({ color: 0xf33f66 });
+        //
+        // scene.add(new THREE.Mesh(podGeometry, material))
     }
 
     /** 总生成模型 */
@@ -515,12 +484,15 @@
         switch (data.type) {
             case 'P': // 库位
                 createPod(data);
+                // if (data.indEmp !== '') {
+                //     createBox(data);
+                //     createPallet(data);
+                // }
                 createBox(data);
                 createPallet(data);
                 break;
             case 'R': // 通道
                 createAisle(data);
-                // createTrack(data);
                 break;
             case 'L': // 提升机
                 if (data.type3d === 't') {
@@ -575,18 +547,13 @@
 
     /** 初始化相机 */
     function initCamera() {
-        camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 25000);
-        camera.position.x = -6600;
-        camera.position.y = 5020;
-        camera.position.z = 6600;
+        camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 2000);
+        camera.position.x = -200;
+        camera.position.y = 150;
+        camera.position.z = 300;
         let target = new THREE.Vector3(0, 0 , 0);
         camera.lookAt(scene.position);
 
-        // controls = new THREE.FlyControls(camera, render.domElement);
-        // // controls.movementSpeed = 1000;
-        // controls.rollSpeed = Math.PI / 10;
-
-        // controls = new THREE.TrackballControls( camera, render.domElement );
     }
 
     /** 创建一个 DirectionalLight 半球光 */
@@ -594,15 +561,8 @@
         // 半球光
         let light = new THREE.HemisphereLight(0xffffbb, 0x080820, 1);
         scene.add( light );
-        // light2 = new THREE.DirectionalLight(0xffffff, 1, 1000);
-        // light2.castShadow = true;
-        // light2.position.set(-30,-25,-30);
-        // scene.add( light1 );
         var ambient = new THREE.AmbientLight('#86827c');
         scene.add(ambient);
-        // var pointLight = new THREE.SpotLight(0xffffff,1,0);
-        // pointLight.position.set(0,3000,0);
-        // scene.add(pointLight);
     }
 
 
@@ -610,7 +570,7 @@
     function initControls() {
 
         controls = new THREE.OrbitControls(camera, render.domElement);
-
+        // controls = new THREE.TrackballControls( camera, render.domElement );
 
         // controls = new THREE.TrackballControls(camera, render.domElement);
         // controls.target = target;
@@ -667,16 +627,12 @@
         //     }
         // }
         render.render(scene, camera);
-        // if (window.carList.length !== 0) {
-        // }
-
         requestAnimationFrame(renderScene);
     }
     /** 所有更新*/
     function update() {
         stat.update();
         controls.update(clock.getDelta());
-        // controls.update();
     }
 </script>
 </body>

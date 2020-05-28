@@ -2,17 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e70cf82-207c-4040-ba9d-c1346e0db725" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/jinshu.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/jinshu1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/mtl/podjin.mtl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/mtl/tishengji.mtl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/mtl/work.mtl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/podjin.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/tishengji.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/work.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/GLTFLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitor_view.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/mtl/全库一体.mtl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index1.html" beforeDir="false" afterPath="$PROJECT_DIR$/index1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/aisle.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/bigpod.obj" beforeDir="false" afterPath="$PROJECT_DIR$/obj/全库一体.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/box.obj" beforeDir="false" afterPath="$PROJECT_DIR$/obj/box.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/carstepObj.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/double.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/doubleTrace.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/loc.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/mtl/aisle.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/mtl/bigpod.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/mtl/box.mtl" beforeDir="false" afterPath="$PROJECT_DIR$/obj/mtl/box.mtl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/mtl/carstepObj.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/mtl/double.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/mtl/doubleTrace.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/mtl/loc.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/mtl/pod.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/mtl/pod1.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/mtl/podjin.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/mtl/singleTrace.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/mtl/singleTrack.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/mtl/tishengji.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/mtl/track.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/mtl/tuopan.mtl" beforeDir="false" afterPath="$PROJECT_DIR$/obj/mtl/tuopan.mtl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/mtl/untitled.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/mtl/work.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/pod.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/pod1.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/podjin.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/singleTrace.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/singleTrack.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/test.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/tishengji.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/track.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/tuopan.obj" beforeDir="false" afterPath="$PROJECT_DIR$/obj/tuopan.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/work.obj" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -72,91 +100,73 @@
     <session id="149004204">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.25" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="mtl" value="3" />
-          <entry key="obj" value="3" />
+          <entry key="html" value="4" />
+          <entry key="jpg" value="1" />
+          <entry key="js" value="1" />
+          <entry key="mtl" value="11" />
+          <entry key="obj" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PLAIN_TEXT" value="6" />
+          <entry key="HTML" value="4" />
+          <entry key="Image" value="1" />
+          <entry key="JavaScript" value="1" />
+          <entry key="PLAIN_TEXT" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="244" />
+          <entry key="html" value="1626" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="244" />
+          <entry key="HTML" value="1626" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
-              <caret line="536" column="30" selection-start-line="536" selection-start-column="30" selection-end-line="536" selection-end-column="30" />
+            <state relative-caret-position="4218">
+              <caret line="222" column="14" selection-end-line="639" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/monitor_view.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="48">
+              <caret line="263" column="7" selection-start-line="263" selection-start-column="7" selection-end-line="263" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/obj/work.obj">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/obj/mtl/work.mtl">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/obj/tishengji.obj">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/obj/mtl/tishengji.mtl">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/obj/podjin.obj">
+        <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-798" />
+            <state relative-caret-position="6289">
+              <caret line="366" column="64" selection-start-line="366" selection-start-column="64" selection-end-line="366" selection-end-column="64" />
+            </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/obj/mtl/podjin.mtl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1596" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/obj/mtl/double.mtl">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/obj/double.obj">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index_c.html">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -187,6 +197,7 @@
       <find>createTrack</find>
       <find>objTrack</find>
       <find>tiobj</find>
+      <find>geometry</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -202,6 +213,7 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/lod.html" />
         <option value="$PROJECT_DIR$/index1.html" />
+        <option value="$PROJECT_DIR$/monitor_view.html" />
       </list>
     </option>
   </component>
@@ -211,11 +223,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="371" />
-    <option name="y" value="25" />
-    <option name="width" value="1440" />
-    <option name="height" value="765" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-342" />
+    <option name="y" value="-1449" />
+    <option name="width" value="2578" />
+    <option name="height" value="1408" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -233,17 +245,7 @@
             <path>
               <item name="monitor_view" type="b2602c69:ProjectViewProjectNode" />
               <item name="monitor_view" type="462c0819:PsiDirectoryNode" />
-              <item name="a" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="monitor_view" type="b2602c69:ProjectViewProjectNode" />
-              <item name="monitor_view" type="462c0819:PsiDirectoryNode" />
               <item name="img" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="monitor_view" type="b2602c69:ProjectViewProjectNode" />
-              <item name="monitor_view" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="monitor_view" type="b2602c69:ProjectViewProjectNode" />
@@ -266,7 +268,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="D:/project/WebstormProjects/iwcs_web_front" />
+    <property name="last_opened_file_path" value="D:/all/胶州/three" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -278,9 +280,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\vscode\CSS\monitor_view\obj\mtl" />
       <recent name="D:\vscode\CSS\monitor_view\obj" />
+      <recent name="D:\vscode\CSS\monitor_view\js" />
       <recent name="D:\vscode\CSS\monitor_view\img" />
       <recent name="D:\vscode\monitor_view\obj" />
-      <recent name="D:\vscode\monitor_view\obj\mtl" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -317,17 +319,23 @@
       <workItem from="1590029141393" duration="9734000" />
       <workItem from="1590109588745" duration="16826000" />
       <workItem from="1590296753085" duration="5375000" />
+      <workItem from="1590541504328" duration="959000" />
+      <workItem from="1590562749580" duration="2725000" />
+      <workItem from="1590565943156" duration="3097000" />
+      <workItem from="1590643509928" duration="1452000" />
+      <workItem from="1590650175210" duration="271000" />
+      <workItem from="1590656113735" duration="5614000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151648000" />
+    <option name="totallyTimeSpent" value="185053000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <frame x="-340" y="-1447" width="2062" height="1126" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15719947" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11747285" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -339,7 +347,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32907802" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -372,31 +380,8 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/obj/mtl/car.mtl" />
-    <entry file="file://$PROJECT_DIR$/obj/mtl/singe_pod.mtl" />
-    <entry file="file://$PROJECT_DIR$/obj/mtl/threePod.mtl" />
-    <entry file="file://$PROJECT_DIR$/obj/singe_pod.obj" />
-    <entry file="file://$PROJECT_DIR$/obj/car.obj" />
-    <entry file="file://$PROJECT_DIR$/img/box.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jquery.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/obj/mtl/pod2.mtl" />
-    <entry file="file://$PROJECT_DIR$/obj/mtl/pod3.mtl" />
     <entry file="file://$PROJECT_DIR$/obj/untitled.obj" />
     <entry file="file://$PROJECT_DIR$/obj/tuopan.mtl" />
-    <entry file="file://$PROJECT_DIR$/obj/mtl/tuopan.mtl">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/obj/tuopan.obj">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/ColladaLoader.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -407,37 +392,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/obj/test.obj">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/obj/track.obj">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/obj/mtl/singleTrace.mtl">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/obj/mtl/pod1.mtl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/obj/test.obj" />
+    <entry file="file://$PROJECT_DIR$/obj/track.obj" />
+    <entry file="file://$PROJECT_DIR$/obj/mtl/singleTrace.mtl" />
+    <entry file="file://$PROJECT_DIR$/obj/mtl/pod1.mtl" />
     <entry file="file://$PROJECT_DIR$/obj/mtl/jiazi.mtl" />
     <entry file="file://$PROJECT_DIR$/obj/jiazi.obj" />
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6954">
-          <caret line="366" column="64" selection-start-line="366" selection-start-column="64" selection-end-line="366" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/obj/bigpod.obj">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/obj/mtl/bigpod.mtl">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/obj/bigpod.obj" />
+    <entry file="file://$PROJECT_DIR$/obj/mtl/bigpod.mtl" />
     <entry file="file://$PROJECT_DIR$/lod.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1216">
@@ -451,91 +413,93 @@
     <entry file="file://$PROJECT_DIR$/js/TrackballControls.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/obj/singleTrace.obj">
+    <entry file="file://$PROJECT_DIR$/obj/singleTrace.obj" />
+    <entry file="file://$PROJECT_DIR$/obj/mtl/pod.mtl" />
+    <entry file="file://$PROJECT_DIR$/obj/pod.obj" />
+    <entry file="file://$PROJECT_DIR$/obj/singleTrack.obj" />
+    <entry file="file://$PROJECT_DIR$/obj/mtl/singleTrack.mtl" />
+    <entry file="file://$PROJECT_DIR$/obj/doubleTrace.obj" />
+    <entry file="file://$PROJECT_DIR$/obj/mtl/doubleTrace.mtl" />
+    <entry file="file://$PROJECT_DIR$/obj/carstepObj.obj" />
+    <entry file="file://$PROJECT_DIR$/obj/mtl/carstepObj.mtl" />
+    <entry file="file://$PROJECT_DIR$/obj/mtl/untitled.mtl" />
+    <entry file="file://$PROJECT_DIR$/obj/double.mtl" />
+    <entry file="file://$PROJECT_DIR$/obj/podjin.obj" />
+    <entry file="file://$PROJECT_DIR$/obj/mtl/podjin.mtl" />
+    <entry file="file://$PROJECT_DIR$/obj/tishengji.obj" />
+    <entry file="file://$PROJECT_DIR$/obj/mtl/tishengji.mtl" />
+    <entry file="file://$PROJECT_DIR$/obj/work.obj" />
+    <entry file="file://$PROJECT_DIR$/obj/mtl/work.mtl" />
+    <entry file="file://$PROJECT_DIR$/js/GLTFLoader.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/obj/mergePod.obj" />
+    <entry file="file://$PROJECT_DIR$/obj/mtl/double.mtl" />
+    <entry file="file://$PROJECT_DIR$/obj/double.obj" />
+    <entry file="file://$PROJECT_DIR$/index_c.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/obj/store.obj" />
+    <entry file="file://$PROJECT_DIR$/obj/mtl/store.mtl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2280" />
+        <state relative-caret-position="4218">
+          <caret line="222" column="14" selection-end-line="639" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/obj/mtl/aisle.mtl">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/obj/mtl/pod.mtl">
+    <entry file="file://$PROJECT_DIR$/obj/mtl/mergePod.mtl">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/obj/pod.obj">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/obj/singleTrack.obj">
+    <entry file="file://$PROJECT_DIR$/obj/全库一体.obj">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-24245" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/obj/mtl/singleTrack.mtl">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/obj/doubleTrace.obj">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/obj/mtl/doubleTrace.mtl">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/obj/box.obj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1179" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/obj/mtl/box.mtl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="190">
+          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/obj/carstepObj.obj">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/obj/mtl/carstepObj.mtl">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/obj/mtl/untitled.mtl">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/obj/double.mtl" />
-    <entry file="file://$PROJECT_DIR$/obj/mtl/double.mtl">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/obj/double.obj">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index_c.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/obj/podjin.obj">
+    <entry file="file://$PROJECT_DIR$/obj/mtl/全库一体.mtl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-798" />
+        <state relative-caret-position="437">
+          <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/obj/mtl/podjin.mtl">
+    <entry file="file://$PROJECT_DIR$/obj/tuopan.obj">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/obj/mtl/tuopan.mtl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/obj/mtl/box.mtl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1596" />
+        <state relative-caret-position="190">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/obj/tishengji.obj">
+    <entry file="file://$PROJECT_DIR$/obj/box.obj">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/obj/mtl/tishengji.mtl">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/img/jinshu.jpg">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/obj/work.obj">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/obj/mtl/work.mtl">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index1.html">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="536" column="30" selection-start-line="536" selection-start-column="30" selection-end-line="536" selection-end-column="30" />
+        <state relative-caret-position="6289">
+          <caret line="366" column="64" selection-start-line="366" selection-start-column="64" selection-end-line="366" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/monitor_view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="263" column="7" selection-start-line="263" selection-start-column="7" selection-end-line="263" selection-end-column="7" />
         </state>
       </provider>
     </entry>
