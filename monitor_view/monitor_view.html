@@ -66,6 +66,8 @@
                         if (child instanceof THREE.Mesh) {
                             child.material.side = THREE.DoubleSide;  // 添加子项双面
                             child.material.receiveShadow = true; // 添加物体接收光
+                            child.material.map = THREE.ImageUtils.loadTexture( 'img/tuo2.jpg');
+                            child.material.needsUpdate = true;
                         }
                     });
                     obj.rotateY(Math.PI / 2);
@@ -74,32 +76,28 @@
                     resolve("托盘成功")
                 }, onProgress, onError)
             })
-        })
+        });
         let car = new Promise((resolve, reject) => {
-            // let center = new THREE.Vector3();
-            // // 加载小车
-            // let carMtl = new THREE.MTLLoader();
-            // carMtl.load('obj/mtl/carstepObj.mtl', function (materail) {
-            //     materail.preload();
-            //     let carObj = new THREE.OBJLoader();
-            //     carObj.setMaterials(materail);
-            //     carObj.load('obj/carstepObj.obj', function (obj) {
-            //         obj.traverse(function (child) {
-            //             if (child instanceof THREE.Mesh) {
-            //                 child.material.side = THREE.DoubleSide;  // 添加子项双面
-            //                 child.material.receiveShadow = true; // 添加物体接收光
-            //             }
-            //
-            //         });
-            //         obj.scale.z = 0.04;
-            //         obj.scale.x = 0.04;
-            //         obj.scale.y = 0.035;
-            //         obj.rotation.y = Math.PI;
-            //         window.objCar = obj;
-            //         console.log('加载小车完成');
+            // 加载小车
+            let carMtl = new THREE.MTLLoader();
+            carMtl.load('obj/mtl/小车.mtl', function (materail) {
+                materail.preload();
+                let carObj = new THREE.OBJLoader();
+                carObj.setMaterials(materail);
+                carObj.load('obj/小车.obj', function (obj) {
+                    obj.traverse(function (child) {
+                        if (child instanceof THREE.Mesh) {
+                            child.material.side = THREE.DoubleSide;  // 添加子项双面
+                            child.material.receiveShadow = true; // 添加物体接收光
+                        }
+
+                    });
+                    obj.rotation.y = Math.PI / 2;
+                    window.objCar = obj;
+                    console.log('加载小车完成');
                     resolve("小车成功")
-            //     }, onProgress, onError)
-            // })
+                }, onProgress, onError)
+            })
         })
         // 箱子 货物
         let boxP = new Promise((resolve, reject) => {
@@ -123,7 +121,12 @@
                 }, onProgress, onError)
             })
         });
-        Promise.all([pallet, car, boxP]).then((result) => {
+        let pod = new Promise((resolve, reject) => {
+            createPod();
+            console.log("加载整体仓库完成");
+            resolve("加载整体仓库完成")
+        }, onProgress, onError);
+        Promise.all([pod, pallet, car, boxP]).then((result) => {
             init();
         }).catch(error => {
             console.log(error);
@@ -145,7 +148,6 @@
         /** 加载鼠标控制器 */
         initControls();
         createPlan();
-        createPod();
         createAmbientLight();
         initRay();
         renderScene();
@@ -208,7 +210,7 @@
                     if (child instanceof THREE.Mesh) {
                         child.material.side = THREE.DoubleSide;  // 添加子项双面
                         child.material.receiveShadow = true; // 添加物体接收光
-                        child.material.map = THREE.ImageUtils.loadTexture( 'img/jinshu.jpg');
+                        child.material.map = THREE.ImageUtils.loadTexture( 'img/5.jpg');
                         child.material.needsUpdate = true;
                     }
                 });
@@ -217,8 +219,6 @@
                 obj.position.x = 100;
                 obj.position.y = 5;
                 console.log(obj);
-                // let result = obj.toJSON();
-                // localStorage.setItem("podObj", JSON.stringify(result));
                 scene.add(obj);
                 console.log('加载货架完成');
             }, onProgress, onError)
@@ -229,11 +229,12 @@
     function createCar(car) {
         let obj = null
         obj = window.objCar.clone();
-        obj.position.x = car.x + 58;
-        obj.position.y = car.y + 16.5;
-        obj.position.z = car.z + 10;
+        obj.position.x = car.x;
+        obj.position.y = car.y;
+        obj.position.z = car.z - 0.3;
         car.id = window.carList.length;
         window.carList[car.id] = obj;
+        console.log(obj);
         scene.add(obj);
     }
     /** 托盘 */
@@ -263,70 +264,81 @@
      * y对应数据库中z,模型3Dz轴方向18  对应模型原点为12.5  但是模型的三楼偏低需要减个0.5 最好判断一下楼层
      */
     function getStorageInfo () {
-        // $.ajax({
-        //     type: 'post',
-        //     url: 'http://192.168.89.115:8088/api/wms_storage_loc/getMapInfoBy3D',
-        //     async: false,
-        //     dataType: 'json',
-        //     success: function (data) {
-        //         if (data.returnCode === 200) {
-        //             let list = data.returnData;
-        //             if (list.length !== 0) {
-        //                 // 倒叙循环 比正序稍微好一点
-        //                 /**
-        //                  * x:51  y: 43
-        //                  **/
-        //                 for (let i = list.length - 1; i >=0; i--) {
-        //                     let x = 6650 - (list[i].cooY * 300);
-        //                     let y = (list[i].cooZ - 1) * 10;
-        //                     let z = 8030 - (list[i].cooX * 370);
-        //                     let dataList = {
-        //                         code: list[i].locCode,
-        //                         x: x,
-        //                         y: y,
-        //                         z: z,
-        //                         id: i,
-        //                         type: list[i].locTypCode,
-        //                         type3d: list[i].way3dType,
-        //                         indEmp: list[i].indEmp
-        //                     }
-        //                     createModal(dataList);
-        //                 }
-                        for (let k = 1; k > 0; k--) {
-                            for (let i = 1; i > 0; i--) {
-                                for (let j = 1; j > 0; j--) {
-                                    let x = -115.5;
-                                    let y = 12.5 + 35.5;
-                                    let z = 105.3;
-                                    let dataList = {
-                                        code: '1',
-                                        x: x,
-                                        y: y,
-                                        z: z,
-                                        id: 0,
-                                        type: 'P'
-                                    }
-                                    createModal(dataList);
-                                }
+        $.ajax({
+            type: 'post',
+            url: 'http://192.168.89.115:8088/api/wms_storage_loc/getMapInfoBy3D',
+            async: false,
+            dataType: 'json',
+            success: function (data) {
+                if (data.returnCode === 200) {
+                    let list = data.returnData;
+                    if (list.length !== 0) {
+                        // 倒叙循环 比正序稍微好一点
+                        /**
+                         * x:51  y: 43
+                         **/
+                        for (let i = list.length - 1; i >=0; i--) {
+                            // let x = 6650 - (list[i].cooY * 300);
+                            // let y = (list[i].cooZ - 1) * 10;
+                            // let z = 8030 - (list[i].cooX * 370);
+                            let offsetY = 0;
+                            if (list[i].cooZ === 2.000) {
+                                offsetY = 18
+                            } else if (list[i].cooZ === 3.000) {
+                                offsetY = 35.5
+                            } else {
+                                offsetY = 0
                             }
+                            let x = -115.5 + (10 * list[i].cooY);
+                            let y = 12.5 + offsetY;
+                            let z = 105.3 - (10 * list[i].cooX);
+                            let dataList = {
+                                code: list[i].locCode,
+                                x: x,
+                                y: y,
+                                z: z,
+                                id: i,
+                                type: list[i].locTypCode,
+                                type3d: list[i].way3dType,
+                                indEmp: list[i].indEmp
+                            }
+                            createModal(dataList);
                         }
-        //             } else {
-        //                 console.log('获取数据为空');
-        //             }
-        //         } else {
-        //             console.log(data.returnMsg);
-        //         }
-        //     },
-        //     error: function (err) {
-        //         console.log(err);
-        //     }
-        // });
+        //                 for (let k = 1; k > 0; k--) {
+        //                     for (let i = 1; i > 0; i--) {
+        //                         for (let j = 1; j > 0; j--) {
+        //                             let x = -115.5;
+        //                             let y = 12.5 + 35.5;
+        //                             let z = 105.3;
+        //                             let dataList = {
+        //                                 code: '1',
+        //                                 x: x,
+        //                                 y: y,
+        //                                 z: z,
+        //                                 id: 0,
+        //                                 type: 'P'
+        //                             }
+        //                             createModal(dataList);
+        //                         }
+        //                     }
+        //                 }
+                    } else {
+                        console.log('获取数据为空');
+                    }
+                } else {
+                    console.log(data.returnMsg);
+                }
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        });
     }
 
     /** 总生成模型 */
     function createModal(data) {
         createPallet(data);
-        // createCar(data);
+        createCar(data);
         createBox(data);
         // createTrack(data);
         // createAisle(data);
@@ -381,8 +393,8 @@
     /** 初始化渲染器 */
     function initRender() {
         // 辅助坐标系
-        let axisHelper = new THREE.AxisHelper(10000)
-        scene.add(axisHelper)
+        // let axisHelper = new THREE.AxisHelper(10000)
+        // scene.add(axisHelper)
         webglRender = new THREE.WebGLRenderer( {antialias: true, alpha: true} ); // antialias 抗锯齿
         webglRender.setSize(window.innerWidth, window.innerHeight);
         webglRender.setClearColor("#f9f3e7", 1.0); // 0xeeeeee
