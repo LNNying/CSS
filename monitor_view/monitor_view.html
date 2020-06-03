@@ -278,9 +278,6 @@
                          * x:51  y: 43
                          **/
                         for (let i = list.length - 1; i >=0; i--) {
-                            // let x = 6650 - (list[i].cooY * 300);
-                            // let y = (list[i].cooZ - 1) * 10;
-                            // let z = 8030 - (list[i].cooX * 370);
                             let offsetY = 0;
                             if (list[i].cooZ === 2.000) {
                                 offsetY = 18
@@ -304,24 +301,24 @@
                             }
                             createModal(dataList);
                         }
-        //                 for (let k = 1; k > 0; k--) {
-        //                     for (let i = 1; i > 0; i--) {
-        //                         for (let j = 1; j > 0; j--) {
-        //                             let x = -115.5;
-        //                             let y = 12.5 + 35.5;
-        //                             let z = 105.3;
-        //                             let dataList = {
-        //                                 code: '1',
-        //                                 x: x,
-        //                                 y: y,
-        //                                 z: z,
-        //                                 id: 0,
-        //                                 type: 'P'
-        //                             }
-        //                             createModal(dataList);
-        //                         }
-        //                     }
-        //                 }
+                        // for (let k = 1; k > 0; k--) {
+                        //     for (let i = 1; i > 0; i--) {
+                        //         for (let j = 1; j > 0; j--) {
+                        //             let x = -115.5;
+                        //             let y = 12.5 + 35.5;
+                        //             let z = 105.3;
+                        //             let dataList = {
+                        //                 code: '1',
+                        //                 x: x,
+                        //                 y: y,
+                        //                 z: z,
+                        //                 id: 0,
+                        //                 type: 'P'
+                        //             }
+                        //             createModal(dataList);
+                        //         }
+                        //     }
+                        // }
                     } else {
                         console.log('获取数据为空');
                     }
