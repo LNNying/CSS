@@ -20,121 +20,14 @@
     <script src="js/query.js"></script>
     <!--引入layui-->
     <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="layui/layer.css">
+    <link rel="stylesheet" href="css/monitor.css">
     <script src="layui/layui.js"></script>
+    <script src="layui/layer.js"></script>
+    <script src="js/layui-table.js"></script>
+    <script src="js/echarts.min.js"></script>
     <style>
-        body{
-            padding: 0;
-            margin: 0;
-            overflow: hidden;
-        }
-        .title {
-            text-shadow: 2px 2px 5px #dbdbdb;
-            position: absolute;
-            text-align: center;
-            width: 100%;
-            top: 0px;
-            font-size: 30px;
-            font-weight: 700;
-            color: #394570;
-            height: 50px;
-            line-height: 50px;
-            letter-spacing: 8px;
-            background: #2070fa;
-        }
-        .data-viewer {
-            height: 100%;
-            width: 100%;
-            /*overflow-x: hidden;*/
-            /*overflow-y: auto;*/
-            position: relative;
-        }
-        .header-bar {
-            position: relative;
-            width: 100%;
-            display: flex;
-            padding-top: 17px;
-            z-index: 1;
-        }
-        .header-left {
-            width: 217px;
-            height: 52px;
-            background: url(img/header-bg-left.png) no-repeat;
-            flex: 0 0 auto;
-        }
 
-        .header-center {
-            height: 52px;
-            background: url(img/header-bg-center.png) repeat-x;
-            flex: 1 1 auto;
-        }
-
-        .header-right {
-            width: 217px;
-            height: 52px;
-            background: url(img/header-bg-right.png) no-repeat;
-            flex: 0 0 auto;
-        }
-        .footer-btn {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 60px;
-            background-size: 100% 100%;
-            opacity: 0.6;
-        }
-        .btns {
-            width: 500px;
-            height: 100%;
-            position: absolute;
-            left: 40%;
-            margin-left: -100px;
-
-        }
-        .btn {
-            height: 100%;
-            width: 100px;
-            float: left;
-            margin-left: 50px;
-        }
-        .left-con {
-            position: absolute;
-            height: 100%;
-            width: 305px;
-            left: 0;
-            background: url(img/bg.png) no-repeat;
-            background-size: 100% 100%;
-            opacity: 0.8;
-        }
-        .right-con {
-            position: absolute;
-            height: 100%;
-            width: 305px;
-            right: 0;
-            background: url(img/bg.png) no-repeat;
-            background-size: 100% 100%;
-            opacity: 0.8;
-        }
-        .header {
-            font-size: 16px;
-            color: #1da3ff;
-            font-family: "Arial Rounded MT Bold";
-            padding-left: 5px;
-            margin-top: 5px;
-            background: url(img/block-title.png) no-repeat;
-            background-size: 100% 100%;
-            background-position-y: 2px;
-        }
-        .table thead tr {
-            background: #394570;
-            color: white;
-        }
-        .equip {
-            height: 42%;
-        }
-        .data-table {
-            width: 100%;
-            height: 90%;
-        }
     </style>
 </head>
 <body>
@@ -143,91 +36,150 @@
         <div class="title">3D视图监控</div>
         <div>
             <div class="header-bar">
-                <div class="header-left"></div>
+                <div class="header-left">
+                    <div>当前位置：<span>数字库存</span></div>
+                </div>
                 <div class="header-center"></div>
                 <div class="header-right"></div>
             </div>
         </div>
     </div>
 </div>
+<div class="top-btn">
+    <div class="top-btn-div">
+        <button type="button" class="layui-btn layui-btn-default button">数字库区</button>
+        <button type="button" class="layui-btn layui-btn-default button">订单任务</button>
+        <button type="button" class="layui-btn layui-btn-default button">库存管理</button>
+        <button type="button" class="layui-btn layui-btn-default button">设备维护</button>
+    </div>
+</div>
 <div class="left-con">
-
+    <!--<-->
 </div>
 <div class="right-con">
     <div class="equip">
         <div class="header">设备状态</div>
         <div class="data-table">
-            <table class="layui-table table" lay-size="sm" lay-skin="row">
-                <thead>
-                <tr>
-                    <th>设备编号</th>
-                    <th>设备类型</th>
-                    <th>设备状态</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <!--<td>1</td>-->
-                    <!--<td>1</td>-->
-                    <!--<td>1</td>-->
-                </tr>
-                </tbody>
+            <table class="layui-table table" id="equip-table">
+                <!--<thead>-->
+                <!--<tr>-->
+                    <!--<th>设备编号</th>-->
+                    <!--<th>设备类型</th>-->
+                    <!--<th>设备状态</th>-->
+                <!--</tr>-->
+                <!--</thead>-->
+                <!--<tbody>-->
+                <!--<tr>-->
+                    <!--<td>T00001</td>-->
+                    <!--<td>穿梭车</td>-->
+                    <!--<td>执行任务</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td>T00002</td>-->
+                    <!--<td>穿梭车</td>-->
+                    <!--<td>执行任务</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td>T00003</td>-->
+                    <!--<td>穿梭车</td>-->
+                    <!--<td>任务空闲</td>-->
+                <!--</tr>-->
+                <!--</tbody>-->
             </table>
         </div>
     </div>
     <div class="equip">
         <div class="header">任务信息</div>
         <div class="data-table">
-            <table class="layui-table table" lay-size="sm" lay-skin="row">
-                <thead>
-                <tr>
-                    <th>任务编号</th>
-                    <th>设备编号</th>
-                    <th>任务状态</th>
-                    <th>任务起点</th>
-                    <th>任务终点</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <!--<td>1</td>-->
-                    <!--<td>1</td>-->
-                    <!--<td>1</td>-->
-                    <!--<td>1</td>-->
-                    <!--<td>1</td>-->
-                </tr>
-                </tbody>
+            <table class="layui-table table" lay-size="sm" lay-skin="row" id="task">
+                <!--<thead>-->
+                <!--<tr>-->
+                    <!--<th>任务编号</th>-->
+                    <!--<th>设备编号</th>-->
+                    <!--<th>任务状态</th>-->
+                    <!--<th>任务起点</th>-->
+                    <!--<th>任务终点</th>-->
+                <!--</tr>-->
+                <!--</thead>-->
+                <!--<tbody>-->
+                <!--<tr>-->
+                    <!--<td>FT0000001</td>-->
+                    <!--<td>T00001</td>-->
+                    <!--<td>执行</td>-->
+                    <!--<td>02-02-02-01-03-10</td>-->
+                    <!--<td>05-02-03-06-03-23</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td>FT0000002</td>-->
+                    <!--<td>T00002</td>-->
+                    <!--<td>执行</td>-->
+                    <!--<td>03-02-02-01-04-10</td>-->
+                    <!--<td>08-04-03-09-03-03</td>-->
+                <!--</tr>-->
+                <!--</tbody>-->
             </table>
         </div>
     </div>
 </div>
 <div class="footer-btn">
     <div class="btns">
-        <div class="btn"> <button type="button" class="layui-btn layui-btn-radius layui-btn-normal">一区全景</button></div>
-        <div class="btn">  <button type="button" class="layui-btn layui-btn-radius layui-btn-warm">二区全景</button></div>
-        <div class="btn">    <button type="button" class="layui-btn layui-btn-radius layui-btn-danger">三区全景</button></div>
+        <div class="btn">
+            <button type="button" class="layui-btn layui-btn-radius layui-btn-normal">一区全景</button>
+        </div>
+        <div class="btn">
+            <button type="button" class="layui-btn layui-btn-radius layui-btn-warm">二区全景</button>
+        </div>
+        <div class="btn">
+            <button type="button" class="layui-btn layui-btn-radius layui-btn-danger">三区全景</button>
+        </div>
     </div>
 </div>
-<div id="stat"></div>
+<div id="stat" class="stats"></div>
 <script type="text/javascript">
     let scene, camera, render, stat, webglRender,
         controls, raycaster, intersects, mouse, lod, clock,
-        podGeometry;
+        podGeometry, loading = null;
 
-    let onProgress = function ( xhr ) {
+    let onProgress = function (xhr) {
 
-        if ( xhr.lengthComputable ) {
+        if (xhr.lengthComputable) {
 
             var percentComplete = xhr.loaded / xhr.total * 100;
-            console.log( Math.round( percentComplete, 2 ) + '% downloaded' );
+            console.log(Math.round(percentComplete, 2) + '% downloaded');
 
         }
 
     };
 
-    let onError = function ( xhr ) { };
+    let onError = function (xhr) {
+    };
 
     $(function() {
+        /**
+         * 两种加载层
+         * */
+        // loading = layer.load(1, {
+        //     shade: [0.3,'#a9a9a9'],
+        //     content: '数据加载中..',
+        //     success: function (layero) {
+        //         layero.find('.layui-layer-content').css({
+        //             'padding-top': '6px',
+        //             'width': '150px',
+        //             'padding-left': '40px'
+        //         });
+        //         layero.find('.layui-layer-ico16, .layui-layer-loading .layui-layer-loading2').css({
+        //             'width': '150px !important',
+        //             'background-position': '2px 0 !important'
+        //         });
+        //     }
+        // });
+        loading = layer.msg('数据加载中。。。', {
+            icon: 16,
+            time: false,
+            shade : [0.5 , '#000' , true],
+            skin: 'load-class'
+        });
+
         // /** 生成场景对象 */
         scene = new THREE.Scene();
         clock = new THREE.Clock();
@@ -304,6 +256,7 @@
         });
         let pod = new Promise((resolve, reject) => {
             createPod();
+            // getPodModal();
             console.log("加载整体仓库完成");
             resolve("加载整体仓库完成")
         }, onProgress, onError);
@@ -313,6 +266,7 @@
             console.log(error);
         })
     });
+
 
     function init() {
         window.palletList = [];
@@ -327,15 +281,14 @@
         initCamera();
         /** 加载鼠标控制器 */
         initControls();
-        // createPlan();
         createAmbientLight();
         initRay();
         renderScene();
         getStorageInfo();
-        // testData();
     }
+
     /** 测试*/
-    function testData () {
+    function testData() {
         let z1 = 0;
         setInterval(function () {
             if (window.carList.length !== 0 && window.palletList.length !== 0 && window.boxList.length !== 0) {
@@ -361,25 +314,10 @@
             // }
         }, 100)
     }
-    /** 创建网格平面 */
-    function createPlan () {
-        let planeGeometry = new THREE.PlaneGeometry(50000, 50000);//新建长方形平面
-        let planeMaterial = new THREE.MeshPhongMaterial({color: '#eed2cd', side: THREE.DoubleSide});//新建平面使用的材质
-        let plane = new THREE.Mesh(planeGeometry, planeMaterial);//新建网格对象
-        plane.rotation.x = -0.5 * Math.PI;//设置平面的旋转角度
-        plane.position.x = -10;//设置长方形平面的位置
-        // plane.position.y = -400;
-        plane.position.z = -2;
-        plane.receiveShadow =true;
-        lod.addLevel(plane, 10000);
-        scene.add(lod);
-    }
+
     /** 货架 */
     function createPod() {
-        // if (localStorage.getItem('podObj')) {
-        //     console.log(JSON.parse(localStorage.getItem('podObj')));
-        //     scene.add(localStorage.getItem('podObj'))
-        // } else {
+        let data = null;
         let carMtl = new THREE.MTLLoader();
         carMtl.load('obj/mtl/全库一体.mtl', function (materail) {
             materail.preload();
@@ -391,7 +329,7 @@
                         child.material.side = THREE.DoubleSide;  // 添加子项双面
                         child.material.receiveShadow = true; // 添加物体接收光
                         if (child.name !== 'Plane.007') {
-                            child.material.map = THREE.ImageUtils.loadTexture( 'img/5.jpg');
+                            child.material.map = THREE.ImageUtils.loadTexture('img/5.jpg');
                             child.material.needsUpdate = true;
                         }
                     }
@@ -400,13 +338,15 @@
                 obj.position.z = -150;
                 obj.position.x = 100;
                 obj.position.y = 5;
-                console.log(obj);
                 scene.add(obj);
+                layer.close(loading);
+                // let data = JSON.stringify(obj);
+                // savePodModal(data);
                 console.log('加载货架完成');
             }, onProgress, onError)
         })
-        // }
     }
+
     /** 小车*/
     function createCar(car) {
         let obj = null
@@ -416,9 +356,9 @@
         obj.position.z = car.z - 0.3;
         car.id = window.carList.length;
         window.carList[car.id] = obj;
-        console.log(obj);
         scene.add(obj);
     }
+
     /** 托盘 */
     function createPallet(pallet) {
         let obj = null
@@ -429,6 +369,7 @@
         window.palletList[pallet.id] = obj;
         scene.add(obj);
     }
+
     /** 箱子货物 */
     function createBox(box) {
         let obj = null
@@ -439,16 +380,71 @@
         window.boxList[box.id] = obj;
         scene.add(obj);
     }
+
+    /**
+     * 获取3d货架模型
+     * */
+    function getPodModal() {
+        let podModal = null;
+        $.ajax({
+            type: 'post',
+            url: 'http://192.168.89.115:8088/api/base-map/getPodModal',
+            async: false,
+            dataType: 'json',
+            success: function (data) {
+                if (data.returnCode === 200) {
+                    if (data.returnData) {
+                        podModal = JSON.parse(data.returnData.content);
+                        scene.add(podModal);
+                    } else {
+                        createPod();
+                    }
+                } else {
+                    console.log(data.returnMsg);
+                }
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        });
+    }
+
+    /**
+     * 保存模型
+     * */
+    function savePodModal(data) {
+        let body = {
+            content: "1"
+        };
+        $.ajax({
+            type: 'post',
+            url: 'http://192.168.89.115:8088/api/base-map/savePodModal',
+            contentType: "application/json;charset=utf-8",
+            data: body,
+            dataType: 'json',
+            success: function (data) {
+                if (data.returnCode === 200) {
+                    console.log('货架模型保存成功');
+                } else {
+                    console.log(data.returnMsg);
+                }
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        });
+    }
+
     /** 获取点位信息*/
     /**
      * x对应数据库中y 模型横向间距为10 对应模型原点为-115.5   -115.5 + (10 * 43)
      * z对应数据库中x,模型纵向间距为10 对应模型原点为105.5    105.3 - (10 * 51)
      * y对应数据库中z,模型3Dz轴方向18  对应模型原点为12.5  但是模型的三楼偏低需要减个0.5 最好判断一下楼层
      */
-    function getStorageInfo () {
+    function getStorageInfo() {
         $.ajax({
             type: 'post',
-            url: 'http://192.168.102.138:8080/api/wms_storage_loc/getMapInfoBy3D',
+            url: 'http://192.168.89.115:8088/api/wms_storage_loc/getMapInfoBy3D',
             async: false,
             dataType: 'json',
             success: function (data) {
@@ -459,7 +455,7 @@
                         /**
                          * x:51  y: 43
                          **/
-                        for (let i = list.length - 1; i >=0; i--) {
+                        for (let i = list.length - 1; i >= 0; i--) {
                             let offsetY = 0;
                             if (list[i].cooZ === 2.000) {
                                 offsetY = 18
@@ -566,6 +562,10 @@
     function initStat() {
         stat = new Stats();
         stat.setMode(0);
+        console.log(stat.domElement);
+        stat.domElement.style.position = 'absolute';
+        stat.domElement.style.right = '0px';
+        stat.domElement.style.top = '0px';
         $('#stat').append(stat.domElement);
     }
 
@@ -574,7 +574,7 @@
         // 辅助坐标系
         // let axisHelper = new THREE.AxisHelper(10000)
         // scene.add(axisHelper)
-        webglRender = new THREE.WebGLRenderer( {antialias: true, alpha: true} ); // antialias 抗锯齿
+        webglRender = new THREE.WebGLRenderer({antialias: true, alpha: true}); // antialias 抗锯齿
         webglRender.setSize(window.innerWidth, window.innerHeight);
         webglRender.setClearColor("#394570", 1.0); // 0xeeeeee
         render = webglRender;
@@ -592,7 +592,7 @@
         camera.position.x = -400;
         camera.position.y = 250;
         camera.position.z = 600;
-        let target = new THREE.Vector3(0, 0 , 0);
+        let target = new THREE.Vector3(0, 0, 0);
         camera.lookAt(scene.position);
 
     }
@@ -601,7 +601,7 @@
     function createAmbientLight() {
         // 半球光
         let light = new THREE.HemisphereLight(0xffffbb, 0x080820, 1);
-        scene.add( light );
+        scene.add(light);
         var ambient = new THREE.AmbientLight('#86827c');
         scene.add(ambient);
     }
@@ -613,14 +613,15 @@
     }
 
     /** 鼠标点击事件 */
-    function onMouseDown( event ) {
+    function onMouseDown(event) {
 
         event.preventDefault();
 
         // 将鼠标位置归一化为设备坐标。x 和 y 方向的取值范围是 (-1 to +1)
-        mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-        mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
     }
+
     /** 当浏览器窗口大小变化时触发 */
     function onWindowResize() {
         camera.aspect = window.innerWidth / window.innerHeight;
@@ -636,6 +637,7 @@
         render.render(scene, camera);
         requestAnimationFrame(renderScene);
     }
+
     /** 所有更新*/
     function update() {
         stat.update();
