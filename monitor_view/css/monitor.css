@@ -118,7 +118,6 @@ body {
     background-size: 100% 100%;
     background-position-y: 2px;
 }
-
 .table thead tr {
     background: #394570;
     color: white;
@@ -161,4 +160,96 @@ body {
 }
 .load-class {
     background-color: #ffe6d1;
+}
+.myTable table {
+    margin:0;
+    white-space:nowrap;
+    width:100%;
+    table-layout:fixed;
+}
+.myTable table th,.myTable table td {
+    overflow:hidden;
+    text-overflow:ellipsis;
+    color: #50807d;
+    opacity: .8;
+}
+.layui-table thead tr{
+    background: #214f84;
+}
+/* 表格定高,默认200 */
+.myTable .tbodyDiv {
+    width:100%;
+    height: 250px;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+/* 盒子内的表格 */
+.box {
+    margin-top: 2px;
+    width: 100%;
+    overflow-x:auto;
+}
+.box .myThead {
+    width: 100%;
+}
+
+.mytbody {
+    background: #1da3ff;
+}
+.box .myTable .tbodyDiv {
+    /* 桌面版会有大约17px的滚动条宽度，若为移动段减去这段距离即可 */
+    width: 100%;
+    color: #e6e6fa;
+}
+/* 滚动条样式*/
+.tbodyDiv::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width : 0px;  /*高宽分别对应横竖滚动条的尺寸*/
+    height: 1px;
+}
+.tbodyDiv::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    border-radius: 10px;
+    box-shadow   : inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background   : #535353;
+}
+.tbodyDiv::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    box-shadow   : inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background   : #ededed;
+}
+.head-info {
+    font-size: 16px;
+    color: #1da3ff;
+    margin-top: 5px;
+    margin-left: 5px;
+    clear: both;
+}
+.ware-title {
+    /*float: left;*/
+    width: 50px;
+    text-align: center;
+    /*line-height: 50px;*/
+    margin-left: 150px;
+    padding: 1px;
+    border: 2px dotted #2686ff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.layui-input, .layui-select, .layui-textarea {
+    height: 28px;
+    background: #2686ff;
+    color: #ffffff;
+    border: #2686ff;
+}
+.layui-form-select dl {
+    padding: 0;
+}
+.head-title {
+    float: left;
+    color: #1da3ff;
+    padding-left: 5px;
+    padding-top: 3px;
 }
