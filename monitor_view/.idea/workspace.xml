@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e70cf82-207c-4040-ba9d-c1346e0db725" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/a/index" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/common/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/echart.js" beforeDir="false" afterPath="$PROJECT_DIR$/common/echart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/layui-table.js" beforeDir="false" afterPath="$PROJECT_DIR$/common/layui-table.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/operationJs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/tween.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/monitor_view.html" beforeDir="false" afterPath="$PROJECT_DIR$/monitor_view.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../obj2gltf" beforeDir="false" afterPath="$PROJECT_DIR$/../obj2gltf" afterDir="false" />
     </list>
@@ -87,7 +86,7 @@
           <entry key="html" value="8" />
           <entry key="index" value="1" />
           <entry key="jpg" value="6" />
-          <entry key="js" value="9" />
+          <entry key="js" value="12" />
           <entry key="mtl" value="16" />
           <entry key="obj" value="16" />
           <entry key="png" value="7" />
@@ -98,23 +97,23 @@
           <entry key="CSS" value="2" />
           <entry key="HTML" value="8" />
           <entry key="Image" value="14" />
-          <entry key="JavaScript" value="9" />
+          <entry key="JavaScript" value="12" />
           <entry key="PLAIN_TEXT" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="621" />
-          <entry key="html" value="6094" />
+          <entry key="html" value="6252" />
           <entry key="index" value="1" />
-          <entry key="js" value="625" />
+          <entry key="js" value="897" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="621" />
-          <entry key="HTML" value="6094" />
-          <entry key="JavaScript" value="625" />
+          <entry key="HTML" value="6252" />
+          <entry key="JavaScript" value="897" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -125,9 +124,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/monitor_view.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3287">
-              <caret line="173" column="17" selection-start-line="173" selection-start-column="17" selection-end-line="173" selection-end-column="17" />
+            <state relative-caret-position="-181">
+              <caret line="37" column="51" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="51" />
               <folding>
+                <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -138,7 +138,31 @@
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#4;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#4;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#4;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#3;n#body#0;n#html#0;n#!!top" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/operationJs.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="462" column="36" selection-start-line="462" selection-start-column="36" selection-end-line="462" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/tween.min.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/common.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -204,6 +228,8 @@
         <option value="$PROJECT_DIR$/js/layui-table.js" />
         <option value="$PROJECT_DIR$/css/monitor.css" />
         <option value="$PROJECT_DIR$/monitor_view.html" />
+        <option value="$PROJECT_DIR$/common/common.js" />
+        <option value="$PROJECT_DIR$/common/operationJs.js" />
       </list>
     </option>
   </component>
@@ -214,10 +240,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-342" />
-    <option name="y" value="-1449" />
-    <option name="width" value="2578" />
-    <option name="height" value="1408" />
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="1940" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -236,7 +262,18 @@
             <path>
               <item name="monitor_view" type="b2602c69:ProjectViewProjectNode" />
               <item name="monitor_view" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="monitor_view" type="b2602c69:ProjectViewProjectNode" />
+              <item name="monitor_view" type="462c0819:PsiDirectoryNode" />
+              <item name="obj" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="monitor_view" type="b2602c69:ProjectViewProjectNode" />
+              <item name="monitor_view" type="462c0819:PsiDirectoryNode" />
+              <item name="obj" type="462c0819:PsiDirectoryNode" />
+              <item name="mtl" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -247,24 +284,25 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../three.js-master" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\vscode\CSS\monitor_view\js" />
+      <recent name="D:\vscode\CSS\monitor_view\img" />
+      <recent name="D:\vscode\CSS\monitor_view\layui" />
+      <recent name="D:\vscode\CSS\monitor_view\obj\mtl" />
+      <recent name="D:\vscode\CSS\monitor_view\obj" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\vscode\CSS\monitor_view\common" />
       <recent name="D:\vscode\CSS\monitor_view\js" />
       <recent name="D:\vscode\CSS\monitor_view\img" />
       <recent name="D:\vscode\monitor_view\obj\mtl" />
       <recent name="D:\vscode\monitor_view\obj" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\vscode\CSS\monitor_view\img" />
-      <recent name="D:\vscode\CSS\monitor_view\js" />
-      <recent name="D:\vscode\CSS\monitor_view\layui" />
-      <recent name="D:\vscode\CSS\monitor_view\obj\mtl" />
-      <recent name="D:\vscode\CSS\monitor_view\obj" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -316,17 +354,18 @@
       <workItem from="1591331576645" duration="15654000" />
       <workItem from="1591410182814" duration="13341000" />
       <workItem from="1591522166987" duration="4045000" />
-      <workItem from="1591582217532" duration="2099000" />
+      <workItem from="1591582217532" duration="5257000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="255800000" />
+    <option name="totallyTimeSpent" value="258958000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-340" y="-1447" width="2062" height="1126" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13474827" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18031704" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -371,8 +410,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/obj/doubleTrace.obj" />
-    <entry file="file://$PROJECT_DIR$/obj/mtl/doubleTrace.mtl" />
     <entry file="file://$PROJECT_DIR$/obj/carstepObj.obj" />
     <entry file="file://$PROJECT_DIR$/obj/mtl/carstepObj.mtl" />
     <entry file="file://$PROJECT_DIR$/obj/mtl/untitled.mtl" />
@@ -501,13 +538,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="48" selection-start-line="4" selection-start-column="48" selection-end-line="4" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/monitor.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1643">
@@ -515,11 +545,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/common/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/tween.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/operationJs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="462" column="36" selection-start-line="462" selection-start-column="36" selection-end-line="462" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/monitor_view.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3287">
-          <caret line="173" column="17" selection-start-line="173" selection-start-column="17" selection-end-line="173" selection-end-column="17" />
+        <state relative-caret-position="-181">
+          <caret line="37" column="51" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="51" />
           <folding>
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -530,6 +578,7 @@
             <element signature="n#style#0;n#div#1;n#div#0;n#div#4;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#4;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#4;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
