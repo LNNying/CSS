@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <title>3D-视图</title>
     <script src="js/three.js"></script>
-    <script src="js/common.js"></script>
+    <script src="common/common.js"></script>
     <!--鼠标控制-->
     <script src="js/OrbitControls.js"></script>
     <script src="js/FlyControls.js"></script>
@@ -184,24 +184,18 @@
     </div>
 </div>
 <script src="js/echarts.min.js"></script>
-<script src="js/echart.js"></script>
-<script src="js/layui-table.js"></script>
+<script src="common/echart.js"></script>
+<script src="common/layui-table.js"></script>
 <div id="stat" class="stats"></div>
 <script type="text/javascript">
 
     let onProgress = function (xhr) {
-
         if (xhr.lengthComputable) {
-
             var percentComplete = xhr.loaded / xhr.total * 100;
             console.log(Math.round(percentComplete, 2) + '% downloaded');
-
         }
-
     };
-
-    let onError = function (xhr) {
-    };
+    let onError = function (xhr) {};
     $(function() {
         // 下拉框选择
         console.log($('#select'));
@@ -373,7 +367,6 @@
 
     /** 货架 */
     function createPod() {
-        let data = null;
         let carMtl = new THREE.MTLLoader();
         carMtl.load('obj/mtl/全库一体.mtl', function (materail) {
             materail.preload();
@@ -396,8 +389,6 @@
                 obj.position.y = 5;
                 scene.add(obj);
                 layer.close(loading);
-                // let data = JSON.stringify(obj);
-                // savePodModal(data);
                 console.log('加载货架完成');
             }, onProgress, onError)
         })
@@ -535,24 +526,6 @@
                             }
                             createModal(dataList);
                         }
-                        // for (let k = 1; k > 0; k--) {
-                        //     for (let i = 1; i > 0; i--) {
-                        //         for (let j = 1; j > 0; j--) {
-                        //             let x = -115.5;
-                        //             let y = 12.5 + 35.5;
-                        //             let z = 105.3;
-                        //             let dataList = {
-                        //                 code: '1',
-                        //                 x: x,
-                        //                 y: y,
-                        //                 z: z,
-                        //                 id: 0,
-                        //                 type: 'P'
-                        //             }
-                        //             createModal(dataList);
-                        //         }
-                        //     }
-                        // }
                     } else {
                         console.log('获取数据为空');
                     }
@@ -670,9 +643,7 @@
 
     /** 鼠标点击事件 */
     function onMouseDown(event) {
-
         event.preventDefault();
-
         // 将鼠标位置归一化为设备坐标。x 和 y 方向的取值范围是 (-1 to +1)
         mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
         mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
