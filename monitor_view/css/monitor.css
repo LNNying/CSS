@@ -77,9 +77,8 @@ body {
     width: 500px;
     height: 100%;
     position: absolute;
-    left: 40%;
-    margin-left: -100px;
-
+    left: 50%;
+    margin-left: -250px;
 }
 
 .btn {

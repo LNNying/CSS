@@ -142,34 +142,6 @@ function init() {
     getStorageInfo();
 }
 
-/** 测试*/
-function testData() {
-    let z1 = 0;
-    setInterval(function () {
-        if (window.carList.length !== 0 && window.palletList.length !== 0 && window.boxList.length !== 0) {
-            if (window.palletList[0].position.z !== -70) {
-                window.carList[0].position.z -= 1;
-                window.palletList[0].position.z -= 1;
-                window.boxList[0].position.z -= 1;
-            } else {
-                // 旋转角度
-                z1++;
-                if (z1 <= 90) {
-                    window.carList[0].rotation.y = -Math.PI * (z1 / 180.0);
-                    // window.carList[0].position.x = -z1
-                }
-
-                console.log(window.carList[0].rotation.y);
-            }
-        }
-        // if (window.palletList[0].position.z === -70) {
-        //     window.palletList[0].position.z = 5;
-        //     window.boxList[0].position.z = 45;
-        //     window.carList[0].position.z = 10;
-        // }
-    }, 100)
-}
-
 /** 加载全库货架模型 */
 function createPod() {
     let carMtl = new THREE.MTLLoader();
@@ -194,6 +166,8 @@ function createPod() {
             obj.position.y = 5;
             scene.add(obj);
             layer.close(loading);
+            // 开始跑车
+            testData();
             console.log('加载货架完成');
         }, onProgress, onError)
     })
@@ -208,6 +182,7 @@ function createCar(car) {
     obj.position.z = car.z - 0.3;
     car.id = window.carList.length;
     window.carList[car.id] = obj;
+    console.log(window.carList);
     scene.add(obj);
 }
 
@@ -219,6 +194,7 @@ function createPallet(pallet) {
     obj.position.y = pallet.y;
     obj.position.z = pallet.z;
     window.palletList[pallet.id] = obj;
+    console.log(window.palletList);
     scene.add(obj);
 }
 
@@ -230,6 +206,7 @@ function createBox(box) {
     obj.position.y = box.y + 1.5;
     obj.position.z = box.z;
     window.boxList[box.id] = obj;
+    console.log(window.boxList);
     scene.add(obj);
 }
 
@@ -289,7 +266,8 @@ function savePodModal(data) {
 
 /** 获取点位信息*/
 /**
- * x对应数据库中y 模型横向间距为10 对应模型原点为-115.5   -115.5 + (10 * 43)
+ * x:51  y: 43
+ * x对应数据库中y 模型横向间距为10 对应模型原点为315.5    315.5 - (10 * 43)
  * z对应数据库中x,模型纵向间距为10 对应模型原点为105.5    105.3 - (10 * 51)
  * y对应数据库中z,模型3Dz轴方向18  对应模型原点为12.5  但是模型的三楼偏低需要减个0.5 最好判断一下楼层
  */
@@ -304,9 +282,6 @@ function getStorageInfo() {
                 let list = data.returnData;
                 if (list.length !== 0) {
                     // 倒叙循环 比正序稍微好一点
-                    /**
-                     * x:51  y: 43
-                     **/
                     for (let i = list.length - 1; i >= 0; i--) {
                         let offsetY = 0;
                         if (list[i].cooZ === 2.000) {
@@ -316,7 +291,7 @@ function getStorageInfo() {
                         } else {
                             offsetY = 0
                         }
-                        let x = -115.5 + (10 * list[i].cooY);
+                        let x = 315.5 - (10 * list[i].cooY);
                         let y = 12.5 + offsetY;
                         let z = 105.3 - (10 * list[i].cooX);
                         let dataList = {
@@ -349,8 +324,6 @@ function createModal(data) {
     createPallet(data);
     createCar(data);
     createBox(data);
-    // createTrack(data);
-    // createAisle(data);
 }
 
 
@@ -404,7 +377,7 @@ function createAmbientLight() {
     // 半球光
     let light = new THREE.HemisphereLight(0xffffbb, 0x080820, 1);
     scene.add(light);
-    var ambient = new THREE.AmbientLight('#86827c');
+    let ambient = new THREE.AmbientLight('#86827c');
     scene.add(ambient);
 }
 
@@ -435,6 +408,7 @@ function renderScene() {
     intersects = raycaster.intersectObjects(scene.children);
     raycaster.setFromCamera(mouse, camera);
     render.render(scene, camera);
+    TWEEN.update();
     requestAnimationFrame(renderScene);
 }
 
@@ -461,11 +435,69 @@ $(function () {
 // 底部点击事件
     $('#oneFloor').click(() => {
         console.log('一区仓库');
+        $('#floorName').text('一楼')
+        new TWEEN.Tween(camera.position).to({
+            x: -200,
+            y: 20,
+            z: -400
+        }, 2000).easing(TWEEN.Easing.Sinusoidal.InOut).start()
     });
     $('#twoFloor').click(() => {
         console.log('二区仓库');
+        $('#floorName').text('二楼')
+        new TWEEN.Tween(camera.position).to({
+            x: -200,
+            y: 50,
+            z: -250
+        }, 2000).easing(TWEEN.Easing.Sinusoidal.InOut).start()
     });
     $('#threeFloor').click(() => {
         console.log('三区仓库');
+        $('#floorName').text('三楼')
+        new TWEEN.Tween(camera.position).to({
+            x: 500,
+            y: 120,
+            z: 200
+        }, 2000).easing(TWEEN.Easing.Sinusoidal.InOut).start()
     });
-})
+});
+
+/** 测试
+ * x => -
+ * z => -
+ * y => +
+ * */
+function testData() {
+    let x1 = 0;
+    let z1 = 0;
+    let y1 = 0;
+    let x = window.carList[0].position.x;
+    let y = window.carList[0].position.y;
+    let z = window.carList[0].position.z;
+    setInterval(function () {
+        if (window.carList.length !== 0 && window.palletList.length !== 0 && window.boxList.length !== 0) {
+            if (x1 <= 160) {
+                x1++
+                window.carList[0].position.x -= 1;
+                window.palletList[0].position.x -= 1;
+                window.boxList[0].position.x -= 1;
+            } else if (z1 <= 100) {
+                z1++
+                window.carList[0].position.z -= 1;
+                window.palletList[0].position.z -= 1;
+                window.boxList[0].position.z -= 1;
+            }
+        }
+        if (z1 === 101) {
+            window.palletList[0].position.x = 315.5;
+            window.palletList[0].position.z = 105.3;
+            window.boxList[0].position.x = 315.5;
+            window.boxList[0].position.z = 105.3;
+            window.carList[0].position.x = 315.5;
+            window.carList[0].position.z = 105.3;
+            z1 = 0;
+            x1 = 0
+            y1 = 0;
+        }
+    }, 100)
+}
