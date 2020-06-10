@@ -38,6 +38,8 @@ $(function() {
     lod = new THREE.LOD();
     podGeometry = new THREE.BufferGeometry();
 
+    group = new THREE.Group();
+
     THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
     let pallet = new Promise((resolve,reject) => {
         // 托盘
@@ -145,11 +147,11 @@ function init() {
 /** 加载全库货架模型 */
 function createPod() {
     let carMtl = new THREE.MTLLoader();
-    carMtl.load('./obj/mtl/全库一体.mtl', function (materail) {
+    carMtl.load('./obj/mtl/全库一体终.mtl', function (materail) {
         materail.preload();
         let carObj = new THREE.OBJLoader();
         carObj.setMaterials(materail);
-        carObj.load('./obj/全库一体.obj', function (obj) {
+        carObj.load('./obj/全库一体终.obj', function (obj) {
             obj.traverse(function (child) {
                 if (child instanceof THREE.Mesh) {
                     child.material.side = THREE.DoubleSide;  // 添加子项双面
@@ -167,7 +169,7 @@ function createPod() {
             scene.add(obj);
             layer.close(loading);
             // 开始跑车
-            testData();
+            // testData();
             console.log('加载货架完成');
         }, onProgress, onError)
     })
@@ -181,8 +183,9 @@ function createCar(car) {
     obj.position.y = car.y;
     obj.position.z = car.z - 0.3;
     car.id = window.carList.length;
+    obj.children.name = '小车';
     window.carList[car.id] = obj;
-    console.log(window.carList);
+    group.add(obj)
     scene.add(obj);
 }
 
@@ -193,8 +196,9 @@ function createPallet(pallet) {
     obj.position.x = pallet.x;
     obj.position.y = pallet.y;
     obj.position.z = pallet.z;
+    obj.children.name = '托盘';
     window.palletList[pallet.id] = obj;
-    console.log(window.palletList);
+    group.add(obj)
     scene.add(obj);
 }
 
@@ -205,8 +209,9 @@ function createBox(box) {
     obj.position.x = box.x;
     obj.position.y = box.y + 1.5;
     obj.position.z = box.z;
+    obj.children.name = '货物';
     window.boxList[box.id] = obj;
-    console.log(window.boxList);
+    group.add(obj)
     scene.add(obj);
 }
 
@@ -284,9 +289,9 @@ function getStorageInfo() {
                     // 倒叙循环 比正序稍微好一点
                     for (let i = list.length - 1; i >= 0; i--) {
                         let offsetY = 0;
-                        if (list[i].cooZ === 2.000) {
+                        if (list[i].cooZ === 2) {
                             offsetY = 18
-                        } else if (list[i].cooZ === 3.000) {
+                        } else if (list[i].cooZ === 3) {
                             offsetY = 35.5
                         } else {
                             offsetY = 0
@@ -324,6 +329,7 @@ function createModal(data) {
     createPallet(data);
     createCar(data);
     createBox(data);
+    scene.add(group)
 }
 
 
@@ -337,7 +343,6 @@ function initRay() {
 function initStat() {
     stat = new Stats();
     stat.setMode(0);
-    console.log(stat.domElement);
     stat.domElement.style.position = 'absolute';
     stat.domElement.style.right = '0px';
     stat.domElement.style.top = '0px';
@@ -358,7 +363,7 @@ function initRender() {
     // 页面重置
     window.addEventListener('resize', onWindowResize, false);
     // 鼠标点击
-    // window.addEventListener('mousedown', onMouseDown, false);
+    window.addEventListener('mousedown', onMouseDown, false);
 }
 
 /** 初始化相机 */
@@ -368,7 +373,7 @@ function initCamera() {
     camera.position.y = 250;
     camera.position.z = 600;
     let target = new THREE.Vector3(0, 0, 0);
-    camera.lookAt(scene.position);
+    camera.lookAt(target);
 
 }
 
@@ -391,8 +396,11 @@ function initControls() {
 function onMouseDown(event) {
     event.preventDefault();
     // 将鼠标位置归一化为设备坐标。x 和 y 方向的取值范围是 (-1 to +1)
-    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+    mouse.x = (event.clientX / render.domElement.clientWidth) * 2 - 1;
+    mouse.y = -(event.clientY / render.domElement.clientHeight) * 2 + 1;
+    raycaster.setFromCamera(mouse, camera);
+    intersects = raycaster.intersectObjects(group.children, true);
+    console.log(intersects);
 }
 
 /** 当浏览器窗口大小变化时触发 */
@@ -405,8 +413,6 @@ function onWindowResize() {
 /** 渲染场景 */
 function renderScene() {
     update();
-    intersects = raycaster.intersectObjects(scene.children);
-    raycaster.setFromCamera(mouse, camera);
     render.render(scene, camera);
     TWEEN.update();
     requestAnimationFrame(renderScene);
