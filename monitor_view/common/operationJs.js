@@ -1,12 +1,12 @@
-
 let onProgress = function (xhr) {
     if (xhr.lengthComputable) {
         var percentComplete = xhr.loaded / xhr.total * 100;
         console.log(Math.round(percentComplete, 2) + '% downloaded');
     }
 };
-let onError = function (xhr) {};
-$(function() {
+let onError = function (xhr) {
+};
+$(function () {
     // 下拉框选择
     /**
      * 两种加载层
@@ -29,19 +29,17 @@ $(function() {
     loading = layer.msg('数据加载中。。。', {
         icon: 16,
         time: false,
-        shade : [0.5 , '#000' , true],
+        shade: [0.5, '#000', true],
         skin: 'load-class'
     });
     // /** 生成场景对象 */
     scene = new THREE.Scene();
     clock = new THREE.Clock();
-    lod = new THREE.LOD();
     podGeometry = new THREE.BufferGeometry();
 
-    group = new THREE.Group();
 
-    THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
-    let pallet = new Promise((resolve,reject) => {
+    THREE.Loader.Handlers.add(/\.dds$/i, new THREE.DDSLoader());
+    let pallet = new Promise((resolve, reject) => {
         // 托盘
         let podMtl = new THREE.MTLLoader();
         podMtl.load('./obj/mtl/tuopan.mtl', function (materail) {
@@ -53,7 +51,7 @@ $(function() {
                     if (child instanceof THREE.Mesh) {
                         child.material.side = THREE.DoubleSide;  // 添加子项双面
                         child.material.receiveShadow = true; // 添加物体接收光
-                        child.material.map = THREE.ImageUtils.loadTexture( 'img/tuo2.jpg');
+                        child.material.map = THREE.ImageUtils.loadTexture('img/tuo2.jpg');
                         child.material.needsUpdate = true;
                     }
                 });
@@ -77,7 +75,6 @@ $(function() {
                         child.material.side = THREE.DoubleSide;  // 添加子项双面
                         child.material.receiveShadow = true; // 添加物体接收光
                     }
-
                 });
                 obj.rotation.y = Math.PI / 2;
                 window.objCar = obj;
@@ -98,7 +95,7 @@ $(function() {
                     if (child instanceof THREE.Mesh) {
                         child.material.side = THREE.DoubleSide;  // 添加子项双面
                         child.material.receiveShadow = true; // 添加物体接收光
-                        child.material.map = THREE.ImageUtils.loadTexture( 'img/box.jpg');
+                        child.material.map = THREE.ImageUtils.loadTexture('img/box.jpg');
                         child.material.needsUpdate = true;
                     }
                 });
@@ -112,13 +109,14 @@ $(function() {
         // 加载饼图
         stock();
         stockNum(floor);
-        createPod();
         // getPodModal();
+        createPod();
         console.log("加载整体仓库完成");
         resolve("加载整体仓库完成")
     }, onProgress, onError);
     Promise.all([pod, pallet, car, boxP]).then((result) => {
         init();
+        // createCarList();
     }).catch(error => {
         console.log(error);
     })
@@ -166,9 +164,11 @@ function createPod() {
             obj.position.z = -150;
             obj.position.x = 100;
             obj.position.y = 5;
+            obj.name = '货架模型'
             scene.add(obj);
             layer.close(loading);
-            // 开始跑车
+            // 连接socket 开始跑车
+            buildWebSocket()
             // testData();
             console.log('加载货架完成');
         }, onProgress, onError)
@@ -182,10 +182,12 @@ function createCar(car) {
     obj.position.x = car.x;
     obj.position.y = car.y;
     obj.position.z = car.z - 0.3;
-    car.id = window.carList.length;
-    obj.children.name = '小车';
+    obj.name = '小车';
     window.carList[car.id] = obj;
-    group.add(obj)
+    for (let i = 0, len = obj.children.length; i < len; i++) {
+        obj.children[i].name = '小车1'
+        group.push(obj.children[i])
+    }
     scene.add(obj);
 }
 
@@ -196,9 +198,12 @@ function createPallet(pallet) {
     obj.position.x = pallet.x;
     obj.position.y = pallet.y;
     obj.position.z = pallet.z;
-    obj.children.name = '托盘';
+    obj.name = '托盘';
     window.palletList[pallet.id] = obj;
-    group.add(obj)
+    for (let i = 0, len = obj.children.length; i < len; i++) {
+        obj.children[i].name = '托盘1'
+        group.push(obj.children[i])
+    }
     scene.add(obj);
 }
 
@@ -209,9 +214,12 @@ function createBox(box) {
     obj.position.x = box.x;
     obj.position.y = box.y + 1.5;
     obj.position.z = box.z;
-    obj.children.name = '货物';
+    obj.name = '货物';
     window.boxList[box.id] = obj;
-    group.add(obj)
+    for (let i = 0, len = obj.children.length; i < len; i++) {
+        obj.children[i].name = '货物1'
+        group.push(obj.children[i])
+    }
     scene.add(obj);
 }
 
@@ -327,9 +335,7 @@ function getStorageInfo() {
 /** 总生成模型 */
 function createModal(data) {
     createPallet(data);
-    createCar(data);
     createBox(data);
-    scene.add(group)
 }
 
 
@@ -373,7 +379,7 @@ function initCamera() {
     camera.position.y = 250;
     camera.position.z = 600;
     let target = new THREE.Vector3(0, 0, 0);
-    camera.lookAt(target);
+    camera.lookAt(scene.position);
 
 }
 
@@ -396,11 +402,20 @@ function initControls() {
 function onMouseDown(event) {
     event.preventDefault();
     // 将鼠标位置归一化为设备坐标。x 和 y 方向的取值范围是 (-1 to +1)
+    // console.log(scene);
     mouse.x = (event.clientX / render.domElement.clientWidth) * 2 - 1;
     mouse.y = -(event.clientY / render.domElement.clientHeight) * 2 + 1;
     raycaster.setFromCamera(mouse, camera);
-    intersects = raycaster.intersectObjects(group.children, true);
-    console.log(intersects);
+    for (var i in scene.children) {
+        if (scene.children[i] instanceof THREE.Group) {
+            intersects = raycaster.intersectObjects(scene.children[i].children);
+        } else if (scene.children[i] instanceof THREE.Mesh) {
+            // intersects.push(raycaster.intersectObject(scene.children[i]));
+        }
+    }
+    // console.log(group);
+    // intersects = raycaster.intersectObjects(group, true);
+    // console.log(intersects);
 }
 
 /** 当浏览器窗口大小变化时触发 */
@@ -460,6 +475,13 @@ $(function () {
     $('#threeFloor').click(() => {
         console.log('三区仓库');
         $('#floorName').text('三楼')
+        // let x = random(0, 20)
+        // let info = {
+        //     x: 315.5 - (10 * x),
+        //     y: window.carList[0].position.y,
+        //     z: window.carList[0].position.z
+        // };
+        // new TWEEN.Tween(window.carList[0].position).to(info, 1000).easing(TWEEN.Easing.Sinusoidal.InOut).start();
         new TWEEN.Tween(camera.position).to({
             x: 500,
             y: 120,
@@ -468,42 +490,156 @@ $(function () {
     });
 });
 
+function createCarList() {
+    for (let i = 0; i < 4; i++) {
+        let info = {}
+        let offsetY = 0;
+        let y1 = random(1, 3)
+        let x1 = random(0, 41) > 21 ? random(23, 40) : random(0, 20)
+        if (y1 === 2) {
+            offsetY = 18
+        } else if (y1 === 3) {
+            offsetY = 35.5
+        } else {
+            offsetY = 0
+        }
+        let x = 315.5 - (10 * x1);
+        let y = 12.5 + offsetY;
+        let z = 105.3 - (10 * random(0, 30));
+        info = {
+            x: x,
+            z: z,
+            y: y,
+            id: i
+        }
+        createCar(info);
+    }
+}
+
+function random(lower, upper) {
+    return Math.floor(Math.random() * (upper - lower + 1)) + lower;
+}
+
 /** 测试
- * x => -
- * z => -
- * y => +
+ * x => -  315.5  315.5 - (51 * 10)
+ * z => -  105.5  105.5 - (43 * 10)
+ * y => +  12.5
  * */
 function testData() {
-    let x1 = 0;
-    let z1 = 0;
-    let y1 = 0;
-    let x = window.carList[0].position.x;
-    let y = window.carList[0].position.y;
-    let z = window.carList[0].position.z;
+    let j = 1;
     setInterval(function () {
-        if (window.carList.length !== 0 && window.palletList.length !== 0 && window.boxList.length !== 0) {
-            if (x1 <= 160) {
-                x1++
-                window.carList[0].position.x -= 1;
-                window.palletList[0].position.x -= 1;
-                window.boxList[0].position.x -= 1;
-            } else if (z1 <= 100) {
-                z1++
-                window.carList[0].position.z -= 1;
-                window.palletList[0].position.z -= 1;
-                window.boxList[0].position.z -= 1;
+        j++;
+        if (window.carList.length !== 0) {
+            for (let i = 0, len = window.carList.length; i < len; i++) {
+                // window.carList[i].position.x -= 1;
+                let info = {
+                    x: 315.5 - (10 * j),
+                    y: window.carList[i].position.y,
+                    z: window.carList[i].position.z
+                };
+                new TWEEN.Tween(window.carList[i].position).to(info, 100).easing(TWEEN.Easing.Sinusoidal.InOut).start();
             }
         }
-        if (z1 === 101) {
-            window.palletList[0].position.x = 315.5;
-            window.palletList[0].position.z = 105.3;
-            window.boxList[0].position.x = 315.5;
-            window.boxList[0].position.z = 105.3;
-            window.carList[0].position.x = 315.5;
-            window.carList[0].position.z = 105.3;
-            z1 = 0;
-            x1 = 0
-            y1 = 0;
-        }
     }, 100)
+}
+
+
+/**
+ * websocket 通信连接后端 实时接收数据
+ * */
+function buildWebSocket() {
+    if ('WebSocket' in window) {
+        console.log('当前浏览器支持WebSocket');
+        socket = new WebSocket(webSocketIp);
+        // 判断连接状态
+        switch (socket.readyState) {
+            case WebSocket.CONNECTING:
+                console.log('正在连接');
+                break;
+            case WebSocket.OPEN:
+                console.log('连接成功');
+                break;
+            case WebSocket.CLOSING:
+                console.log('正在关闭');
+                break;
+            case WebSocket.CLOSED:
+                console.log('连接关闭或连接失败');
+                break;
+            default:
+                console.log('无法判断的状态');
+                break;
+        }
+        // 连接成功回调
+        socket.onopen = function (e) {
+            console.log('连接成功');
+        };
+        // 接收信息
+        socket.onmessage = function (e) {
+            message = e.data;
+            handleData(message)
+        };
+        // 连接关闭回调
+        socket.onclose = function (e) {
+            console.log('连接被关闭');
+            console.log(e);
+        };
+        // 连接失败回调
+        socket.onerror = function (ev) {
+            console.log('建立连接失败');
+        };
+    } else {
+        console.log('当前浏览器不支持WebSocket');
+    }
+}
+
+// 发送消息
+function sendMessage(data) {
+    if (!socket) {
+        socket = new WebSocket(webSocketIp);
+    }
+    socket.send(data);
+}
+
+// 操作方法
+/**
+ * 在这里创建小车对象
+ * 如果存在添加小车，没有改变当前小车的位置
+ */
+function handleData(data) {
+    let msg = JSON.parse(data);
+    console.log(msg);
+    for (let i =0, len = msg.length; i < len; i++) {
+        let carId = msg[i].deviceNO;
+        let info = {};
+        let allLoc = msg[i].location.split(',')
+        let y1 = Number(allLoc[2]);
+        let x1 = Number(allLoc[0]);
+        let z1 = Number(allLoc[1]);
+        let offsetY = 0;
+        if (y1 == 2) {
+            offsetY = 18
+        } else if (y1 == 3) {
+            offsetY = 35.5
+        } else {
+            offsetY = 0
+        }
+        if (window.carList[carId] === undefined) {
+            let x = 315.5 - (10 * x1);
+            let y = 12.5 + offsetY;
+            let z = 105.3 - (10 * random(0, 30));
+            info = {
+                x: x,
+                z: z,
+                y: y,
+                id: carId
+            };
+            createCar(info);
+        } else {
+            new TWEEN.Tween(window.carList[carId].position).to({
+                x: 315.5 - (10 * x1),
+                y: 12.5 + offsetY,
+                z: 105.3 - (10 * z1)
+            }, 1000).easing(TWEEN.Easing.Sinusoidal.InOut).start();
+        }
+    }
 }
