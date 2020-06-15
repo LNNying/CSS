@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tippy.js-纯js tooltip工具提示插件|DEMO_jQuery之家-自由分享jQuery、html5、css3的插件库</title>
+	<link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
+	<link rel="stylesheet" href="css/tippy.css">
+
+	<style type="text/css">
+		*{outline: none;}
+		.tippy-tooltip.honeybee-theme {
+		  /* Your styling here. Example: */
+		  background-color: yellow;
+		  border: 2px solid orange;
+		}
+		.tippy-tooltip.honeybee-theme [x-arrow] {
+		  /* Your arrow styling here. Uses transform: rotate() so no need for CSS triangle shenanigans. */
+		  background-color: yellow;
+		  border: 2px solid;
+		  border-color: transparent transparent orange orange; /* same for any position */
+		}
+		.tippy-tooltip.honeybee-theme .tippy-tooltip-content {
+		  /* Your styling here. Example: */
+		  color: black;
+		}
+		.tippy-tooltip.honeybee-theme [x-circle] {
+		  /* Your styling here. Example: */
+		  background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<div class="htmleaf-container">
+		<header class="htmleaf-header">
+			<h1>Tippy.js-纯js tooltip工具提示插件 <span>A lightweight, pure JS tooltip library </span></h1>
+			<div class="htmleaf-links">
+				<a class="htmleaf-icon icon-htmleaf-home-outline" href="http://www.htmleaf.com/" title="jQuery之家" target="_blank"><span> jQuery之家</span></a>
+				<a class="htmleaf-icon icon-htmleaf-arrow-forward-outline" href="http://www.htmleaf.com/jQuery/Tooltips/201704054439.html" title="返回下载页" target="_blank"><span> 返回下载页</span></a>
+			</div>
+		</header>
+		<div class="container">
+			<div class="row" style="padding: 30px 0;">
+				<div class="col-md-4"><button class="btn btn-primary tippy" title="I'm a tooltip!">默认的tooltip效果</button></div>
+				<div class="col-md-4"><button class="btn btn-primary tippy-right" title="I'm a tooltip!">tooltip显示在右侧</button></div>
+				<div class="col-md-4"><button class="btn btn-primary tippy-arrow" title="I'm a tooltip!">带箭头的tooltip效果</button></div>
+
+			</div>
+			<div class="row" style="padding: 30px 0;">
+				<div class="col-md-4"><button class="btn btn-primary tippy-scale" title="I'm a tooltip!">tooltip 缩放动画效果</button></div>
+				<div class="col-md-4"><button class="btn btn-primary tippy-perspective" title="I'm a tooltip!">tooltip 翻转动画效果</button></div>
+				<div class="col-md-4"><button class="btn btn-primary tippy-shift" title="I'm a tooltip!">tooltip 位移动画效果</button></div>
+			</div>
+			<div class="row" style="padding: 30px 0;">
+				<div class="col-md-4"><button class="btn btn-primary tippy-light" title="I'm a tooltip!">亮色主题效果</button></div>
+				<div class="col-md-4"><button class="btn btn-primary tippy-honeybee" title="I'm a tooltip!">自定义主题</button></div>
+				<div class="col-md-4"><button class="btn btn-primary " id="tooltip-with-my-template" title="I'm a tooltip!">自定义HTML模板</button></div>
+			</div>
+			<!--自定义HTML模板-->
+			<div id="my-template-id" style="display: none;">
+			  <p>Fun <strong>non-interactive HTML</strong> here</p>
+			  <img alt="" height="150" src="img/1.jpg">
+			</div>
+		</div>
+		<div class="related">
+		    <h3>如果你喜欢这个插件，那么你可能也喜欢:</h3>
+		    <a href="http://www.htmleaf.com/jQuery/Tooltips/201611094181.html">
+			  <img src="related/1.jpg" width="300" alt="纯js tooltip工具提示插件"/>
+			  <h3>纯js tooltip工具提示插件</h3>
+			</a>
+			<a href="http://www.htmleaf.com/jQuery/Tooltips/201509102553.html">
+			  <img src="related/2.jpg" width="300" alt="Protip | 功能强大的jQuery tooltip插件"/>
+			  <h3>Protip | 功能强大的jQuery tooltip插件</h3>
+			</a>
+		</div>
+	</div>
+
+
+	<script src="js/tippy.js"></script>
+	<script type="text/javascript">
+		new Tippy('.tippy');
+		new Tippy('.tippy-right', { position: 'right', animation: 'fade' })
+		new Tippy('.tippy-scale', { position: 'top', animation: 'scale',arrow:'true'  })
+		new Tippy('.tippy-arrow', { position: 'top', animation: 'scale',arrow:'true' });
+		new Tippy('.tippy-perspective', { position: 'top', animation: 'perspective',arrow:'true' });
+		new Tippy('.tippy-shift', { position: 'top', animation: 'shift',arrow:'true' });
+		new Tippy('.tippy-light', { position: 'top', animation: 'scale',arrow:'true','theme':'light' })
+		new Tippy('.tippy-honeybee', { position: 'top', animation: 'scale',arrow:'true',theme:'honeybee' });
+		new Tippy('#tooltip-with-my-template', {
+		  position:'bottom',
+		  html: '#my-template-id',
+		  arrow: true,
+		  animation: 'fade'
+		})
+	</script>
+</body>
+</html>

@@ -181,7 +181,7 @@ body {
 }
 
 .layui-table thead tr {
-    background: #214f84;
+    background: #c1f3e6;
 }
 
 /* 表格定高,默认200 */
@@ -204,7 +204,7 @@ body {
 }
 
 .mytbody {
-    background: #1da3ff;
+    background: #ede9ff;
 }
 
 .box .myTable .tbodyDiv {

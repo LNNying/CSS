@@ -198,8 +198,8 @@ function createPallet(pallet) {
     obj.position.x = pallet.x;
     obj.position.y = pallet.y;
     obj.position.z = pallet.z;
-    obj.name = '托盘';
-    window.palletList[pallet.id] = obj;
+    obj.name = '托盘' + pallet.palletCode;
+    window.palletList[pallet.palletCode] = obj;
     for (let i = 0, len = obj.children.length; i < len; i++) {
         obj.children[i].name = '托盘1'
         group.push(obj.children[i])
@@ -214,8 +214,8 @@ function createBox(box) {
     obj.position.x = box.x;
     obj.position.y = box.y + 1.5;
     obj.position.z = box.z;
-    obj.name = '货物';
-    window.boxList[box.id] = obj;
+    obj.name = '货物' + box.palletCode;
+    window.boxList[box.palletCode] = obj;
     for (let i = 0, len = obj.children.length; i < len; i++) {
         obj.children[i].name = '货物1'
         group.push(obj.children[i])
@@ -315,7 +315,8 @@ function getStorageInfo() {
                             id: i,
                             type: list[i].locTypCode,
                             type3d: list[i].way3dType,
-                            indEmp: list[i].indEmp
+                            indEmp: list[i].indEmp,
+                            palletCode: list[i].palletCode
                         }
                         createModal(dataList);
                     }
@@ -614,6 +615,7 @@ function handleData(data) {
     console.log(msg);
     for (let i =0, len = msg.length; i < len; i++) {
         let carId = msg[i].deviceNO;
+        let palletCode = msg[i].palletCode
         let info = {};
         let allLoc = msg[i].location.split(',')
         let y1 = Number(allLoc[2]);
@@ -630,7 +632,7 @@ function handleData(data) {
         if (window.carList[carId] === undefined) {
             let x = 315.5 - (10 * x1);
             let y = 12.5 + offsetY;
-            let z = 105.3 - (10 * random(0, 30));
+            let z = 105.3 - (10 * z1);
             info = {
                 x: x,
                 z: z,
@@ -640,6 +642,20 @@ function handleData(data) {
             createCar(info);
         } else {
             new TWEEN.Tween(window.carList[carId].position).to({
+                x: 315.5 - (10 * x1),
+                y: 12.5 + offsetY,
+                z: 105.3 - (10 * z1)
+            }, 1000).easing(TWEEN.Easing.Sinusoidal.InOut).start();
+        }
+        if (palletCode) {
+            // 托盘移动
+            new TWEEN.Tween(window.palletList[palletCode].position).to({
+                x: 315.5 - (10 * x1),
+                y: 12.5 + offsetY,
+                z: 105.3 - (10 * z1)
+            }, 1000).easing(TWEEN.Easing.Sinusoidal.InOut).start();
+            // 货物移动
+            new TWEEN.Tween(window.boxList[palletCode].position).to({
                 x: 315.5 - (10 * x1),
                 y: 12.5 + offsetY,
                 z: 105.3 - (10 * z1)
@@ -656,11 +672,15 @@ function createTableData (msg) {
     let equipHtml = '',taskHtml = '';
     if (msg.length != 0) {
         for (let i = 0, len = msg.length; i < len; i ++) {
-            equipHtml += `<tr><td class="tippy" title="${msg[i].deviceNO}">${msg[i].deviceNO}</td>
-<td class="tippy" title="${msg[i].deviceType}">${msg[i].deviceType}</td><td class="tippy" title="${judgeStatus(msg[i].status)}">${judgeStatus(msg[i].status)}</td></tr>`;
+            equipHtml += `<tr>
+<td class="tippy" title="${msg[i].deviceNO}" id="deviceNO" ondblclick="onCopy('deviceType')">${msg[i].deviceNO}</td>
+<td class="tippy" title="${judgeType(msg[i].deviceType)}" id="deviceType" ondblclick="onCopy('deviceType')">${judgeType(msg[i].deviceType)}</td>
+<td class="tippy" title="${judgeStatus(msg[i].status)}" id="status" ondblclick="onCopy('status')">${judgeStatus(msg[i].status)}</td></tr>`;
 
-            taskHtml += `<tr><td class="tippy" title="${msg[i].taskId}">${msg[i].taskId}</td><td class="tippy" title="${msg[i].deviceNO}">${msg[i].deviceNO}</td>
-<td class="tippy" title="${judgeStatus(msg[i].taskStatus)}">${judgeStatus(msg[i].taskStatus)}</td></tr>`;
+            taskHtml += `<tr>
+<td class="tippy" title="${msg[i].taskId}" id="taskId" ondblclick="onCopy('taskId')">${msg[i].taskId}</td>
+<td class="tippy" title="${msg[i].deviceNO}" id="deviceNO1" ondblclick="onCopy('deviceNO1')">${msg[i].deviceNO}</td>
+<td class="tippy" title="${judgeStatus(msg[i].taskStatus)}" id="taskStatus" ondblclick="onCopy('taskStatus')">${judgeStatus(msg[i].taskStatus)}</td></tr>`;
         }
         equip.innerHTML = equipHtml;
         task.innerHTML = taskHtml;
@@ -680,4 +700,33 @@ function judgeStatus(val) {
             break;
     }
     return state;
+}
+function onCopy(obj) {
+    let Url2 = document.getElementById(obj).innerHTML;
+    let oInput = document.createElement('input');
+    oInput.value = Url2; // 赋值
+    document.body.appendChild(oInput);
+    oInput.select(); // 选择对象
+    document.execCommand('Copy');
+    oInput.className = 'oInput';
+    oInput.style.display = 'none';
+    console.log('复制内容' + Url2);
+}
+function judgeType(val) {
+    let type = ''
+    switch (val) {
+        case '1':
+            type = '穿梭车';
+            break;
+        case '2':
+            type = '提升机';
+            break;
+        case '3':
+            type = '输送线';
+            break;
+        default:
+            type = '';
+            break;
+    }
+    return type;
 }
