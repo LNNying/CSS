@@ -164,6 +164,8 @@ body {
 
 .load-class {
     background-color: #ffe6d1;
+    color: #040102;
+    text-align: center;
 }
 
 .myTable table {

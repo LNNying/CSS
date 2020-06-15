@@ -26,7 +26,7 @@ $(function () {
     //         });
     //     }
     // });
-    loading = layer.msg('数据加载中。。。', {
+    loading = layer.msg('数据加载中, 请稍等。。。', {
         icon: 16,
         time: false,
         shade: [0.5, '#000', true],
