@@ -591,7 +591,11 @@ function buildWebSocket() {
         console.log('当前浏览器不支持WebSocket');
     }
 }
-
+window.onbeforeunload = () => {
+    if (socket) {
+        socket.close();
+    }
+}
 // 发送消息
 function sendMessage(data) {
     if (!socket) {
@@ -641,5 +645,39 @@ function handleData(data) {
                 z: 105.3 - (10 * z1)
             }, 1000).easing(TWEEN.Easing.Sinusoidal.InOut).start();
         }
+        // 生成表格数据
+        createTableData(msg)
     }
+}
+
+function createTableData (msg) {
+    let equip = document.getElementById('equip-table');
+    let task = document.getElementById('task-table');
+    let equipHtml = '',taskHtml = '';
+    if (msg.length != 0) {
+        for (let i = 0, len = msg.length; i < len; i ++) {
+            equipHtml += `<tr><td class="tippy" title="${msg[i].deviceNO}">${msg[i].deviceNO}</td>
+<td class="tippy" title="${msg[i].deviceType}">${msg[i].deviceType}</td><td class="tippy" title="${judgeStatus(msg[i].status)}">${judgeStatus(msg[i].status)}</td></tr>`;
+
+            taskHtml += `<tr><td class="tippy" title="${msg[i].taskId}">${msg[i].taskId}</td><td class="tippy" title="${msg[i].deviceNO}">${msg[i].deviceNO}</td>
+<td class="tippy" title="${judgeStatus(msg[i].taskStatus)}">${judgeStatus(msg[i].taskStatus)}</td></tr>`;
+        }
+        equip.innerHTML = equipHtml;
+        task.innerHTML = taskHtml;
+    }
+}
+function judgeStatus(val) {
+    let state = ''
+    switch (val) {
+        case '1':
+            state = '任务执行';
+            break;
+        case '2':
+            state = '暂停';
+            break;
+        default:
+            state = '';
+            break;
+    }
+    return state;
 }

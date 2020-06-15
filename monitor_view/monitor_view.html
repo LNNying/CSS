@@ -21,12 +21,35 @@
     <script src="js/query.js"></script>
     <script src="js/tween.min.js"></script>
     <!--引入layui-->
+    <link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
+    <link rel="stylesheet" href="css/tippy.css">
     <link rel="stylesheet" href="layui/css/layui.css">
     <link rel="stylesheet" href="layui/layer.css">
     <link rel="stylesheet" href="css/monitor.css">
     <script src="layui/layui.js"></script>
     <script src="layui/layer.js"></script>
-
+    <style>
+        *{outline: none;}
+        .tippy-tooltip.honeybee-theme {
+            /* Your styling here. Example: */
+            background-color: yellow;
+            border: 2px solid orange;
+        }
+        .tippy-tooltip.honeybee-theme [x-arrow] {
+            /* Your arrow styling here. Uses transform: rotate() so no need for CSS triangle shenanigans. */
+            background-color: yellow;
+            border: 2px solid;
+            border-color: transparent transparent orange orange; /* same for any position */
+        }
+        .tippy-tooltip.honeybee-theme .tippy-tooltip-content {
+            /* Your styling here. Example: */
+            color: black;
+        }
+        .tippy-tooltip.honeybee-theme [x-circle] {
+            /* Your styling here. Example: */
+            background-color: yellow;
+        }
+    </style>
 </head>
 <body>
 <div class="data-viewer">
@@ -100,23 +123,7 @@
                 </table>
                 <div class="tbodyDiv">
                     <table class="mytbody layui-table" id="equip" border="1" bordercolor="#ccc" cellspacing="0">
-                        <tbody>
-                        <tr>
-                            <td>T00001</td>
-                            <td>穿梭车</td>
-                            <td>执行任务</td>
-                        </tr>
-                        <tr>
-                            <td>T00002</td>
-                            <td>穿梭车</td>
-                            <td>执行任务</td>
-                        </tr>
-                        <tr>
-                            <td>T00001</td>
-                            <td>穿梭车</td>
-                            <td>执行任务</td>
-                        </tr>
-                        </tbody>
+                        <tbody id="equip-table" style="cursor: pointer"></tbody>
                     </table>
                 </div>
             </div>
@@ -139,29 +146,7 @@
                 </table>
                 <div class="tbodyDiv">
                     <table class="mytbody layui-table" id="task" border="1" bordercolor="#ccc" cellspacing="0">
-                        <tbody>
-                        <tr>
-                            <td>FT0000001</td>
-                            <td>T00001</td>
-                            <td>执行</td>
-                            <!--<td>02-02-02-01-03-10</td>-->
-                            <!--<td>05-02-03-06-03-23</td>-->
-                        </tr>
-                        <tr>
-                            <td>FT0000002</td>
-                            <td>T00002</td>
-                            <td>执行</td>
-                            <!--<td>03-02-02-01-04-10</td>-->
-                            <!--<td>08-04-03-09-03-03</td>-->
-                        </tr>
-                        <tr>
-                            <td>FT0000002</td>
-                            <td>T00002</td>
-                            <td>执行</td>
-                            <!--<td>03-02-02-01-04-10</td>-->
-                            <!--<td>08-04-03-09-03-03</td>-->
-                        </tr>
-                        </tbody>
+                        <tbody id="task-table" style="cursor: pointer"></tbody>
                     </table>
                 </div>
             </div>
@@ -181,6 +166,10 @@
         </div>
     </div>
 </div>
+<script src="js/tippy.js"></script>
+<script type="text/javascript">
+    new Tippy('.tippy', { position: 'left', animation: 'perspective',arrow:'true' });
+</script>
 <script src="js/echarts.min.js"></script>
 <script src="common/echart.js"></script>
 <script src="common/layui-table.js"></script>
