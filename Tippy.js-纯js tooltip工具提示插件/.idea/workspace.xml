@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b11bfa28-93f6-4b90-9815-882478df0b35" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/201704051607/demo.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../jQuery-tooltip.js/dome.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../monitor_view/css/htmleaf-demo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../monitor_view/css/normalize.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../monitor_view/css/tippy.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../monitor_view/fonts/icomoon.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../monitor_view/fonts/icomoon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../monitor_view/fonts/icomoon.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../monitor_view/fonts/icomoon.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../monitor_view/js/tippy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/201704051607/demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/201704051607/demo.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../monitor_view/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../monitor_view/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../monitor_view/common/operationJs.js" beforeDir="false" afterPath="$PROJECT_DIR$/../monitor_view/common/operationJs.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../monitor_view/monitor_view.html" beforeDir="false" afterPath="$PROJECT_DIR$/../monitor_view/monitor_view.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../obj2gltf" beforeDir="false" afterPath="$PROJECT_DIR$/../obj2gltf" afterDir="false" />
     </list>
@@ -30,43 +20,45 @@
     <session id="607772794">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
-          <entry key="project.open.time.0" value="1" />
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="3" />
-          <entry key="html" value="2" />
-          <entry key="jpg" value="1" />
-          <entry key="js" value="1" />
+          <entry key="css" value="6" />
+          <entry key="html" value="4" />
+          <entry key="jpg" value="3" />
+          <entry key="js" value="2" />
+          <entry key="url" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="3" />
-          <entry key="HTML" value="2" />
-          <entry key="Image" value="1" />
-          <entry key="JavaScript" value="1" />
+          <entry key="CSS" value="6" />
+          <entry key="HTML" value="4" />
+          <entry key="Image" value="3" />
+          <entry key="JavaScript" value="2" />
+          <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="95" />
+          <entry key="html" value="121" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="95" />
+          <entry key="HTML" value="121" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/201704051607/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
@@ -76,6 +68,51 @@
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/201704051607/js/tippy.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="24" column="20" lean-forward="true" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/201704051607/jQuery之家.url">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/201704051607/demo.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="12" column="8" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+              <folding>
+                <element signature="n#style#0;n#button#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/201704051607/css/tippy.css">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/201704051607/css/htmleaf-demo.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="332">
+              <caret line="167" column="19" selection-start-line="167" selection-start-column="19" selection-end-line="167" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/201704051607/css/normalize.css">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -105,10 +142,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="270" />
-    <option name="y" value="35" />
-    <option name="width" value="1555" />
-    <option name="height" value="840" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -139,6 +176,12 @@
               <item name="Tippy.js-纯js tooltip工具提示插件" type="b2602c69:ProjectViewProjectNode" />
               <item name="Tippy.js-纯js tooltip工具提示插件" type="462c0819:PsiDirectoryNode" />
               <item name="201704051607" type="462c0819:PsiDirectoryNode" />
+              <item name="fonts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tippy.js-纯js tooltip工具提示插件" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tippy.js-纯js tooltip工具提示插件" type="462c0819:PsiDirectoryNode" />
+              <item name="201704051607" type="462c0819:PsiDirectoryNode" />
               <item name="img" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -162,7 +205,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../monitor_view" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -190,14 +233,16 @@
       <updated>1592116546176</updated>
       <workItem from="1592116547313" duration="3223000" />
       <workItem from="1592182989924" duration="201000" />
+      <workItem from="1592189285861" duration="735000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3424000" />
+    <option name="totallyTimeSpent" value="4159000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15852048" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -228,30 +273,17 @@
     <entry file="file://$PROJECT_DIR$/201704051607/img/1.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/201704051607/css/normalize.css">
+    <entry file="file://$PROJECT_DIR$/201704051607/related/2.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/201704051607/related/1.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/201704051607/jQuery之家.url">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/201704051607/demo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="16" lean-forward="true" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/201704051607/css/htmleaf-demo.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1995" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/201704051607/css/tippy.css">
+    <entry file="file://$PROJECT_DIR$/201704051607/readme.html">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/201704051607/js/tippy.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="10770" selection-start-column="10770" selection-end-column="10770" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/201704051607/index.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -260,6 +292,36 @@
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/201704051607/css/normalize.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/201704051607/css/tippy.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/201704051607/css/htmleaf-demo.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="167" column="19" selection-start-line="167" selection-start-column="19" selection-end-line="167" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/201704051607/demo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="8" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/201704051607/js/tippy.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="24" column="20" lean-forward="true" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
         </state>
       </provider>
     </entry>
