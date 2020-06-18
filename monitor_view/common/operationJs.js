@@ -35,7 +35,6 @@ $(function () {
     // /** 生成场景对象 */
     scene = new THREE.Scene();
     clock = new THREE.Clock();
-    podGeometry = new THREE.BufferGeometry();
 
 
     THREE.Loader.Handlers.add(/\.dds$/i, new THREE.DDSLoader());
@@ -180,8 +179,8 @@ function createCar(car) {
     let obj = null
     obj = window.objCar.clone();
     obj.position.x = car.x;
-    obj.position.y = car.y;
-    obj.position.z = car.z - 0.3;
+    obj.position.y = car.y - 0.2;
+    obj.position.z = car.z - 0.5;
     obj.name = '小车';
     window.carList[car.id] = obj;
     for (let i = 0, len = obj.children.length; i < len; i++) {
@@ -403,13 +402,16 @@ function initControls() {
 function onMouseDown(event) {
     event.preventDefault();
     // 将鼠标位置归一化为设备坐标。x 和 y 方向的取值范围是 (-1 to +1)
-    // console.log(scene);
+    console.log(scene);
     mouse.x = (event.clientX / render.domElement.clientWidth) * 2 - 1;
     mouse.y = -(event.clientY / render.domElement.clientHeight) * 2 + 1;
     raycaster.setFromCamera(mouse, camera);
     for (var i in scene.children) {
         if (scene.children[i] instanceof THREE.Group) {
-            intersects = raycaster.intersectObjects(scene.children[i].children);
+            // if (scene.children[i].name !== '货架模型') {
+                console.log(scene.children[i].children);
+                intersects = raycaster.intersectObjects(scene.children[i].children);
+            // }
         } else if (scene.children[i] instanceof THREE.Mesh) {
             // intersects.push(raycaster.intersectObject(scene.children[i]));
         }
@@ -645,7 +647,7 @@ function handleData(data) {
                 x: 315.5 - (10 * x1),
                 y: 12.5 + offsetY,
                 z: 105.3 - (10 * z1)
-            }, 1000).easing(TWEEN.Easing.Sinusoidal.InOut).start();
+            }, 2000).easing(TWEEN.Easing.Sinusoidal.InOut).start();
         }
         if (palletCode) {
             // 托盘移动
@@ -673,18 +675,22 @@ function createTableData (msg) {
     if (msg.length != 0) {
         for (let i = 0, len = msg.length; i < len; i ++) {
             equipHtml += `<tr>
-<td class="tippy" title="${msg[i].deviceNO}" id="deviceNO" ondblclick="onCopy('deviceType')">${msg[i].deviceNO}</td>
-<td class="tippy" title="${judgeType(msg[i].deviceType)}" id="deviceType" ondblclick="onCopy('deviceType')">${judgeType(msg[i].deviceType)}</td>
-<td class="tippy" title="${judgeStatus(msg[i].status)}" id="status" ondblclick="onCopy('status')">${judgeStatus(msg[i].status)}</td></tr>`;
+<td class="tippys" title="${msg[i].deviceNO}" id="deviceNO" ondblclick="onCopy('deviceType')">${msg[i].deviceNO}</td>
+<td class="tippys" title="${judgeType(msg[i].deviceType)}" id="deviceType" ondblclick="onCopy('deviceType')">${judgeType(msg[i].deviceType)}</td>
+<td class="tippys" title="${judgeStatus(msg[i].status)}" id="status" ondblclick="onCopy('status')">${judgeStatus(msg[i].status)}</td></tr>`;
 
             taskHtml += `<tr>
-<td class="tippy" title="${msg[i].taskId}" id="taskId" ondblclick="onCopy('taskId')">${msg[i].taskId}</td>
-<td class="tippy" title="${msg[i].deviceNO}" id="deviceNO1" ondblclick="onCopy('deviceNO1')">${msg[i].deviceNO}</td>
-<td class="tippy" title="${judgeStatus(msg[i].taskStatus)}" id="taskStatus" ondblclick="onCopy('taskStatus')">${judgeStatus(msg[i].taskStatus)}</td></tr>`;
+<td class="tippys" title="${msg[i].taskId}" id="taskId" ondblclick="onCopy('taskId')">${msg[i].taskId}</td>
+<td class="tippys" title="${msg[i].deviceNO}" id="deviceNO1" ondblclick="onCopy('deviceNO1')">${msg[i].deviceNO}</td>
+<td class="tippys" title="${judgeStatus(msg[i].taskStatus)}" id="taskStatus" ondblclick="onCopy('taskStatus')">${judgeStatus(msg[i].taskStatus)}</td>
+<td class="tippys" title="${msg[i].startNode}" id="startNode" ondblclick="onCopy('startNode')">${msg[i].startNode}</td>
+<td class="tippys" title="${msg[i].endNode}" id="endNode" ondblclick="onCopy('endNode')">${msg[i].endNode}</td>
+</tr>`;
         }
         equip.innerHTML = equipHtml;
         task.innerHTML = taskHtml;
     }
+    new Tippy('.tippys', { position: 'top', animation: 'perspective',arrow:'true' });
 }
 function judgeStatus(val) {
     let state = ''

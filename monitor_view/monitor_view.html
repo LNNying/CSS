@@ -167,14 +167,16 @@
     </div>
 </div>
 <script src="js/tippy.js"></script>
-<script type="text/javascript">
-    new Tippy('.tippy', { position: 'top', animation: 'perspective',arrow:'true' });
-</script>
 <script src="js/echarts.min.js"></script>
 <script src="common/echart.js"></script>
 <script src="common/layui-table.js"></script>
 <script src="common/socket.js"></script>
 <script src="common/operationJs.js"></script>
 <div id="stat" class="stats"></div>
+<script type="text/javascript">
+    $(function () {
+        new Tippy('.tippy', { position: 'top', animation: 'perspective',arrow:'true' });
+    })
+</script>
 </body>
 </html>

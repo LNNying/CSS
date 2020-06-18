@@ -94,7 +94,6 @@
     function onMouseDown(event) {
         event.preventDefault();
         // 将鼠标位置归一化为设备坐标。x 和 y 方向的取值范围是 (-1 to +1)
-        console.log(scene);
         mouse.x = (event.clientX / renderer.domElement.clientWidth) * 2 - 1;
         mouse.y = -(event.clientY / renderer.domElement.clientHeight) * 2 + 1;
         raycaster.setFromCamera(mouse, camera);
@@ -106,9 +105,14 @@
         //     }
         // }
         var intersects = raycaster.intersectObjects(scene.children, true);
+        intersects[0].object.material.color.set('#fff')
         // console.log(group);
         // intersects = raycaster.intersectObjects(group, true);
         console.log(intersects);
+    }
+
+    function randomHexColor() { //随机生成十六进制颜色
+        return '#' + ('00000' + (Math.random() * 0x1000000 << 0).toString(16)).substr(-6);
     }
 
 
