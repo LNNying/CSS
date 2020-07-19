@@ -1,0 +1,359 @@
+{include file="public/__head" /}
+<nav class="breadcrumb">
+    <a class="breadcrumb-item" href="{:url('index/index/index')}">
+        <i class="fa fa-home"></i>首页
+    </a>
+</nav>
+<div class="content" style="height: auto;margin-bottom: 10px;padding-bottom: 20px;">
+    <div class="role_title">
+        <div class="icon_role"></div>
+        <div class="role_word">
+            销售分析
+        </div>
+    </div>
+    <div class="row" style="margin-top: 10px;">
+        <div class="col-sm-6">
+            <div id="throughput3" style="width:98%; height: 300px; border: 1px solid red; border-radius: 5px 5px"></div>
+        </div>
+        <div class="col-sm-6">
+            <div id="throughput1" style="width:98%; height: 300px; border: 1px solid red; border-radius: 5px 5px"></div>
+        </div>
+    </div>
+    <div class="role_title"></div>
+    <div class="row" style="margin-top: 10px;">
+        <div class="col-sm-6">
+            <div id="throughput2" style="width:98%; height: 300px; border: 1px solid red; border-radius: 5px 5px"></div>
+        </div>
+        <div class="col-sm-6">
+            <div id="throughput4" style="width:98%; height: 300px; border: 1px solid red; border-radius: 5px 5px"></div>
+        </div>
+    </div>
+</div>
+<script>
+    orderTrend();
+    productTrend();
+    costTrend();
+    incidental();
+    setInterval(function () {
+        var myDate = new Date();
+        var date = myDate.getDate();
+        if(date == 1){ // 一个月更新一次
+            orderTrend();
+            productTrend();
+            costTrend();
+            incidental();
+            console.log('等于');
+        } else {
+            console.log('不等于');
+        }
+    },1000*60*60*24);
+    // 杂费
+    function incidental() {
+        $.ajax({
+            url: "{:url('index/index/incidental')}",
+            type: 'post',
+            dataType: 'json',
+            success: function (data) {
+                var inDate = [];
+                var inCbm = [];
+                var water = [];
+                var rent = [];
+                // 电费
+                for (var o = 0; o < data.electricity.length; o++) {
+                    var date = data.electricity[o].month + '月';
+                    var num = data.electricity[o].num;
+                    inDate.push(date);
+                    inCbm.push(num);
+                }
+                // 水费
+                for (var p = 0; p < data.water.length; p++) {
+                    water.push(data.water[p].num);
+                }
+                // 房租
+                for (var m = 0; m < data.rent.length; m++) {
+                    rent.push(data.rent[m].num);
+                }
+                var option = {
+                    title : {
+                        text: '每月杂费走势',
+                        subtext: ''
+                    },
+                    tooltip : {
+                        trigger: 'axis',
+                        axisPointer : {
+                            type : 'shadow'
+                        }
+                    },
+                    toolbox: {
+                        show : true,
+                        feature : {
+                        }
+                    },
+                    legend: {
+                        data:['电费', '水费','房租']
+                    },
+                    calculable : true,
+                    xAxis : [
+                        {
+                            type : 'value',
+                            name: '金额(￥)'
+                        }
+                    ],
+                    yAxis : [
+                        {
+                            type : 'category',
+                            name: '月份',
+                            data : inDate
+                        }
+                    ],
+                    series : [
+                        {
+                            name:'电费',
+                            type:'bar',
+                            stack: '总量',
+                            itemStyle : { normal: {label : {show: true, position: 'insideRight'}}},
+                            data:inCbm
+                        },
+                        {
+                            name:'水费',
+                            type:'bar',
+                            stack: '总量',
+                            itemStyle : { normal: {label : {show: true, position: 'insideRight'}}},
+                            data:water
+                        },
+                        {
+                            name:'房租',
+                            type:'bar',
+                            stack: '总量',
+                            itemStyle : { normal: {label : {show: true, position: 'insideRight'}}},
+                            data:rent
+                        },
+                    ]
+                };
+                var myChart = echarts.init(document.getElementById('throughput4'));
+                myChart.setOption(option);
+            }
+        });
+    }
+    // 成本与销售额对比
+    function costTrend() {
+        $.ajax({
+            url: "{:url('index/index/costTrend')}",
+            type: 'post',
+            dataType: 'json',
+            success: function (data) {
+                var costDate = [];
+                var costCbm = [];
+                var sale = [];
+                for (var i = 0; i < data.cost.length; i++) {
+                    var date = data.cost[i].month + '月';
+                    var num = data.cost[i].num;
+                    costDate.push(date);
+                    costCbm.push(num);
+                }
+                for (var j = 0; j < data.sale.length; j++) {
+                    sale.push(data.sale[j].num);
+                }
+                var option = {
+                    title : {
+                        text: '成本&销售额',
+                        subtext: ''
+                    },
+                    tooltip : {
+                        trigger: 'axis'
+                    },
+                    legend: {
+                        data:['成本总额','销售总额']
+                    },
+                    toolbox: {
+                        show : true,
+                        feature : {
+                            mark : {show: true},
+                            dataView : {show: true, readOnly: false},
+                            magicType : {show: true, type: ['line', 'bar']},
+                            restore : {show: true},
+                            saveAsImage : {show: true}
+                        }
+                    },
+                    calculable : true,
+                    xAxis : [
+                        {
+                            type : 'category',
+                            name: '月份',
+                            data : costDate
+                        }
+                    ],
+                    yAxis : [
+                        {
+                            type : 'value',
+                            name: '金额(￥)'
+                        }
+                    ],
+                    series : [
+                        {
+                            name:'成本总额',
+                            type:'bar',
+                            data:costCbm,
+                            markPoint : {
+                                data : [
+                                    {type : 'max', name: '最大值'},
+                                    {type : 'min', name: '最小值'}
+                                ]
+                            },
+                            markLine : {
+                                data : [
+                                    {type : 'average', name: '平均值'}
+                                ]
+                            }
+                        },
+                        {
+                            name:'销售总额',
+                            type:'bar',
+                            data:sale,
+                            markPoint : {
+                                data : [
+                                    {name : '年最高', value : 182.2, xAxis: 7, yAxis: 183, symbolSize:18},
+                                    {name : '年最低', value : 2.3, xAxis: 11, yAxis: 3}
+                                ]
+                            },
+                            markLine : {
+                                data : [
+                                    {type : 'average', name : '平均值'}
+                                ]
+                            }
+                        }
+                    ]
+                };
+                var myChart = echarts.init(document.getElementById('throughput2'));
+                myChart.setOption(option);
+            }
+        });
+    }
+    // 进货数量
+    function productTrend() {
+        $.ajax({
+            url: "{:url('index/index/productTrend')}",
+            type: 'post',
+            dataType: 'json',
+            success: function (data) {
+                var proDate = [];
+                var proCbm = [];
+                for (var i = 0; i < data.length; i++) {
+                    var date = data[i].month + '月';
+                    var num = data[i].num;
+                    proDate.push(date);
+                    proCbm.push(num);
+
+                }
+                var option = {
+                    title : {
+                        text: '每月进货数量',
+                        subtext: ''
+                    },
+                    tooltip : {
+                        trigger: 'axis'
+                    },
+                    toolbox: {
+                        show : true,
+                        feature : {
+                        }
+                    },
+                    calculable : true,
+                    xAxis : [
+                        {
+                            type : 'category',
+                            name: '月份',
+                            data : proDate
+                        }
+                    ],
+                    yAxis : [
+                        {
+                            type : 'value',
+                            name: '进货数量(件)'
+                        }
+                    ],
+                    series : [
+                        {
+                            name:'进货数量(件)',
+                            type:'bar',
+                            data: proCbm,
+                            markPoint : {
+                                data : [
+                                    {type : 'max', name: '最大值'},
+                                    {type : 'min', name: '最小值'}
+                                ]
+                            },
+                            markLine : {
+                                data : [
+                                    {type : 'average', name: '平均值'}
+                                ]
+                            }
+                        }
+                    ]
+                };
+                var myChart = echarts.init(document.getElementById('throughput1'));
+                myChart.setOption(option);
+            }
+        });
+    }
+    // 订单走势
+    function orderTrend() {
+        $.ajax({
+            url: "{:url('index/index/orderTrend')}",
+            type: 'post',
+            dataType: 'json',
+            success: function (data) {
+                var cateDate = [];
+                var cateCbm = [];
+                for (var i = 0; i < data.length; i++) {
+                    var date = data[i].month + '月';
+                    var num = data[i].num;
+                    cateDate.push(date);
+                    cateCbm.push(num);
+
+                }
+                option = {
+                    title : {
+                        text: '每月订单走势',
+                        subtext: ''
+                    },
+                    tooltip : {
+                        trigger: 'axis'
+                    },
+                    toolbox: {
+                        show : true,
+                        feature : {
+
+                        }
+                    },
+                    calculable : true,
+                    xAxis : [
+                        {
+                            type : 'category',
+                            name: '月份',
+                            boundaryGap : false,
+                            data :cateDate
+                        }
+                    ],
+                    yAxis : [
+                        {
+                            type : 'value',
+                            name: '订单数量(单)'
+                        }
+                    ],
+                    series : [
+                        {
+                            name:'订单数量(单)',
+                            type:'line',
+                            stack: '单数',
+                            data:cateCbm
+                        }
+                    ]
+                };
+                var myChart = echarts.init(document.getElementById('throughput3'));
+                myChart.setOption(option);
+            }
+        });
+    }
+</script>
+{include file="public/__footer" /}

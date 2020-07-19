@@ -1,0 +1,2201 @@
+---------------------------------------------------------------
+[ 2019-05-03T17:26:45+08:00 ] 127.0.0.1 GET /phone/login
+[ info ] www.phone.com/phone/login [运行时间：0.202074s][吞吐率：4.95req/s] [内存消耗：5,213.70kb] [文件加载：52]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'login',
+    2 => 'login',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Login->login[ C:\wamp64\www\phone\ems\index\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] C:\wamp64\www\phone\public/../ems/index\view\login\login.html [ array (
+  0 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.009091s ] mysql:host=127.0.0.1;dbname=phonesystem;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_system` [ RunTime:0.007394s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_system` WHERE `tp_system`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002767s ]
+---------------------------------------------------------------
+[ 2019-05-03T17:26:46+08:00 ] 127.0.0.1 GET /static/layer/js/theme/default/layer.css?v=3.1.1
+[ info ] www.phone.com/static/layer/js/theme/default/layer.css?v=3.1.1 [运行时间：0.098148s][吞吐率：10.19req/s] [内存消耗：2,550.67kb] [文件加载：35]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'layer',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://www.phone.com/phone/login',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '3.1.1',
+  'theme' => 'default',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-03T17:26:56+08:00 ] 127.0.0.1 POST /phone/login.html
+[ info ] www.phone.com/phone/login.html [运行时间：0.158447s][吞吐率：6.31req/s] [内存消耗：5,311.73kb] [文件加载：53]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'login',
+    2 => 'login',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'content-length' => '52',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.phone.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.phone.com/phone/login',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+  'username' => '管理员',
+  'password' => '123456',
+)
+[ info ] [ RUN ] app\index\controller\Login->login[ C:\wamp64\www\phone\ems\index\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013730s ] mysql:host=127.0.0.1;dbname=phonesystem;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_manger` [ RunTime:0.003933s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_manger` WHERE (  `manger_name` = '管理员' ) AND `tp_manger`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002169s ]
+---------------------------------------------------------------
+[ 2019-05-03T17:26:59+08:00 ] 127.0.0.1 GET /phone/index.html
+[ info ] www.phone.com/phone/index.html [运行时间：0.283158s][吞吐率：3.53req/s] [内存消耗：6,997.10kb] [文件加载：62]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.phone.com/phone/login',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ C:\wamp64\www\phone\ems\index\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] C:\wamp64\www\phone\public/../ems/index\view\index\index.html [ array (
+  0 => 'order',
+  1 => 'client',
+  2 => 'manger',
+  3 => 'loginTime',
+  4 => 'data',
+  5 => 'result',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004154s ] mysql:host=127.0.0.1;dbname=phonesystem;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_manger` [ RunTime:0.002941s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_manger` WHERE (  `id` = 1 ) AND `tp_manger`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002625s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_department` [ RunTime:0.001813s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL [ RunTime:0.001996s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_thing` [ RunTime:0.002092s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_thing` ORDER BY `id` DESC [ RunTime:0.002212s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_manger` WHERE (  `id` IN (1,2) ) AND `tp_manger`.`delete_time` IS NULL [ RunTime:0.004365s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_order` [ RunTime:0.002718s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `tp_order` WHERE `tp_order`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001528s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_client` [ RunTime:0.002757s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `tp_client` WHERE `tp_client`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001740s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_manger` WHERE `tp_manger`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001435s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002456s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.003329s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002486s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002018s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001797s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001789s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` IS NULL ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002348s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001718s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001739s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002298s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002305s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002071s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002096s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002475s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002641s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 2 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001902s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 2 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002590s ]
+---------------------------------------------------------------
+[ 2019-05-03T17:26:59+08:00 ] 127.0.0.1 GET /static/layer/js/theme/default/layer.css?v=3.1.1
+[ info ] www.phone.com/static/layer/js/theme/default/layer.css?v=3.1.1 [运行时间：0.081107s][吞吐率：12.33req/s] [内存消耗：2,550.70kb] [文件加载：35]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'layer',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://www.phone.com/phone/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '3.1.1',
+  'theme' => 'default',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-03T17:26:59+08:00 ] 127.0.0.1 POST /index/index/clientnum.html
+[ info ] www.phone.com/index/index/clientnum.html [运行时间：0.142773s][吞吐率：7.00req/s] [内存消耗：5,688.77kb] [文件加载：51]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'clientnum',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.phone.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'referer' => 'http://www.phone.com/phone/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->clientNum[ C:\wamp64\www\phone\ems\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007627s ] mysql:host=127.0.0.1;dbname=phonesystem;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_client` [ RunTime:0.004341s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `tp_client` WHERE (  `months` = 1 ) AND `tp_client`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.005494s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `tp_client` WHERE (  `months` = 2 ) AND `tp_client`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002248s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `tp_client` WHERE (  `months` = 3 ) AND `tp_client`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002094s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `tp_client` WHERE (  `months` = 4 ) AND `tp_client`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.003937s ]
+---------------------------------------------------------------
+[ 2019-05-03T17:26:59+08:00 ] 127.0.0.1 POST /index/index/clientinfo.html
+[ info ] www.phone.com/index/index/clientinfo.html [运行时间：0.182797s][吞吐率：5.47req/s] [内存消耗：5,689.59kb] [文件加载：51]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'clientinfo',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.phone.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'referer' => 'http://www.phone.com/phone/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->clientInfo[ C:\wamp64\www\phone\ems\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012620s ] mysql:host=127.0.0.1;dbname=phonesystem;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_client` [ RunTime:0.003084s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_client` WHERE (  `job` = '学生' ) AND `tp_client`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002315s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_client` WHERE (  `job` = '就业人士' ) AND `tp_client`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001643s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_client` WHERE (  `job` = '待业人士' ) AND `tp_client`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001730s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_client` WHERE (  `job` = '老年人' ) AND `tp_client`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.003107s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_client` WHERE (  `job` = '其他' ) AND `tp_client`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.003887s ]
+---------------------------------------------------------------
+[ 2019-05-03T17:26:59+08:00 ] 127.0.0.1 POST /index/index/productinfo.html
+[ info ] www.phone.com/index/index/productinfo.html [运行时间：0.191810s][吞吐率：5.21req/s] [内存消耗：5,895.15kb] [文件加载：53]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'productinfo',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.phone.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'referer' => 'http://www.phone.com/phone/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->productInfo[ C:\wamp64\www\phone\ems\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005191s ] mysql:host=127.0.0.1;dbname=phonesystem;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_rolepro` [ RunTime:0.002743s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_rolepro` WHERE `tp_rolepro`.`delete_time` IS NULL [ RunTime:0.003485s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_product` [ RunTime:0.002535s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_product` WHERE (  `role_id` IN (1,2,3,4,5) ) AND `tp_product`.`delete_time` IS NULL [ RunTime:0.003275s ]
+---------------------------------------------------------------
+[ 2019-05-03T17:27:18+08:00 ] 127.0.0.1 GET /phone/index.html
+[ info ] www.phone.com/phone/index.html [运行时间：0.291986s][吞吐率：3.42req/s] [内存消耗：6,997.05kb] [文件加载：62]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.phone.com/phone/login',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ C:\wamp64\www\phone\ems\index\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] C:\wamp64\www\phone\public/../ems/index\view\index\index.html [ array (
+  0 => 'order',
+  1 => 'client',
+  2 => 'manger',
+  3 => 'loginTime',
+  4 => 'data',
+  5 => 'result',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005296s ] mysql:host=127.0.0.1;dbname=phonesystem;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_manger` [ RunTime:0.003395s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_manger` WHERE (  `id` = 1 ) AND `tp_manger`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002888s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_department` [ RunTime:0.001755s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL [ RunTime:0.002114s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_thing` [ RunTime:0.003489s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_thing` ORDER BY `id` DESC [ RunTime:0.002185s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_manger` WHERE (  `id` IN (1,2) ) AND `tp_manger`.`delete_time` IS NULL [ RunTime:0.002746s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_order` [ RunTime:0.003017s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `tp_order` WHERE `tp_order`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002051s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_client` [ RunTime:0.003514s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `tp_client` WHERE `tp_client`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002554s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_manger` WHERE `tp_manger`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001987s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002437s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001731s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002481s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.003222s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002818s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002611s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` IS NULL ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002224s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002389s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001843s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001763s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002376s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002630s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002229s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001821s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002151s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 2 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002615s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 2 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001868s ]
+---------------------------------------------------------------
+[ 2019-05-03T17:27:18+08:00 ] 127.0.0.1 GET /static/layer/js/theme/default/layer.css?v=3.1.1
+[ info ] www.phone.com/static/layer/js/theme/default/layer.css?v=3.1.1 [运行时间：0.081607s][吞吐率：12.25req/s] [内存消耗：2,550.68kb] [文件加载：35]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'layer',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://www.phone.com/phone/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '3.1.1',
+  'theme' => 'default',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-03T17:27:18+08:00 ] 127.0.0.1 POST /index/index/clientnum.html
+[ info ] www.phone.com/index/index/clientnum.html [运行时间：0.107893s][吞吐率：9.27req/s] [内存消耗：5,688.77kb] [文件加载：51]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'clientnum',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.phone.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'referer' => 'http://www.phone.com/phone/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->clientNum[ C:\wamp64\www\phone\ems\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.008308s ] mysql:host=127.0.0.1;dbname=phonesystem;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_client` [ RunTime:0.002136s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `tp_client` WHERE (  `months` = 1 ) AND `tp_client`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001723s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `tp_client` WHERE (  `months` = 2 ) AND `tp_client`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002571s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `tp_client` WHERE (  `months` = 3 ) AND `tp_client`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001104s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `tp_client` WHERE (  `months` = 4 ) AND `tp_client`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000857s ]
+---------------------------------------------------------------
+[ 2019-05-03T17:27:18+08:00 ] 127.0.0.1 POST /index/index/productinfo.html
+[ info ] www.phone.com/index/index/productinfo.html [运行时间：0.154564s][吞吐率：6.47req/s] [内存消耗：5,895.15kb] [文件加载：53]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'productinfo',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.phone.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'referer' => 'http://www.phone.com/phone/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->productInfo[ C:\wamp64\www\phone\ems\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004253s ] mysql:host=127.0.0.1;dbname=phonesystem;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_rolepro` [ RunTime:0.002110s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_rolepro` WHERE `tp_rolepro`.`delete_time` IS NULL [ RunTime:0.002923s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_product` [ RunTime:0.003452s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_product` WHERE (  `role_id` IN (1,2,3,4,5) ) AND `tp_product`.`delete_time` IS NULL [ RunTime:0.002469s ]
+---------------------------------------------------------------
+[ 2019-05-03T17:27:18+08:00 ] 127.0.0.1 POST /index/index/clientinfo.html
+[ info ] www.phone.com/index/index/clientinfo.html [运行时间：0.176768s][吞吐率：5.66req/s] [内存消耗：5,689.59kb] [文件加载：51]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'clientinfo',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.phone.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'referer' => 'http://www.phone.com/phone/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->clientInfo[ C:\wamp64\www\phone\ems\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012928s ] mysql:host=127.0.0.1;dbname=phonesystem;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_client` [ RunTime:0.002204s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_client` WHERE (  `job` = '学生' ) AND `tp_client`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001704s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_client` WHERE (  `job` = '就业人士' ) AND `tp_client`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001340s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_client` WHERE (  `job` = '待业人士' ) AND `tp_client`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001426s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_client` WHERE (  `job` = '老年人' ) AND `tp_client`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002232s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_client` WHERE (  `job` = '其他' ) AND `tp_client`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.004523s ]
+---------------------------------------------------------------
+[ 2019-05-03T17:27:51+08:00 ] 127.0.0.1 GET /phone/order_list.html
+[ info ] www.phone.com/phone/order_list.html [运行时间：0.210414s][吞吐率：4.75req/s] [内存消耗：6,698.18kb] [文件加载：63]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'orderList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.phone.com/phone/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->orderList[ C:\wamp64\www\phone\ems\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] C:\wamp64\www\phone\public/../ems/index\view\index\order_list.html [ array (
+  0 => 'page',
+  1 => 'pageinit',
+  2 => 'data',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004375s ] mysql:host=127.0.0.1;dbname=phonesystem;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_order` [ RunTime:0.002903s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_order` WHERE `tp_order`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001485s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_order` WHERE `tp_order`.`delete_time` IS NULL ORDER BY `id` DESC LIMIT 0,2 [ RunTime:0.001939s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_manger` [ RunTime:0.003233s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_manger` WHERE (  `id` IN (1) ) AND `tp_manger`.`delete_time` IS NULL [ RunTime:0.003033s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_product` [ RunTime:0.003097s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_product` WHERE (  `id` = 1 ) AND `tp_product`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002550s ]
+---------------------------------------------------------------
+[ 2019-05-03T17:27:51+08:00 ] 127.0.0.1 GET /static/layer/js/theme/default/layer.css?v=3.1.1
+[ info ] www.phone.com/static/layer/js/theme/default/layer.css?v=3.1.1 [运行时间：0.067952s][吞吐率：14.72req/s] [内存消耗：2,550.53kb] [文件加载：35]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'layer',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://www.phone.com/phone/order_list.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '3.1.1',
+  'theme' => 'default',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-03T17:27:58+08:00 ] 127.0.0.1 GET /phone/sale_analysis.html
+[ info ] www.phone.com/phone/sale_analysis.html [运行时间：0.140708s][吞吐率：7.11req/s] [内存消耗：4,028.67kb] [文件加载：44]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'saleAnalysis',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.phone.com/phone/order_list.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->saleAnalysis[ C:\wamp64\www\phone\ems\index\controller\Index.php ]
+[ info ] [ VIEW ] C:\wamp64\www\phone\public/../ems/index\view\index\sale_analysis.html [ array (
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-03T17:27:59+08:00 ] 127.0.0.1 GET /static/layer/js/theme/default/layer.css?v=3.1.1
+[ info ] www.phone.com/static/layer/js/theme/default/layer.css?v=3.1.1 [运行时间：0.079868s][吞吐率：12.52req/s] [内存消耗：2,550.52kb] [文件加载：35]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'layer',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://www.phone.com/phone/sale_analysis.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '3.1.1',
+  'theme' => 'default',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-03T17:27:59+08:00 ] 127.0.0.1 POST /index/index/costtrend.html
+[ info ] www.phone.com/index/index/costtrend.html [运行时间：0.153764s][吞吐率：6.50req/s] [内存消耗：5,761.86kb] [文件加载：52]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'costtrend',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.phone.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'referer' => 'http://www.phone.com/phone/sale_analysis.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->costTrend[ C:\wamp64\www\phone\ems\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005159s ] mysql:host=127.0.0.1;dbname=phonesystem;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_product` [ RunTime:0.003164s ]
+[ sql ] [ SQL ] SELECT SUM(costprice) AS tp_sum FROM `tp_product` WHERE (  `months` = 1 ) AND `tp_product`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002923s ]
+[ sql ] [ SQL ] SELECT SUM(costprice) AS tp_sum FROM `tp_product` WHERE (  `months` = 2 ) AND `tp_product`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002314s ]
+[ sql ] [ SQL ] SELECT SUM(costprice) AS tp_sum FROM `tp_product` WHERE (  `months` = 3 ) AND `tp_product`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001663s ]
+[ sql ] [ SQL ] SELECT SUM(costprice) AS tp_sum FROM `tp_product` WHERE (  `months` = 4 ) AND `tp_product`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001779s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_orders` [ RunTime:0.002711s ]
+[ sql ] [ SQL ] SELECT SUM(price) AS tp_sum FROM `tp_orders` WHERE (  `months` = 1 ) AND `tp_orders`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001753s ]
+[ sql ] [ SQL ] SELECT SUM(price) AS tp_sum FROM `tp_orders` WHERE (  `months` = 2 ) AND `tp_orders`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001946s ]
+[ sql ] [ SQL ] SELECT SUM(price) AS tp_sum FROM `tp_orders` WHERE (  `months` = 3 ) AND `tp_orders`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002132s ]
+[ sql ] [ SQL ] SELECT SUM(price) AS tp_sum FROM `tp_orders` WHERE (  `months` = 4 ) AND `tp_orders`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002870s ]
+---------------------------------------------------------------
+[ 2019-05-03T17:27:59+08:00 ] 127.0.0.1 POST /index/index/producttrend.html
+[ info ] www.phone.com/index/index/producttrend.html [运行时间：0.169620s][吞吐率：5.90req/s] [内存消耗：5,693.34kb] [文件加载：51]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'producttrend',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.phone.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'referer' => 'http://www.phone.com/phone/sale_analysis.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->productTrend[ C:\wamp64\www\phone\ems\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002944s ] mysql:host=127.0.0.1;dbname=phonesystem;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_product` [ RunTime:0.002143s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `tp_product` WHERE (  `months` = 1 ) AND `tp_product`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002007s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `tp_product` WHERE (  `months` = 2 ) AND `tp_product`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001076s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `tp_product` WHERE (  `months` = 3 ) AND `tp_product`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001215s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `tp_product` WHERE (  `months` = 4 ) AND `tp_product`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001332s ]
+---------------------------------------------------------------
+[ 2019-05-03T17:27:59+08:00 ] 127.0.0.1 POST /index/index/ordertrend.html
+[ info ] www.phone.com/index/index/ordertrend.html [运行时间：0.183612s][吞吐率：5.45req/s] [内存消耗：5,689.24kb] [文件加载：51]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'ordertrend',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.phone.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'referer' => 'http://www.phone.com/phone/sale_analysis.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->orderTrend[ C:\wamp64\www\phone\ems\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004361s ] mysql:host=127.0.0.1;dbname=phonesystem;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_order` [ RunTime:0.002023s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `tp_order` WHERE (  `months` = 1 ) AND `tp_order`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001005s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `tp_order` WHERE (  `months` = 2 ) AND `tp_order`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001090s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `tp_order` WHERE (  `months` = 3 ) AND `tp_order`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001176s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `tp_order` WHERE (  `months` = 4 ) AND `tp_order`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000953s ]
+---------------------------------------------------------------
+[ 2019-05-03T17:27:59+08:00 ] 127.0.0.1 POST /index/index/incidental.html
+[ info ] www.phone.com/index/index/incidental.html [运行时间：0.187929s][吞吐率：5.32req/s] [内存消耗：5,683.73kb] [文件加载：51]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'incidental',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.phone.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'referer' => 'http://www.phone.com/phone/sale_analysis.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->incidental[ C:\wamp64\www\phone\ems\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005308s ] mysql:host=127.0.0.1;dbname=phonesystem;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_profit` [ RunTime:0.001776s ]
+[ sql ] [ SQL ] SELECT SUM(charge_for_water) AS tp_sum FROM `tp_profit` WHERE (  `months` = 1 ) AND `tp_profit`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001464s ]
+[ sql ] [ SQL ] SELECT SUM(rent) AS tp_sum FROM `tp_profit` WHERE (  `months` = 1 ) AND `tp_profit`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001005s ]
+[ sql ] [ SQL ] SELECT SUM(electricity) AS tp_sum FROM `tp_profit` WHERE (  `months` = 1 ) AND `tp_profit`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001275s ]
+[ sql ] [ SQL ] SELECT SUM(charge_for_water) AS tp_sum FROM `tp_profit` WHERE (  `months` = 2 ) AND `tp_profit`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001094s ]
+[ sql ] [ SQL ] SELECT SUM(rent) AS tp_sum FROM `tp_profit` WHERE (  `months` = 2 ) AND `tp_profit`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001082s ]
+[ sql ] [ SQL ] SELECT SUM(electricity) AS tp_sum FROM `tp_profit` WHERE (  `months` = 2 ) AND `tp_profit`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001185s ]
+[ sql ] [ SQL ] SELECT SUM(charge_for_water) AS tp_sum FROM `tp_profit` WHERE (  `months` = 3 ) AND `tp_profit`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001085s ]
+[ sql ] [ SQL ] SELECT SUM(rent) AS tp_sum FROM `tp_profit` WHERE (  `months` = 3 ) AND `tp_profit`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001182s ]
+[ sql ] [ SQL ] SELECT SUM(electricity) AS tp_sum FROM `tp_profit` WHERE (  `months` = 3 ) AND `tp_profit`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001255s ]
+[ sql ] [ SQL ] SELECT SUM(charge_for_water) AS tp_sum FROM `tp_profit` WHERE (  `months` = 4 ) AND `tp_profit`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001233s ]
+[ sql ] [ SQL ] SELECT SUM(rent) AS tp_sum FROM `tp_profit` WHERE (  `months` = 4 ) AND `tp_profit`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002739s ]
+[ sql ] [ SQL ] SELECT SUM(electricity) AS tp_sum FROM `tp_profit` WHERE (  `months` = 4 ) AND `tp_profit`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001168s ]
+---------------------------------------------------------------
+[ 2019-05-03T17:28:08+08:00 ] 127.0.0.1 GET /phone/order_list.html
+[ info ] www.phone.com/phone/order_list.html [运行时间：0.180516s][吞吐率：5.54req/s] [内存消耗：6,431.10kb] [文件加载：61]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'orderList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.phone.com/phone/sale_analysis.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->orderList[ C:\wamp64\www\phone\ems\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] C:\wamp64\www\phone\public/../ems/index\view\index\order_list.html [ array (
+  0 => 'page',
+  1 => 'pageinit',
+  2 => 'data',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004448s ] mysql:host=127.0.0.1;dbname=phonesystem;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_order` [ RunTime:0.001867s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_order` WHERE `tp_order`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000976s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_order` WHERE `tp_order`.`delete_time` IS NULL ORDER BY `id` DESC LIMIT 0,2 [ RunTime:0.001555s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_manger` [ RunTime:0.002150s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_manger` WHERE (  `id` IN (1) ) AND `tp_manger`.`delete_time` IS NULL [ RunTime:0.002508s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_product` [ RunTime:0.005901s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_product` WHERE (  `id` = 1 ) AND `tp_product`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002162s ]
+---------------------------------------------------------------
+[ 2019-05-03T17:28:09+08:00 ] 127.0.0.1 GET /static/layer/js/theme/default/layer.css?v=3.1.1
+[ info ] www.phone.com/static/layer/js/theme/default/layer.css?v=3.1.1 [运行时间：0.092694s][吞吐率：10.79req/s] [内存消耗：2,550.53kb] [文件加载：35]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'layer',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://www.phone.com/phone/order_list.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '3.1.1',
+  'theme' => 'default',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-03T17:28:12+08:00 ] 127.0.0.1 GET /phone/profit_manger.html
+[ info ] www.phone.com/phone/profit_manger.html [运行时间：0.273468s][吞吐率：3.66req/s] [内存消耗：6,314.73kb] [文件加载：58]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'profitManger',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.phone.com/phone/order_list.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->profitManger[ C:\wamp64\www\phone\ems\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] C:\wamp64\www\phone\public/../ems/index\view\index\profit_manger.html [ array (
+  0 => 'page',
+  1 => 'pageinit',
+  2 => 'data',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004433s ] mysql:host=127.0.0.1;dbname=phonesystem;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_profit` [ RunTime:0.002221s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_profit` WHERE `tp_profit`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001857s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_profit` WHERE `tp_profit`.`delete_time` IS NULL ORDER BY `months` DESC LIMIT 0,2 [ RunTime:0.002327s ]
+---------------------------------------------------------------
+[ 2019-05-03T17:28:12+08:00 ] 127.0.0.1 GET /static/layer/js/theme/default/layer.css?v=3.1.1
+[ info ] www.phone.com/static/layer/js/theme/default/layer.css?v=3.1.1 [运行时间：0.092706s][吞吐率：10.79req/s] [内存消耗：2,550.52kb] [文件加载：35]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'layer',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://www.phone.com/phone/profit_manger.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '3.1.1',
+  'theme' => 'default',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-03T17:30:08+08:00 ] 127.0.0.1 GET /phone/profit_manger.html
+[ info ] www.phone.com/phone/profit_manger.html [运行时间：0.215461s][吞吐率：4.64req/s] [内存消耗：6,043.03kb] [文件加载：56]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'profitManger',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.phone.com/phone/order_list.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->profitManger[ C:\wamp64\www\phone\ems\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] C:\wamp64\www\phone\public/../ems/index\view\index\profit_manger.html [ array (
+  0 => 'page',
+  1 => 'pageinit',
+  2 => 'data',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012585s ] mysql:host=127.0.0.1;dbname=phonesystem;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_profit` [ RunTime:0.002490s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_profit` WHERE `tp_profit`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001611s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_profit` WHERE `tp_profit`.`delete_time` IS NULL ORDER BY `months` DESC LIMIT 0,2 [ RunTime:0.001883s ]
+---------------------------------------------------------------
+[ 2019-05-03T17:30:08+08:00 ] 127.0.0.1 GET /static/layer/js/theme/default/layer.css?v=3.1.1
+[ info ] www.phone.com/static/layer/js/theme/default/layer.css?v=3.1.1 [运行时间：0.070563s][吞吐率：14.17req/s] [内存消耗：2,550.52kb] [文件加载：35]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'layer',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://www.phone.com/phone/profit_manger.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '3.1.1',
+  'theme' => 'default',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-03T17:30:30+08:00 ] 127.0.0.1 GET /phone/profit_manger.html
+[ info ] www.phone.com/phone/profit_manger.html [运行时间：0.157755s][吞吐率：6.34req/s] [内存消耗：6,043.03kb] [文件加载：56]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'profitManger',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.phone.com/phone/order_list.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->profitManger[ C:\wamp64\www\phone\ems\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] C:\wamp64\www\phone\public/../ems/index\view\index\profit_manger.html [ array (
+  0 => 'page',
+  1 => 'pageinit',
+  2 => 'data',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004925s ] mysql:host=127.0.0.1;dbname=phonesystem;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_profit` [ RunTime:0.001978s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_profit` WHERE `tp_profit`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000942s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_profit` WHERE `tp_profit`.`delete_time` IS NULL ORDER BY `months` DESC LIMIT 0,2 [ RunTime:0.001564s ]
+---------------------------------------------------------------
+[ 2019-05-03T17:30:31+08:00 ] 127.0.0.1 GET /static/layer/js/theme/default/layer.css?v=3.1.1
+[ info ] www.phone.com/static/layer/js/theme/default/layer.css?v=3.1.1 [运行时间：0.086107s][吞吐率：11.61req/s] [内存消耗：2,550.52kb] [文件加载：35]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'layer',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://www.phone.com/phone/profit_manger.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '3.1.1',
+  'theme' => 'default',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-03T17:31:35+08:00 ] 127.0.0.1 GET /phone/profit_manger.html
+[ info ] www.phone.com/phone/profit_manger.html [运行时间：0.278182s][吞吐率：3.59req/s] [内存消耗：6,314.89kb] [文件加载：58]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'profitManger',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.phone.com/phone/order_list.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->profitManger[ C:\wamp64\www\phone\ems\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] C:\wamp64\www\phone\public/../ems/index\view\index\profit_manger.html [ array (
+  0 => 'page',
+  1 => 'pageinit',
+  2 => 'data',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005278s ] mysql:host=127.0.0.1;dbname=phonesystem;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_profit` [ RunTime:0.004015s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_profit` WHERE `tp_profit`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001911s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_profit` WHERE `tp_profit`.`delete_time` IS NULL ORDER BY `months` DESC LIMIT 0,2 [ RunTime:0.002861s ]
+---------------------------------------------------------------
+[ 2019-05-03T17:31:35+08:00 ] 127.0.0.1 GET /static/layer/js/theme/default/layer.css?v=3.1.1
+[ info ] www.phone.com/static/layer/js/theme/default/layer.css?v=3.1.1 [运行时间：0.089422s][吞吐率：11.18req/s] [内存消耗：2,550.52kb] [文件加载：35]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'layer',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://www.phone.com/phone/profit_manger.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '3.1.1',
+  'theme' => 'default',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-03T17:31:47+08:00 ] 127.0.0.1 POST /index/index/saveprofit.html
+[ info ] www.phone.com/index/index/saveprofit.html [运行时间：0.164034s][吞吐率：6.10req/s] [内存消耗：5,836.57kb] [文件加载：54]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'saveprofit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'content-length' => '37',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.phone.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.phone.com/phone/profit_manger.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+  'rent' => '123',
+  'electricity' => '12222',
+  'water' => '1231',
+)
+[ info ] [ RUN ] app\index\controller\Index->saveProfit[ C:\wamp64\www\phone\ems\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013298s ] mysql:host=127.0.0.1;dbname=phonesystem;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_wage` [ RunTime:0.002295s ]
+[ sql ] [ SQL ] SELECT SUM(allWage) AS tp_sum FROM `tp_wage` WHERE (  `months` = 4 ) AND `tp_wage`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002075s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_product` [ RunTime:0.003318s ]
+[ sql ] [ SQL ] SELECT SUM(allcost) AS tp_sum FROM `tp_product` WHERE (  `months` = 4 ) AND `tp_product`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002277s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_orders` [ RunTime:0.002674s ]
+[ sql ] [ SQL ] SELECT SUM(price) AS tp_sum FROM `tp_orders` WHERE (  `months` = 4 ) AND `tp_orders`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002872s ]
+---------------------------------------------------------------
+[ 2019-05-03T17:31:58+08:00 ] 127.0.0.1 GET /phone/wage_manger.html
+[ info ] www.phone.com/phone/wage_manger.html [运行时间：0.250440s][吞吐率：3.99req/s] [内存消耗：6,840.90kb] [文件加载：64]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'wageManger',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.phone.com/phone/profit_manger.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->wageManger[ C:\wamp64\www\phone\ems\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] C:\wamp64\www\phone\public/../ems/index\view\index\wage_manger.html [ array (
+  0 => 'page',
+  1 => 'pageinit',
+  2 => 'data',
+  3 => 'tax',
+  4 => 'manger',
+  5 => 'department',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004468s ] mysql:host=127.0.0.1;dbname=phonesystem;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_wages` [ RunTime:0.003451s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_wages` WHERE `tp_wages`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002869s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_wages` WHERE `tp_wages`.`delete_time` IS NULL ORDER BY `state` DESC LIMIT 0,2 [ RunTime:0.002836s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_manger` [ RunTime:0.004116s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_manger` WHERE (  `id` IN (2) ) AND `tp_manger`.`delete_time` IS NULL [ RunTime:0.004416s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_taxrate` [ RunTime:0.004159s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_taxrate` WHERE `tp_taxrate`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.003315s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_manger` WHERE (  `id` > 1 ) AND `tp_manger`.`delete_time` IS NULL [ RunTime:0.003924s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_department` [ RunTime:0.004013s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE `tp_department`.`delete_time` IS NULL [ RunTime:0.003047s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002111s ]
+---------------------------------------------------------------
+[ 2019-05-03T17:31:58+08:00 ] 127.0.0.1 GET /static/layer/js/theme/default/layer.css?v=3.1.1
+[ info ] www.phone.com/static/layer/js/theme/default/layer.css?v=3.1.1 [运行时间：0.071908s][吞吐率：13.91req/s] [内存消耗：2,550.53kb] [文件加载：35]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'layer',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://www.phone.com/phone/wage_manger.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '3.1.1',
+  'theme' => 'default',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-03T17:37:13+08:00 ] 127.0.0.1 GET /phone/wage_manger.html
+[ info ] www.phone.com/phone/wage_manger.html [运行时间：0.224746s][吞吐率：4.45req/s] [内存消耗：6,562.55kb] [文件加载：62]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'wageManger',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.phone.com/phone/profit_manger.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->wageManger[ C:\wamp64\www\phone\ems\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] C:\wamp64\www\phone\public/../ems/index\view\index\wage_manger.html [ array (
+  0 => 'page',
+  1 => 'pageinit',
+  2 => 'data',
+  3 => 'tax',
+  4 => 'manger',
+  5 => 'department',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004350s ] mysql:host=127.0.0.1;dbname=phonesystem;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_wages` [ RunTime:0.002520s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_wages` WHERE `tp_wages`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001415s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_wages` WHERE `tp_wages`.`delete_time` IS NULL ORDER BY `state` DESC LIMIT 0,2 [ RunTime:0.002581s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_manger` [ RunTime:0.002633s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_manger` WHERE (  `id` IN (2) ) AND `tp_manger`.`delete_time` IS NULL [ RunTime:0.002412s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_taxrate` [ RunTime:0.002532s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_taxrate` WHERE `tp_taxrate`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001196s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_manger` WHERE (  `id` > 1 ) AND `tp_manger`.`delete_time` IS NULL [ RunTime:0.001640s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_department` [ RunTime:0.001543s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE `tp_department`.`delete_time` IS NULL [ RunTime:0.001461s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002521s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002132s ]
+---------------------------------------------------------------
+[ 2019-05-03T17:37:14+08:00 ] 127.0.0.1 GET /static/layer/js/theme/default/layer.css?v=3.1.1
+[ info ] www.phone.com/static/layer/js/theme/default/layer.css?v=3.1.1 [运行时间：0.100226s][吞吐率：9.98req/s] [内存消耗：2,550.53kb] [文件加载：35]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'layer',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://www.phone.com/phone/wage_manger.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '3.1.1',
+  'theme' => 'default',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-03T17:37:17+08:00 ] 127.0.0.1 GET /phone/profit_manger.html
+[ info ] www.phone.com/phone/profit_manger.html [运行时间：0.283630s][吞吐率：3.53req/s] [内存消耗：6,314.73kb] [文件加载：58]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'profitManger',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.phone.com/phone/wage_manger.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->profitManger[ C:\wamp64\www\phone\ems\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] C:\wamp64\www\phone\public/../ems/index\view\index\profit_manger.html [ array (
+  0 => 'page',
+  1 => 'pageinit',
+  2 => 'data',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004349s ] mysql:host=127.0.0.1;dbname=phonesystem;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_profit` [ RunTime:0.002070s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_profit` WHERE `tp_profit`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001397s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_profit` WHERE `tp_profit`.`delete_time` IS NULL ORDER BY `months` DESC LIMIT 0,2 [ RunTime:0.002694s ]
+---------------------------------------------------------------
+[ 2019-05-03T17:37:17+08:00 ] 127.0.0.1 GET /static/layer/js/theme/default/layer.css?v=3.1.1
+[ info ] www.phone.com/static/layer/js/theme/default/layer.css?v=3.1.1 [运行时间：0.104187s][吞吐率：9.60req/s] [内存消耗：2,550.52kb] [文件加载：35]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'layer',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://www.phone.com/phone/profit_manger.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '3.1.1',
+  'theme' => 'default',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-03T17:37:56+08:00 ] 127.0.0.1 GET /phone/wage_manger.html
+[ info ] www.phone.com/phone/wage_manger.html [运行时间：0.222013s][吞吐率：4.50req/s] [内存消耗：6,562.18kb] [文件加载：62]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'wageManger',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.phone.com/phone/profit_manger.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->wageManger[ C:\wamp64\www\phone\ems\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] C:\wamp64\www\phone\public/../ems/index\view\index\wage_manger.html [ array (
+  0 => 'page',
+  1 => 'pageinit',
+  2 => 'data',
+  3 => 'tax',
+  4 => 'manger',
+  5 => 'department',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004379s ] mysql:host=127.0.0.1;dbname=phonesystem;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_wages` [ RunTime:0.001904s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_wages` WHERE `tp_wages`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001482s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_wages` WHERE `tp_wages`.`delete_time` IS NULL ORDER BY `state` DESC LIMIT 0,2 [ RunTime:0.002032s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_manger` [ RunTime:0.002323s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_manger` WHERE (  `id` IN (2) ) AND `tp_manger`.`delete_time` IS NULL [ RunTime:0.002003s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_taxrate` [ RunTime:0.002438s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_taxrate` WHERE `tp_taxrate`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001484s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_manger` WHERE (  `id` > 1 ) AND `tp_manger`.`delete_time` IS NULL [ RunTime:0.002064s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_department` [ RunTime:0.002529s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE `tp_department`.`delete_time` IS NULL [ RunTime:0.001891s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002094s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002736s ]
+---------------------------------------------------------------
+[ 2019-05-03T17:37:56+08:00 ] 127.0.0.1 GET /static/layer/js/theme/default/layer.css?v=3.1.1
+[ info ] www.phone.com/static/layer/js/theme/default/layer.css?v=3.1.1 [运行时间：0.074506s][吞吐率：13.42req/s] [内存消耗：2,550.53kb] [文件加载：35]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'layer',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://www.phone.com/phone/wage_manger.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '3.1.1',
+  'theme' => 'default',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-03T17:44:36+08:00 ] 127.0.0.1 GET /phone/wage_manger.html
+[ info ] www.phone.com/phone/wage_manger.html [运行时间：0.194902s][吞吐率：5.13req/s] [内存消耗：6,562.55kb] [文件加载：62]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'wageManger',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.phone.com/phone/profit_manger.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->wageManger[ C:\wamp64\www\phone\ems\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] C:\wamp64\www\phone\public/../ems/index\view\index\wage_manger.html [ array (
+  0 => 'page',
+  1 => 'pageinit',
+  2 => 'data',
+  3 => 'tax',
+  4 => 'manger',
+  5 => 'department',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002891s ] mysql:host=127.0.0.1;dbname=phonesystem;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_wages` [ RunTime:0.002414s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_wages` WHERE `tp_wages`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001792s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_wages` WHERE `tp_wages`.`delete_time` IS NULL ORDER BY `state` DESC LIMIT 0,2 [ RunTime:0.001441s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_manger` [ RunTime:0.001910s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_manger` WHERE (  `id` IN (2) ) AND `tp_manger`.`delete_time` IS NULL [ RunTime:0.001753s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_taxrate` [ RunTime:0.002297s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_taxrate` WHERE `tp_taxrate`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001287s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_manger` WHERE (  `id` > 1 ) AND `tp_manger`.`delete_time` IS NULL [ RunTime:0.001639s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_department` [ RunTime:0.002092s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE `tp_department`.`delete_time` IS NULL [ RunTime:0.001469s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002063s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001880s ]
+---------------------------------------------------------------
+[ 2019-05-03T17:44:36+08:00 ] 127.0.0.1 GET /static/layer/js/theme/default/layer.css?v=3.1.1
+[ info ] www.phone.com/static/layer/js/theme/default/layer.css?v=3.1.1 [运行时间：0.073376s][吞吐率：13.63req/s] [内存消耗：2,550.53kb] [文件加载：35]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'layer',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://www.phone.com/phone/wage_manger.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '3.1.1',
+  'theme' => 'default',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-03T17:44:40+08:00 ] 127.0.0.1 GET /phone/profit_manger.html
+[ info ] www.phone.com/phone/profit_manger.html [运行时间：0.157929s][吞吐率：6.33req/s] [内存消耗：6,056.41kb] [文件加载：56]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'profitManger',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.phone.com/phone/wage_manger.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->profitManger[ C:\wamp64\www\phone\ems\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] C:\wamp64\www\phone\public/../ems/index\view\index\profit_manger.html [ array (
+  0 => 'page',
+  1 => 'pageinit',
+  2 => 'data',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011307s ] mysql:host=127.0.0.1;dbname=phonesystem;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_profit` [ RunTime:0.001378s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_profit` WHERE `tp_profit`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001157s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_profit` WHERE `tp_profit`.`delete_time` IS NULL ORDER BY `months` DESC LIMIT 0,2 [ RunTime:0.001298s ]
+---------------------------------------------------------------
+[ 2019-05-03T17:44:40+08:00 ] 127.0.0.1 GET /static/layer/js/theme/default/layer.css?v=3.1.1
+[ info ] www.phone.com/static/layer/js/theme/default/layer.css?v=3.1.1 [运行时间：0.078680s][吞吐率：12.71req/s] [内存消耗：2,550.52kb] [文件加载：35]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'layer',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://www.phone.com/phone/profit_manger.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '3.1.1',
+  'theme' => 'default',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-03T17:44:46+08:00 ] 127.0.0.1 GET /phone/index.html
+[ info ] www.phone.com/phone/index.html [运行时间：0.247150s][吞吐率：4.05req/s] [内存消耗：6,702.80kb] [文件加载：60]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.phone.com/phone/profit_manger.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ C:\wamp64\www\phone\ems\index\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] C:\wamp64\www\phone\public/../ems/index\view\index\index.html [ array (
+  0 => 'order',
+  1 => 'client',
+  2 => 'manger',
+  3 => 'loginTime',
+  4 => 'data',
+  5 => 'result',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002478s ] mysql:host=127.0.0.1;dbname=phonesystem;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_manger` [ RunTime:0.001505s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_manger` WHERE (  `id` = 1 ) AND `tp_manger`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001544s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_department` [ RunTime:0.001555s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL [ RunTime:0.001805s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_thing` [ RunTime:0.001957s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_thing` ORDER BY `id` DESC [ RunTime:0.001643s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_manger` WHERE (  `id` IN (1,2) ) AND `tp_manger`.`delete_time` IS NULL [ RunTime:0.001493s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_order` [ RunTime:0.001774s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `tp_order` WHERE `tp_order`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001446s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_client` [ RunTime:0.002188s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `tp_client` WHERE `tp_client`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001204s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_manger` WHERE `tp_manger`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001204s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001973s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001347s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001570s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001352s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001514s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001401s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` IS NULL ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001381s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001351s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001629s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001306s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001200s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001449s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001182s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001790s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 1 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002054s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 2 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002178s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_department` WHERE (  `id` = 2 ) AND `tp_department`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002732s ]
+---------------------------------------------------------------
+[ 2019-05-03T17:44:47+08:00 ] 127.0.0.1 GET /static/layer/js/theme/default/layer.css?v=3.1.1
+[ info ] www.phone.com/static/layer/js/theme/default/layer.css?v=3.1.1 [运行时间：0.073306s][吞吐率：13.64req/s] [内存消耗：2,550.68kb] [文件加载：35]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'layer',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://www.phone.com/phone/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '3.1.1',
+  'theme' => 'default',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-03T17:44:47+08:00 ] 127.0.0.1 POST /index/index/clientnum.html
+[ info ] www.phone.com/index/index/clientnum.html [运行时间：0.151095s][吞吐率：6.62req/s] [内存消耗：5,688.77kb] [文件加载：51]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'clientnum',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.phone.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'referer' => 'http://www.phone.com/phone/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->clientNum[ C:\wamp64\www\phone\ems\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004706s ] mysql:host=127.0.0.1;dbname=phonesystem;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_client` [ RunTime:0.002957s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `tp_client` WHERE (  `months` = 1 ) AND `tp_client`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001259s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `tp_client` WHERE (  `months` = 2 ) AND `tp_client`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001123s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `tp_client` WHERE (  `months` = 3 ) AND `tp_client`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000879s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `tp_client` WHERE (  `months` = 4 ) AND `tp_client`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000977s ]
+---------------------------------------------------------------
+[ 2019-05-03T17:44:47+08:00 ] 127.0.0.1 POST /index/index/clientinfo.html
+[ info ] www.phone.com/index/index/clientinfo.html [运行时间：0.156376s][吞吐率：6.39req/s] [内存消耗：5,689.59kb] [文件加载：51]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'clientinfo',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.phone.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'referer' => 'http://www.phone.com/phone/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->clientInfo[ C:\wamp64\www\phone\ems\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004271s ] mysql:host=127.0.0.1;dbname=phonesystem;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_client` [ RunTime:0.002898s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_client` WHERE (  `job` = '学生' ) AND `tp_client`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002006s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_client` WHERE (  `job` = '就业人士' ) AND `tp_client`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001926s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_client` WHERE (  `job` = '待业人士' ) AND `tp_client`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001275s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_client` WHERE (  `job` = '老年人' ) AND `tp_client`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001599s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_client` WHERE (  `job` = '其他' ) AND `tp_client`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001415s ]
+---------------------------------------------------------------
+[ 2019-05-03T17:44:47+08:00 ] 127.0.0.1 POST /index/index/productinfo.html
+[ info ] www.phone.com/index/index/productinfo.html [运行时间：0.172126s][吞吐率：5.81req/s] [内存消耗：5,895.15kb] [文件加载：53]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'productinfo',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.phone.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'referer' => 'http://www.phone.com/phone/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->productInfo[ C:\wamp64\www\phone\ems\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012487s ] mysql:host=127.0.0.1;dbname=phonesystem;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_rolepro` [ RunTime:0.002011s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_rolepro` WHERE `tp_rolepro`.`delete_time` IS NULL [ RunTime:0.001330s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_product` [ RunTime:0.002875s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_product` WHERE (  `role_id` IN (1,2,3,4,5) ) AND `tp_product`.`delete_time` IS NULL [ RunTime:0.002315s ]
+---------------------------------------------------------------
+[ 2019-05-03T17:44:57+08:00 ] 127.0.0.1 GET /phone/sale_analysis.html
+[ info ] www.phone.com/phone/sale_analysis.html [运行时间：0.107691s][吞吐率：9.29req/s] [内存消耗：3,747.12kb] [文件加载：42]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'saleAnalysis',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.phone.com/phone/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->saleAnalysis[ C:\wamp64\www\phone\ems\index\controller\Index.php ]
+[ info ] [ VIEW ] C:\wamp64\www\phone\public/../ems/index\view\index\sale_analysis.html [ array (
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-03T17:44:57+08:00 ] 127.0.0.1 GET /static/layer/js/theme/default/layer.css?v=3.1.1
+[ info ] www.phone.com/static/layer/js/theme/default/layer.css?v=3.1.1 [运行时间：0.075025s][吞吐率：13.33req/s] [内存消耗：2,550.52kb] [文件加载：35]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'layer',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://www.phone.com/phone/sale_analysis.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '3.1.1',
+  'theme' => 'default',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-05-03T17:44:57+08:00 ] 127.0.0.1 POST /index/index/ordertrend.html
+[ info ] www.phone.com/index/index/ordertrend.html [运行时间：0.170595s][吞吐率：5.86req/s] [内存消耗：5,689.24kb] [文件加载：51]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'ordertrend',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.phone.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'referer' => 'http://www.phone.com/phone/sale_analysis.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->orderTrend[ C:\wamp64\www\phone\ems\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004220s ] mysql:host=127.0.0.1;dbname=phonesystem;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_order` [ RunTime:0.002848s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `tp_order` WHERE (  `months` = 1 ) AND `tp_order`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001886s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `tp_order` WHERE (  `months` = 2 ) AND `tp_order`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002200s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `tp_order` WHERE (  `months` = 3 ) AND `tp_order`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002799s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `tp_order` WHERE (  `months` = 4 ) AND `tp_order`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002263s ]
+---------------------------------------------------------------
+[ 2019-05-03T17:44:57+08:00 ] 127.0.0.1 POST /index/index/producttrend.html
+[ info ] www.phone.com/index/index/producttrend.html [运行时间：0.172355s][吞吐率：5.80req/s] [内存消耗：5,693.34kb] [文件加载：51]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'producttrend',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.phone.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'referer' => 'http://www.phone.com/phone/sale_analysis.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->productTrend[ C:\wamp64\www\phone\ems\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012439s ] mysql:host=127.0.0.1;dbname=phonesystem;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_product` [ RunTime:0.002851s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `tp_product` WHERE (  `months` = 1 ) AND `tp_product`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002065s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `tp_product` WHERE (  `months` = 2 ) AND `tp_product`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000871s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `tp_product` WHERE (  `months` = 3 ) AND `tp_product`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001923s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `tp_product` WHERE (  `months` = 4 ) AND `tp_product`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001466s ]
+---------------------------------------------------------------
+[ 2019-05-03T17:44:57+08:00 ] 127.0.0.1 POST /index/index/incidental.html
+[ info ] www.phone.com/index/index/incidental.html [运行时间：0.169741s][吞吐率：5.89req/s] [内存消耗：5,683.77kb] [文件加载：51]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'incidental',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.phone.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'referer' => 'http://www.phone.com/phone/sale_analysis.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->incidental[ C:\wamp64\www\phone\ems\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.008615s ] mysql:host=127.0.0.1;dbname=phonesystem;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_profit` [ RunTime:0.001952s ]
+[ sql ] [ SQL ] SELECT SUM(charge_for_water) AS tp_sum FROM `tp_profit` WHERE (  `months` = 1 ) AND `tp_profit`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001144s ]
+[ sql ] [ SQL ] SELECT SUM(rent) AS tp_sum FROM `tp_profit` WHERE (  `months` = 1 ) AND `tp_profit`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002061s ]
+[ sql ] [ SQL ] SELECT SUM(electricity) AS tp_sum FROM `tp_profit` WHERE (  `months` = 1 ) AND `tp_profit`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001873s ]
+[ sql ] [ SQL ] SELECT SUM(charge_for_water) AS tp_sum FROM `tp_profit` WHERE (  `months` = 2 ) AND `tp_profit`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001133s ]
+[ sql ] [ SQL ] SELECT SUM(rent) AS tp_sum FROM `tp_profit` WHERE (  `months` = 2 ) AND `tp_profit`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001288s ]
+[ sql ] [ SQL ] SELECT SUM(electricity) AS tp_sum FROM `tp_profit` WHERE (  `months` = 2 ) AND `tp_profit`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001973s ]
+[ sql ] [ SQL ] SELECT SUM(charge_for_water) AS tp_sum FROM `tp_profit` WHERE (  `months` = 3 ) AND `tp_profit`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001316s ]
+[ sql ] [ SQL ] SELECT SUM(rent) AS tp_sum FROM `tp_profit` WHERE (  `months` = 3 ) AND `tp_profit`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001228s ]
+[ sql ] [ SQL ] SELECT SUM(electricity) AS tp_sum FROM `tp_profit` WHERE (  `months` = 3 ) AND `tp_profit`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002085s ]
+[ sql ] [ SQL ] SELECT SUM(charge_for_water) AS tp_sum FROM `tp_profit` WHERE (  `months` = 4 ) AND `tp_profit`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001135s ]
+[ sql ] [ SQL ] SELECT SUM(rent) AS tp_sum FROM `tp_profit` WHERE (  `months` = 4 ) AND `tp_profit`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001856s ]
+[ sql ] [ SQL ] SELECT SUM(electricity) AS tp_sum FROM `tp_profit` WHERE (  `months` = 4 ) AND `tp_profit`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001913s ]
+---------------------------------------------------------------
+[ 2019-05-03T17:44:57+08:00 ] 127.0.0.1 POST /index/index/costtrend.html
+[ info ] www.phone.com/index/index/costtrend.html [运行时间：0.181741s][吞吐率：5.50req/s] [内存消耗：5,761.86kb] [文件加载：52]
+[ info ] [ LANG ] C:\wamp64\www\phone\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'costtrend',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.phone.com',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.phone.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'referer' => 'http://www.phone.com/phone/sale_analysis.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hkpn1lqi7kmrhjv1k384pg7nu3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->costTrend[ C:\wamp64\www\phone\ems\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004227s ] mysql:host=127.0.0.1;dbname=phonesystem;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_product` [ RunTime:0.003440s ]
+[ sql ] [ SQL ] SELECT SUM(costprice) AS tp_sum FROM `tp_product` WHERE (  `months` = 1 ) AND `tp_product`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001122s ]
+[ sql ] [ SQL ] SELECT SUM(costprice) AS tp_sum FROM `tp_product` WHERE (  `months` = 2 ) AND `tp_product`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001567s ]
+[ sql ] [ SQL ] SELECT SUM(costprice) AS tp_sum FROM `tp_product` WHERE (  `months` = 3 ) AND `tp_product`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001849s ]
+[ sql ] [ SQL ] SELECT SUM(costprice) AS tp_sum FROM `tp_product` WHERE (  `months` = 4 ) AND `tp_product`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002533s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_orders` [ RunTime:0.002523s ]
+[ sql ] [ SQL ] SELECT SUM(price) AS tp_sum FROM `tp_orders` WHERE (  `months` = 1 ) AND `tp_orders`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001645s ]
+[ sql ] [ SQL ] SELECT SUM(price) AS tp_sum FROM `tp_orders` WHERE (  `months` = 2 ) AND `tp_orders`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001123s ]
+[ sql ] [ SQL ] SELECT SUM(price) AS tp_sum FROM `tp_orders` WHERE (  `months` = 3 ) AND `tp_orders`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002129s ]
+[ sql ] [ SQL ] SELECT SUM(price) AS tp_sum FROM `tp_orders` WHERE (  `months` = 4 ) AND `tp_orders`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001268s ]

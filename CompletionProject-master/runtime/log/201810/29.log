@@ -1,0 +1,841 @@
+---------------------------------------------------------------
+[ 2018-10-29T10:54:20+08:00 ] 127.0.0.1 GET /mangeuser/index/login.html
+[ info ] www.tp1.com/mangeuser/index/login.html [运行时间：2.388231s][吞吐率：0.42req/s] [内存消耗：3,126.01kb] [文件加载：42]
+[ info ] [ LANG ] C:\wamp64\www\tp1\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'mangeuser',
+    1 => 'index',
+    2 => 'login',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.tp1.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=8763799552',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\mangeuser\controller\Index->login[ C:\wamp64\www\tp1\ems\mangeuser\controller\Index.php ]
+[ info ] [ VIEW ] C:\wamp64\www\tp1\public/../ems/mangeuser\view\index\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-29T10:54:22+08:00 ] 127.0.0.1 GET /static/js/theme/default/layer.css?v=3.1.1
+[ info ] www.tp1.com/static/js/theme/default/layer.css?v=3.1.1 [运行时间：0.956266s][吞吐率：1.05req/s] [内存消耗：2,520.34kb] [文件加载：35]
+[ info ] [ LANG ] C:\wamp64\www\tp1\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'theme',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.tp1.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://www.tp1.com/mangeuser/index/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=8763799552',
+)
+[ info ] [ PARAM ] array (
+  'v' => '3.1.1',
+  'default' => 'layer.css',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-29T10:54:47+08:00 ] 127.0.0.1 POST /mangeuser/index/login.html
+[ info ] www.tp1.com/mangeuser/index/login.html [运行时间：1.764849s][吞吐率：0.57req/s] [内存消耗：5,153.90kb] [文件加载：52]
+[ info ] [ LANG ] C:\wamp64\www\tp1\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'mangeuser',
+    1 => 'index',
+    2 => 'login',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.tp1.com',
+  'connection' => 'keep-alive',
+  'content-length' => '36',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.tp1.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.tp1.com/mangeuser/index/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=8763799552',
+)
+[ info ] [ PARAM ] array (
+  'username' => '1754102225',
+  'password' => '1231123',
+)
+[ info ] [ RUN ] app\mangeuser\controller\Index->login[ C:\wamp64\www\tp1\ems\mangeuser\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.502813s ] mysql:host=127.0.0.1;dbname=shopcate;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_user` [ RunTime:0.508562s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_user` WHERE (  `username` = '1754102225' ) AND `tp_user`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.107046s ]
+---------------------------------------------------------------
+[ 2018-10-29T10:54:57+08:00 ] 127.0.0.1 POST /mangeuser/index/login.html
+[ info ] www.tp1.com/mangeuser/index/login.html [运行时间：0.383853s][吞吐率：2.61req/s] [内存消耗：5,270.57kb] [文件加载：53]
+[ info ] [ LANG ] C:\wamp64\www\tp1\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'mangeuser',
+    1 => 'index',
+    2 => 'login',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.tp1.com',
+  'connection' => 'keep-alive',
+  'content-length' => '35',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.tp1.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.tp1.com/mangeuser/index/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=8763799552; PHPSESSID=3fpgkgdn885dn92rp678th3hb3',
+)
+[ info ] [ PARAM ] array (
+  'username' => '1754102225',
+  'password' => '123123',
+)
+[ info ] [ RUN ] app\mangeuser\controller\Index->login[ C:\wamp64\www\tp1\ems\mangeuser\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011114s ] mysql:host=127.0.0.1;dbname=shopcate;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_user` [ RunTime:0.067084s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_user` WHERE (  `username` = '1754102225' ) AND `tp_user`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.018014s ]
+---------------------------------------------------------------
+[ 2018-10-29T10:54:59+08:00 ] 127.0.0.1 GET /mangeuser/shop/index.html
+[ info ] www.tp1.com/mangeuser/shop/index.html [运行时间：0.284078s][吞吐率：3.52req/s] [内存消耗：3,238.03kb] [文件加载：42]
+[ info ] [ LANG ] C:\wamp64\www\tp1\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'mangeuser',
+    1 => 'shop',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.tp1.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.tp1.com/mangeuser/index/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=8763799552; PHPSESSID=3fpgkgdn885dn92rp678th3hb3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\mangeuser\controller\Shop->index[ C:\wamp64\www\tp1\ems\mangeuser\controller\Shop.php ]
+[ info ] [ VIEW ] C:\wamp64\www\tp1\public/../ems/mangeuser\view\shop\index.html [ array (
+  0 => 'domain',
+  1 => 'ip',
+  2 => 'file',
+  3 => 'url',
+  4 => 'pathinfo',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-29T10:55:00+08:00 ] 127.0.0.1 GET /static/js/theme/default/layer.css?v=3.1.1
+[ info ] www.tp1.com/static/js/theme/default/layer.css?v=3.1.1 [运行时间：0.252826s][吞吐率：3.96req/s] [内存消耗：2,520.41kb] [文件加载：35]
+[ info ] [ LANG ] C:\wamp64\www\tp1\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'theme',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.tp1.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://www.tp1.com/mangeuser/shop/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=8763799552; PHPSESSID=3fpgkgdn885dn92rp678th3hb3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '3.1.1',
+  'default' => 'layer.css',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-29T10:55:07+08:00 ] 127.0.0.1 GET /mangeuser/shop/memberadd.html
+[ info ] www.tp1.com/mangeuser/shop/memberadd.html [运行时间：0.250123s][吞吐率：4.00req/s] [内存消耗：3,257.80kb] [文件加载：43]
+[ info ] [ LANG ] C:\wamp64\www\tp1\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'mangeuser',
+    1 => 'shop',
+    2 => 'memberadd',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.tp1.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.tp1.com/mangeuser/shop/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=8763799552; PHPSESSID=3fpgkgdn885dn92rp678th3hb3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\mangeuser\controller\Shop->memberadd[ C:\wamp64\www\tp1\ems\mangeuser\controller\Shop.php ]
+[ info ] [ VIEW ] C:\wamp64\www\tp1\public/../ems/mangeuser\view\shop\memberadd.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-29T10:55:07+08:00 ] 127.0.0.1 GET /static/js/theme/default/layer.css?v=3.1.1
+[ info ] www.tp1.com/static/js/theme/default/layer.css?v=3.1.1 [运行时间：0.244144s][吞吐率：4.10req/s] [内存消耗：2,520.22kb] [文件加载：35]
+[ info ] [ LANG ] C:\wamp64\www\tp1\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'theme',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.tp1.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://www.tp1.com/mangeuser/shop/memberadd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=8763799552; PHPSESSID=3fpgkgdn885dn92rp678th3hb3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '3.1.1',
+  'default' => 'layer.css',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-29T10:55:12+08:00 ] 127.0.0.1 GET /mangeuser/shop/memberlist.html
+[ info ] www.tp1.com/mangeuser/shop/memberlist.html [运行时间：0.656432s][吞吐率：1.52req/s] [内存消耗：5,585.04kb] [文件加载：57]
+[ info ] [ LANG ] C:\wamp64\www\tp1\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'mangeuser',
+    1 => 'shop',
+    2 => 'memberlist',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.tp1.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.tp1.com/mangeuser/shop/memberadd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=8763799552; PHPSESSID=3fpgkgdn885dn92rp678th3hb3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\mangeuser\controller\Shop->memberlist[ C:\wamp64\www\tp1\ems\mangeuser\controller\Shop.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] C:\wamp64\www\tp1\public/../ems/mangeuser\view\shop\memberlist.html [ array (
+  0 => 'data',
+  1 => 'page',
+  2 => 'pageinit',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011365s ] mysql:host=127.0.0.1;dbname=shopcate;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member` [ RunTime:0.093753s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_member` WHERE `tp_member`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.065360s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_member` WHERE `tp_member`.`delete_time` IS NULL ORDER BY `status` DESC LIMIT 0,4 [ RunTime:0.026795s ]
+---------------------------------------------------------------
+[ 2018-10-29T10:55:12+08:00 ] 127.0.0.1 GET /static/js/theme/default/layer.css?v=3.1.1
+[ info ] www.tp1.com/static/js/theme/default/layer.css?v=3.1.1 [运行时间：0.215099s][吞吐率：4.65req/s] [内存消耗：2,520.22kb] [文件加载：35]
+[ info ] [ LANG ] C:\wamp64\www\tp1\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'theme',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.tp1.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://www.tp1.com/mangeuser/shop/memberlist.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=8763799552; PHPSESSID=3fpgkgdn885dn92rp678th3hb3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '3.1.1',
+  'default' => 'layer.css',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-29T10:55:16+08:00 ] 127.0.0.1 POST /mangeuser/shop/memberlist.html
+[ info ] www.tp1.com/mangeuser/shop/memberlist.html [运行时间：0.566836s][吞吐率：1.76req/s] [内存消耗：5,505.52kb] [文件加载：56]
+[ info ] [ LANG ] C:\wamp64\www\tp1\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'mangeuser',
+    1 => 'shop',
+    2 => 'memberlist',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.tp1.com',
+  'connection' => 'keep-alive',
+  'content-length' => '13',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.tp1.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.tp1.com/mangeuser/shop/memberlist.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=8763799552; PHPSESSID=3fpgkgdn885dn92rp678th3hb3',
+)
+[ info ] [ PARAM ] array (
+  'status' => '1',
+  'id' => '2',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\mangeuser\controller\Shop->memberlist[ C:\wamp64\www\tp1\ems\mangeuser\controller\Shop.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.032841s ] mysql:host=127.0.0.1;dbname=shopcate;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member` [ RunTime:0.040252s ]
+[ sql ] [ SQL ] UPDATE `tp_member`  SET `status`='0',`update_time`='2018-10-29 10:55:16'  WHERE  `id` = 2 [ RunTime:0.141816s ]
+---------------------------------------------------------------
+[ 2018-10-29T10:55:19+08:00 ] 127.0.0.1 GET /mangeuser/shop/memberlist.html
+[ info ] www.tp1.com/mangeuser/shop/memberlist.html [运行时间：0.369391s][吞吐率：2.71req/s] [内存消耗：5,585.04kb] [文件加载：57]
+[ info ] [ LANG ] C:\wamp64\www\tp1\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'mangeuser',
+    1 => 'shop',
+    2 => 'memberlist',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.tp1.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.tp1.com/mangeuser/shop/memberlist.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=8763799552; PHPSESSID=3fpgkgdn885dn92rp678th3hb3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\mangeuser\controller\Shop->memberlist[ C:\wamp64\www\tp1\ems\mangeuser\controller\Shop.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] C:\wamp64\www\tp1\public/../ems/mangeuser\view\shop\memberlist.html [ array (
+  0 => 'data',
+  1 => 'page',
+  2 => 'pageinit',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.015136s ] mysql:host=127.0.0.1;dbname=shopcate;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member` [ RunTime:0.046094s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_member` WHERE `tp_member`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.004528s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_member` WHERE `tp_member`.`delete_time` IS NULL ORDER BY `status` DESC LIMIT 0,4 [ RunTime:0.005690s ]
+---------------------------------------------------------------
+[ 2018-10-29T10:55:19+08:00 ] 127.0.0.1 GET /static/js/theme/default/layer.css?v=3.1.1
+[ info ] www.tp1.com/static/js/theme/default/layer.css?v=3.1.1 [运行时间：0.183199s][吞吐率：5.46req/s] [内存消耗：2,520.22kb] [文件加载：35]
+[ info ] [ LANG ] C:\wamp64\www\tp1\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'theme',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.tp1.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://www.tp1.com/mangeuser/shop/memberlist.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=8763799552; PHPSESSID=3fpgkgdn885dn92rp678th3hb3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '3.1.1',
+  'default' => 'layer.css',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-29T10:55:28+08:00 ] 127.0.0.1 GET /mangeuser/shop/userlist.html
+[ info ] www.tp1.com/mangeuser/shop/userlist.html [运行时间：0.453100s][吞吐率：2.21req/s] [内存消耗：5,609.01kb] [文件加载：57]
+[ info ] [ LANG ] C:\wamp64\www\tp1\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'mangeuser',
+    1 => 'shop',
+    2 => 'userlist',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.tp1.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.tp1.com/mangeuser/shop/memberlist.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=8763799552; PHPSESSID=3fpgkgdn885dn92rp678th3hb3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\mangeuser\controller\Shop->userlist[ C:\wamp64\www\tp1\ems\mangeuser\controller\Shop.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] C:\wamp64\www\tp1\public/../ems/mangeuser\view\shop\userlist.html [ array (
+  0 => 'data',
+  1 => 'page',
+  2 => 'pageinit',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.009494s ] mysql:host=127.0.0.1;dbname=shopcate;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_user` [ RunTime:0.049818s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE `tp_user`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.021168s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_user` WHERE `tp_user`.`delete_time` IS NULL ORDER BY `is_super` ASC,`statue` ASC LIMIT 0,4 [ RunTime:0.009041s ]
+---------------------------------------------------------------
+[ 2018-10-29T10:55:28+08:00 ] 127.0.0.1 GET /static/js/theme/default/layer.css?v=3.1.1
+[ info ] www.tp1.com/static/js/theme/default/layer.css?v=3.1.1 [运行时间：0.262966s][吞吐率：3.80req/s] [内存消耗：2,520.49kb] [文件加载：35]
+[ info ] [ LANG ] C:\wamp64\www\tp1\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'theme',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.tp1.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://www.tp1.com/mangeuser/shop/userlist.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=8763799552; PHPSESSID=3fpgkgdn885dn92rp678th3hb3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '3.1.1',
+  'default' => 'layer.css',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-29T10:55:40+08:00 ] 127.0.0.1 GET /mangeuser/shop/userlist.html?page=2
+[ info ] www.tp1.com/mangeuser/shop/userlist.html?page=2 [运行时间：0.394391s][吞吐率：2.54req/s] [内存消耗：5,603.16kb] [文件加载：57]
+[ info ] [ LANG ] C:\wamp64\www\tp1\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'mangeuser',
+    1 => 'shop',
+    2 => 'userlist',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.tp1.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.tp1.com/mangeuser/shop/userlist.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=8763799552; PHPSESSID=3fpgkgdn885dn92rp678th3hb3',
+)
+[ info ] [ PARAM ] array (
+  'page' => '2',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\mangeuser\controller\Shop->userlist[ C:\wamp64\www\tp1\ems\mangeuser\controller\Shop.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] C:\wamp64\www\tp1\public/../ems/mangeuser\view\shop\userlist.html [ array (
+  0 => 'data',
+  1 => 'page',
+  2 => 'pageinit',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010116s ] mysql:host=127.0.0.1;dbname=shopcate;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_user` [ RunTime:0.054449s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE `tp_user`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.008737s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_user` WHERE `tp_user`.`delete_time` IS NULL ORDER BY `is_super` ASC,`statue` ASC LIMIT 4,4 [ RunTime:0.008973s ]
+---------------------------------------------------------------
+[ 2018-10-29T10:55:40+08:00 ] 127.0.0.1 GET /static/js/theme/default/layer.css?v=3.1.1
+[ info ] www.tp1.com/static/js/theme/default/layer.css?v=3.1.1 [运行时间：0.219552s][吞吐率：4.55req/s] [内存消耗：2,520.26kb] [文件加载：35]
+[ info ] [ LANG ] C:\wamp64\www\tp1\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'theme',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.tp1.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://www.tp1.com/mangeuser/shop/userlist.html?page=2',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=8763799552; PHPSESSID=3fpgkgdn885dn92rp678th3hb3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '3.1.1',
+  'default' => 'layer.css',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-29T10:55:46+08:00 ] 127.0.0.1 GET /mangeuser/shop/system.html
+[ info ] www.tp1.com/mangeuser/shop/system.html [运行时间：0.424188s][吞吐率：2.36req/s] [内存消耗：5,338.15kb] [文件加载：53]
+[ info ] [ LANG ] C:\wamp64\www\tp1\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'mangeuser',
+    1 => 'shop',
+    2 => 'system',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.tp1.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.tp1.com/mangeuser/shop/userlist.html?page=2',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=8763799552; PHPSESSID=3fpgkgdn885dn92rp678th3hb3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\mangeuser\controller\Shop->system[ C:\wamp64\www\tp1\ems\mangeuser\controller\Shop.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] C:\wamp64\www\tp1\public/../ems/mangeuser\view\shop\system.html [ array (
+  0 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.009292s ] mysql:host=127.0.0.1;dbname=shopcate;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_system` [ RunTime:0.042945s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_system` WHERE `tp_system`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.023710s ]
+---------------------------------------------------------------
+[ 2018-10-29T10:55:47+08:00 ] 127.0.0.1 GET /static/js/theme/default/layer.css?v=3.1.1
+[ info ] www.tp1.com/static/js/theme/default/layer.css?v=3.1.1 [运行时间：0.207392s][吞吐率：4.82req/s] [内存消耗：2,520.43kb] [文件加载：35]
+[ info ] [ LANG ] C:\wamp64\www\tp1\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'theme',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.tp1.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://www.tp1.com/mangeuser/shop/system.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=8763799552; PHPSESSID=3fpgkgdn885dn92rp678th3hb3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '3.1.1',
+  'default' => 'layer.css',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-29T10:55:51+08:00 ] 127.0.0.1 GET /mangeuser/shop/person.html
+[ info ] www.tp1.com/mangeuser/shop/person.html [运行时间：0.435882s][吞吐率：2.29req/s] [内存消耗：5,384.96kb] [文件加载：53]
+[ info ] [ LANG ] C:\wamp64\www\tp1\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'mangeuser',
+    1 => 'shop',
+    2 => 'person',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.tp1.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.tp1.com/mangeuser/shop/system.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=8763799552; PHPSESSID=3fpgkgdn885dn92rp678th3hb3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\mangeuser\controller\Shop->person[ C:\wamp64\www\tp1\ems\mangeuser\controller\Shop.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] C:\wamp64\www\tp1\public/../ems/mangeuser\view\shop\person.html [ array (
+  0 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.038883s ] mysql:host=127.0.0.1;dbname=shopcate;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_user` [ RunTime:0.011467s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_user` WHERE (  `id` = 1 ) AND `tp_user`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.023541s ]
+---------------------------------------------------------------
+[ 2018-10-29T10:55:52+08:00 ] 127.0.0.1 GET /static/js/theme/default/layer.css?v=3.1.1
+[ info ] www.tp1.com/static/js/theme/default/layer.css?v=3.1.1 [运行时间：0.211262s][吞吐率：4.73req/s] [内存消耗：2,520.43kb] [文件加载：35]
+[ info ] [ LANG ] C:\wamp64\www\tp1\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'theme',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.tp1.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://www.tp1.com/mangeuser/shop/person.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=8763799552; PHPSESSID=3fpgkgdn885dn92rp678th3hb3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '3.1.1',
+  'default' => 'layer.css',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-29T10:55:55+08:00 ] 127.0.0.1 GET /mangeuser/shop/person.html
+[ info ] www.tp1.com/mangeuser/shop/person.html [运行时间：0.318755s][吞吐率：3.14req/s] [内存消耗：5,384.96kb] [文件加载：53]
+[ info ] [ LANG ] C:\wamp64\www\tp1\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'mangeuser',
+    1 => 'shop',
+    2 => 'person',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.tp1.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.tp1.com/mangeuser/shop/person.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=8763799552; PHPSESSID=3fpgkgdn885dn92rp678th3hb3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\mangeuser\controller\Shop->person[ C:\wamp64\www\tp1\ems\mangeuser\controller\Shop.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] C:\wamp64\www\tp1\public/../ems/mangeuser\view\shop\person.html [ array (
+  0 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010066s ] mysql:host=127.0.0.1;dbname=shopcate;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_user` [ RunTime:0.007572s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_user` WHERE (  `id` = 1 ) AND `tp_user`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.007550s ]
+---------------------------------------------------------------
+[ 2018-10-29T10:55:55+08:00 ] 127.0.0.1 GET /static/js/theme/default/layer.css?v=3.1.1
+[ info ] www.tp1.com/static/js/theme/default/layer.css?v=3.1.1 [运行时间：0.238263s][吞吐率：4.20req/s] [内存消耗：2,520.43kb] [文件加载：35]
+[ info ] [ LANG ] C:\wamp64\www\tp1\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'theme',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.tp1.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://www.tp1.com/mangeuser/shop/person.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=8763799552; PHPSESSID=3fpgkgdn885dn92rp678th3hb3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '3.1.1',
+  'default' => 'layer.css',
+)
+[ info ] [ LOG ] INIT File

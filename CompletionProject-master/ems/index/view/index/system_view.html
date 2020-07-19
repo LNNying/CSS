@@ -1,0 +1,111 @@
+{include file="public/__head" /}
+<nav class="breadcrumb">
+    <a class="breadcrumb-item" href="{:url('index/index/index')}">
+        <i class="fa fa-home"></i>首页
+    </a>
+    <a class="breadcrumb-item" href="{:url('index/index/mangerList')}">
+        系统设置
+    </a>
+</nav>
+<div class="content" style="height: auto;margin-bottom: 10px;padding-bottom: 20px;">
+    <table class="table table-bordered table-striped table-hover table-responsive-sm">
+        <thead>
+
+        </thead>
+        <tbody>
+        <tr>
+            <td>当前域名(domain)</td>
+            <td>{$domain}</td>
+        </tr>
+        <tr>
+            <td>URL地址</td>
+            <td>{$url}</td>
+        </tr>
+        <tr>
+            <td>ip</td>
+            <td>{$ip}</td>
+        </tr>
+        <tr>
+            <td>当前入口文件</td>
+            <td>{$file}</td>
+        </tr>
+        <tr>
+            <td>PATH_INFO信息</td>
+            <td>{$pathinfo}</td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="role_title"></div>
+    <form style="margin-top: 15px;">
+        <div class="row">
+            <div class="col-sm-4">
+                <table>
+                    <tr>
+                        <td><label for="webname">网站标题:</label></td>
+                        <td class="pl-10">
+                            <div class="input-group-sm">
+                                <input type="hidden" name="id" id="id" value="{$data.id}">
+                                <input type="text" name="webname" id="webname" class="form-control" placeholder="网站标题"
+                                       value="{$data.webname}">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-sm-6">
+                <table>
+                    <tr>
+                        <td><label for="edition">版本编号:</label></td>
+                        <td class="pl-10">
+                            <div class="input-group-sm">
+                                <input type="text" name="edition" id="edition" class="form-control"
+                                       placeholder="版本编号" value="{$data.edition}">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-sm-12">
+                <button class="btn btn-success btn-sm" id="editSystem">保存</button>
+                <button type="reset" class="btn btn-warning btn-sm mx-4">取消</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+    $(function () {
+        $('#editSystem').click(function (e) {
+            e.preventDefault();
+            var info = {
+                id: $('#id').val(),
+                name: $('#webname').val(),
+                no: $('#edition').val()
+            };
+            $.ajax({
+                type: "post",
+                url: "{:url('index/index/editSystemInfo')}",
+                data: info,
+                dataType: "json",
+                success: function (data) {
+                    if (data.code == 1) {
+                        layer.msg(data.msg, {
+                            icon: 6,
+                            time: 2000,
+                        }, function () {
+                            location.href = data.url;
+                        });
+                    } else {
+                        layer.open({
+                            title: '操作失败',
+                            icon: 2,
+                            content: data.msg,
+                        });
+                    }
+                }
+            });
+        });
+    })
+</script>
+{include file="public/__footer" /}

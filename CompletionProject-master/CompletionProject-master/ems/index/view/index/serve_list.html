@@ -1,0 +1,361 @@
+{include file="public/__head" /}
+<nav class="breadcrumb">
+    <a class="breadcrumb-item" href="{:url('index/index/index')}">
+        <i class="fa fa-home"></i>首页
+    </a>
+</nav>
+<div class="content" style="height: auto;margin-bottom: 10px;padding-bottom: 20px;">
+    <div class="role_title">
+        <div class="icon_role"></div>
+        <div class="role_word">
+            维修订单
+        </div>
+    </div>
+    <div style="margin-top: 5px;">
+        <button type="button" class="btn btn-sm btn-success"
+                style="margin-top: 5px;margin-left: 2px;margin-bottom: 5px;"
+                data-toggle="modal"
+                data-target="#addModal">添加
+        </button>
+    </div>
+    <div style="width: 100%;height: auto; margin-top: 5px;">
+        <table class="table table-bordered table-striped table-sm table-hover table-responsive-sm"
+               style="text-align: center;">
+            <thead>
+            <tr>
+                <th>序号</th>
+                <th>编号</th>
+                <th>客户名称</th>
+                <th>产品名称</th>
+                <th>维修原因</th>
+                <th>维修天数</th>
+                <th>维修人员</th>
+                <th>创建时间</th>
+                <td>操作</td>
+            </tr>
+            </thead>
+            <tbody>
+            {volist name="data" id="vo"}
+            <tr>
+                <td>{$i + ($pageinit-1)*2}</td>
+                <td>{$vo.ser_no}</td>
+                <td>{$vo.client_ser.client_name}</td>
+                <td>{$vo.product_ser.pro_name}</td>
+                <td>{$vo.ser_desc}</td>
+                <td>{$vo.ser_day}</td>
+                <td>{$vo.manger_ser.manger_name}</td>
+                <td>{$vo.creat_date}</td>
+                <td>
+                    <button type="button" class="btn btn-sm btn-success edit"
+                            style="margin-top: 5px;margin-left: 2px;margin-bottom: 5px;"
+                            data-toggle="modal"
+                            data-target="#editModal" data-id="{$vo.id}">编辑
+                    </button>
+                    <button type="button" class="btn btn-danger btn-sm delManger" id="delManger" data-id="{$vo.id}">删除
+                    </button>
+                </td>
+            </tr>
+            {/volist}
+            </tbody>
+        </table>
+    </div>
+    <div class="page" style="margin-top: 10px;">{if $page}{$page}{else}&nbsp;{/if}</div>
+</div>
+<div class="modal fade" id="addModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title">添加</h6>
+                <button type="button" class="close btn btn-sm" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="roleFormAdd">
+                    <table style="text-align: right">
+                        <tr>
+                            <td><label for="manger_no">维修单编号:</label></td>
+                            <td class="pl-10">
+                                <div class="input-group-sm" style="float:left;">
+                                    <input type="text" class="form-control" id="manger_no" name="" value="" disabled
+                                           style="width: 180px;" placeholder="编号">
+                                </div>
+                                <div style="float:left;margin-left: 2px;">
+                                    <button type="button" class="btn btn-sm btn-success" id="getNo" style="float:left;">
+                                        获取
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="name">客户名称:</label></td>
+                            <td class="pl-10">
+                                <div class="input-group-sm">
+                                    <div class="input-group-sm">
+                                        <select class="form-control" id="name">
+                                            <option value="0">请选择</option>
+                                            {volist name="client" id="vo"}
+                                            <option value="{$vo.id}">{$vo.client_name}</option>
+                                            {/volist}
+                                        </select>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="proName">产品名称:</label></td>
+                            <td class="pl-10">
+                                <div class="input-group-sm">
+                                    <select class="form-control" id="proName">
+                                        <option value="0">请选择</option>
+                                        {volist name="product" id="vo"}
+                                        <option value="{$vo.id}">{$vo.pro_name}</option>
+                                        {/volist}
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="desc">维修原因:</label></td>
+                            <td class="pl-10">
+                                <div class="input-group-sm">
+                                    <textarea class="form-control" cols="3" rows="2" placeholder="维修原因" id="desc" name="" value=""></textarea>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="manger">维修人员:</label></td>
+                            <td class="pl-10">
+                                <div class="input-group-sm">
+                                    <select class="form-control" id="manger">
+                                        <option value="0">请选择</option>
+                                        {volist name="manger" id="vo"}
+                                        <option value="{$vo.id}">{$vo.manger_name}</option>
+                                        {/volist}
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="desc">维修天数:</label></td>
+                            <td class="pl-10">
+                                <div class="input-group-sm">
+                                    <input type="text" class="form-control" id="day" name="" value=""
+                                           placeholder="维修天数">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success btn-sm" data-dismiss="modal" id="save">保存</button>
+                <button type="button" class="btn btn-warning btn-sm" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="editModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title">编辑</h6>
+                <button type="button" class="close btn btn-sm" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="FormAdd">
+                    <table style="text-align: right">
+                        <tr>
+                            <td><label for="manger_no">维修单编号:</label></td>
+                            <td class="pl-10">
+                                <div class="input-group-sm" style="float:left;">
+                                    <input id="id" hidden type="text">
+                                    <input type="text" class="form-control" id="no" name="" value="" disabled
+                                           style="width: 230px;" placeholder="编号">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="nameS">客户名称:</label></td>
+                            <td class="pl-10">
+                                <div class="input-group-sm">
+                                    <input type="text" class="form-control" id="nameS" name="" value=""
+                                           placeholder="名称" disabled>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="pro">产品名称:</label></td>
+                            <td class="pl-10">
+                                <div class="input-group-sm">
+                                    <input type="text" class="form-control" id="pro" name="" value=""
+                                           placeholder="产品名称" disabled>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="reason">维修原因:</label></td>
+                            <td class="pl-10">
+                                <div class="input-group-sm">
+                                    <textarea class="form-control" cols="3" rows="2" placeholder="维修原因" id="reason" name="" value=""></textarea>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="mangers">维修人员:</label></td>
+                            <td class="pl-10">
+                                <div class="input-group-sm">
+                                    <input type="text" class="form-control" id="mangers" name="" value=""
+                                           placeholder="维修人员" disabled>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="days">维修天数:</label></td>
+                            <td class="pl-10">
+                                <div class="input-group-sm">
+                                    <input type="text" class="form-control" id="days" name="" value=""
+                                           placeholder="维修天数">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success btn-sm" data-dismiss="modal" id="update">保存</button>
+                <button type="button" class="btn btn-warning btn-sm" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        $('.delManger').click(function (e) {
+            e.preventDefault();
+            var delId =  {
+                id: $(this).attr('data-id')
+            };
+            $.ajax({
+                type: "post",
+                url: "{:url('index/index/deleteServeInfo')}",
+                data: delId,
+                dataType: "json",
+                success: function (data) {
+                    if (data.code == 1) {
+                        layer.msg(data.msg, {
+                            icon: 6,
+                            time: 2000,
+                        }, function () {
+                            location.href = data.url;
+                        });
+                    } else {
+                        layer.open({
+                            title: '操作失败',
+                            icon: 2,
+                            content: data.msg,
+                        });
+                    }
+                }
+            })
+        });
+        $('#update').click(function (e) {
+            e.preventDefault();
+            var update = {
+                id: $('#id').val(),
+                reason: $('#reason').val(),
+                day: $('#days').val()
+            };
+            $.ajax({
+                type: "post",
+                url: "{:url('index/index/updateServeInfo')}",
+                data: update,
+                dataType: "json",
+                success: function (data) {
+                    if (data.code == 1) {
+                        layer.msg(data.msg, {
+                            icon: 6,
+                            time: 2000,
+                        }, function () {
+                            location.href = data.url;
+                        });
+                    } else {
+                        layer.open({
+                            title: '操作失败',
+                            icon: 2,
+                            content: data.msg,
+                        });
+                    }
+                }
+            })
+        });
+        $('.edit').click(function (e) {
+            e.preventDefault();
+            var id = {
+                id: $(this).attr('data-id')
+            };
+            $.ajax({
+                type: "post",
+                url: "{:url('index/index/getServeInfo')}",
+                data: id,
+                dataType: "json",
+                success: function (data) {
+                    if (data.serve.id) {
+                        $('#id').val(data.serve.id);
+                        $('#no').val(data.serve.ser_no);
+                        $('#nameS').val(data.client.client_name);
+                        $('#pro').val(data.product.pro_name);
+                        $('#reason').val(data.serve.ser_desc);
+                        $('#mangers').val(data.manger.manger_name);
+                        $('#days').val(data.serve.ser_day)
+                    } else {
+                        msg('错误', '数据获取异常！');
+                    }
+                }
+            })
+        });
+        $('#save').click(function (e) {
+            e.preventDefault();
+            var info = {
+                no: $('#manger_no').val(),
+                name: $('#name').val(),
+                proName: $('#proName').val(),
+                desc: $('#desc').val(),
+                manger: $('#manger').val(),
+                day: $('#day').val()
+            };
+            $.ajax({
+                type: "post",
+                url: "{:url('index/index/saveServeInfo')}",
+                data: info,
+                dataType: "json",
+                success: function (data) {
+                    if (data.code == 1) {
+                        layer.msg(data.msg, {
+                            icon: 6,
+                            time: 2000,
+                        }, function () {
+                            location.href = data.url;
+                        });
+                    } else {
+                        layer.open({
+                            title: '操作失败',
+                            icon: 2,
+                            content: data.msg,
+                        });
+                    }
+                }
+            })
+        });
+        $('#getNo').click(function (e) {
+            e.preventDefault();
+            var number = '';
+            var no = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+            for (var i = 0; i < 6; i++) {
+                var index = Math.round(Math.random() * 9);
+                number += no[index];
+            }
+            var mangerNo = "SERN" + number;
+            $('#manger_no').val(mangerNo);
+        });
+    })
+</script>
+{include file="public/__footer" /}

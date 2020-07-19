@@ -1,0 +1,135 @@
+---------------------------------------------------------------
+[ 2019-01-01T15:00:24+08:00 ] 0.0.0.0 GET /tp1/public/shop/shop/index
+[ info ] localhost/tp1/public/shop/shop/index [运行时间：0.053430s][吞吐率：18.72req/s] [内存消耗：2,480.11kb] [文件加载：35]
+[ info ] [ LANG ] C:\wamp64\www\tp1\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'shop',
+    1 => 'shop',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'Webstorm-105cc875=3e466077-539a-4e1c-b87c-b05cc3d37ef4; UM_distinctid=16762f02a17540-08f683c0652b48-594d2a16-e1000-16762f02a18bbc; CNZZDATA1261572618=349544385-1543548616-%7C1543548616; pgv_pvi=8333974528; rememberMe=true; Phpstorm-ae64ed99=2bb7629e-15fb-4a9b-9e55-9af7b847499f',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-01-01T15:00:38+08:00 ] 0.0.0.0 GET /tp1/public/shop/index
+[ info ] localhost/tp1/public/shop/index [运行时间：0.071981s][吞吐率：13.89req/s] [内存消耗：2,480.36kb] [文件加载：35]
+[ info ] [ LANG ] C:\wamp64\www\tp1\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'shop',
+    1 => 'index',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'Webstorm-105cc875=3e466077-539a-4e1c-b87c-b05cc3d37ef4; UM_distinctid=16762f02a17540-08f683c0652b48-594d2a16-e1000-16762f02a18bbc; CNZZDATA1261572618=349544385-1543548616-%7C1543548616; pgv_pvi=8333974528; rememberMe=true; Phpstorm-ae64ed99=2bb7629e-15fb-4a9b-9e55-9af7b847499f',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-01-01T15:00:58+08:00 ] 0.0.0.0 GET /tp1/public/mangeuser/shop/index
+[ info ] localhost/tp1/public/mangeuser/shop/index [运行时间：0.074602s][吞吐率：13.40req/s] [内存消耗：3,441.64kb] [文件加载：43]
+[ info ] [ LANG ] C:\wamp64\www\tp1\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'mangeuser',
+    1 => 'shop',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'Webstorm-105cc875=3e466077-539a-4e1c-b87c-b05cc3d37ef4; UM_distinctid=16762f02a17540-08f683c0652b48-594d2a16-e1000-16762f02a18bbc; CNZZDATA1261572618=349544385-1543548616-%7C1543548616; pgv_pvi=8333974528; rememberMe=true; Phpstorm-ae64ed99=2bb7629e-15fb-4a9b-9e55-9af7b847499f',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\mangeuser\controller\Shop->index[ C:\wamp64\www\tp1\ems\mangeuser\controller\Shop.php ]
+[ info ] [ VIEW ] C:\wamp64\www\tp1\public/../ems/mangeuser\view\shop\index.html [ array (
+  0 => 'domain',
+  1 => 'ip',
+  2 => 'file',
+  3 => 'url',
+  4 => 'pathinfo',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-01-01T15:02:23+08:00 ] 0.0.0.0 GET /tp1/public/mangeuser/shop/index
+[ info ] localhost/tp1/public/mangeuser/shop/index [运行时间：0.051277s][吞吐率：19.50req/s] [内存消耗：3,185.55kb] [文件加载：41]
+[ info ] [ LANG ] C:\wamp64\www\tp1\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'mangeuser',
+    1 => 'shop',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'Webstorm-105cc875=3e466077-539a-4e1c-b87c-b05cc3d37ef4; UM_distinctid=16762f02a17540-08f683c0652b48-594d2a16-e1000-16762f02a18bbc; CNZZDATA1261572618=349544385-1543548616-%7C1543548616; pgv_pvi=8333974528; rememberMe=true; Phpstorm-ae64ed99=2bb7629e-15fb-4a9b-9e55-9af7b847499f; PHPSESSID=h8n65fvrnac17qqnchkmuc54j0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\mangeuser\controller\Shop->index[ C:\wamp64\www\tp1\ems\mangeuser\controller\Shop.php ]
+[ info ] [ VIEW ] C:\wamp64\www\tp1\public/../ems/mangeuser\view\shop\index.html [ array (
+  0 => 'domain',
+  1 => 'ip',
+  2 => 'file',
+  3 => 'url',
+  4 => 'pathinfo',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File

@@ -1,0 +1,129 @@
+{include file="public/__head" /}
+<nav class="breadcrumb">
+    <a class="breadcrumb-item" href="{:url('index/index/index')}">
+        <i class="fa fa-home"></i>首页
+    </a>
+</nav>
+<div class="content" style="height: auto;margin-bottom: 10px;padding-bottom: 20px;">
+    <div class="role_title">
+        <div class="icon_role"></div>
+        <div class="role_word">
+            销售订单
+        </div>
+    </div>
+    <div style="margin-top: 5px;">
+        <a class="btn btn-success btn-sm" href="{:url('index/index/addOrder')}">添加</a>
+    </div>
+    <div style="width: 100%;height: auto; margin-top: 5px;">
+        <table class="table table-bordered table-striped table-sm table-hover table-responsive-sm" style="text-align: center;">
+            <thead>
+            <tr>
+                <th>序号</th>
+                <th>订单编号</th>
+                <th>产品名称</th>
+                <th>订单客户</th>
+                <th>销售价格</th>
+                <th>预定数量</th>
+                <th>预定价格</th>
+                <th>状态</th>
+                <th>创建人</th>
+                <th>创建时间</th>
+                <td>操作</td>
+            </tr>
+            </thead>
+            <tbody>
+            {volist name="data" id="vo"}
+            <tr>
+                <td>{$i + ($pageinit-1)*2}</td>
+                <td>{$vo.order_no}</td>
+                <td>{$vo.product_o.pro_name}</td>
+                <td>{$vo.manger_o.manger_name}</td>
+                <td>{$vo.product_o.price}元</td>
+                {if $vo.pro_num == ''}
+                <td>0件</td>
+                {else}
+                <td>{$vo.pro_num}件</td>
+                {/if}
+                <td>{$vo.price}元</td>
+                {if $vo.state == 0}
+                <td class="bg-danger">未审批</td>
+                {elseif $vo.state == 1}
+                <td class="bg-success">已生成订单</td>
+                {/if}
+                <td>{$vo.manger_o.manger_name}</td>
+                <td>{$vo.create_date}</td>
+                <td>
+                    {if $vo.state == 0}
+                    <a  class="btn btn-sm btn-info" href="{:url('index/index/editOrder')}?id={$vo.id}">编辑</a>
+                    <button type="button" class="btn btn-success btn-sm approve" id="approve" data-id="{$vo.id}">审批</button>
+                    {/if}
+                    <button type="button" class="btn btn-danger btn-sm delManger" id="delManger" data-id="{$vo.id}">删除</button>
+                </td>
+            </tr>
+            {/volist}
+            </tbody>
+        </table>
+    </div>
+    <div class="page" style="margin-top: 10px;">{if $page}{$page}{else}&nbsp;{/if}</div>
+</div>
+<script>
+    $(function () {
+        $('.delManger').click(function (e) {
+            e.preventDefault();
+            var delId = {
+                id: $(this).attr('data-id')
+            };
+            $.ajax({
+                type: "post",
+                url: "{:url('index/index/deleteOrderInfo')}",
+                data: delId,
+                dataType: "json",
+                success: function (data) {
+                    if (data.code == 1) {
+                        layer.msg(data.msg, {
+                            icon: 6,
+                            time: 2000,
+                        }, function () {
+                            location.href = data.url;
+                        });
+                    } else {
+                        layer.open({
+                            title: '操作失败',
+                            icon: 2,
+                            content: data.msg,
+                        });
+                    }
+                }
+            });
+        });
+        $('.approve').click(function (e) {
+            e.preventDefault();
+            var approve = {
+                id: $(this).attr('data-id')
+            };
+            $.ajax({
+                type: "post",
+                url: "{:url('index/index/approve')}",
+                data: approve,
+                dataType: "json",
+                success: function (data) {
+                    if (data.code == 1) {
+                        layer.msg(data.msg, {
+                            icon: 6,
+                            time: 2000,
+                        }, function () {
+                            location.href = data.url;
+                        });
+                    } else {
+                        layer.open({
+                            title: '操作失败',
+                            icon: 2,
+                            content: data.msg,
+                        });
+                    }
+                }
+            });
+        });
+    })
+</script>
+{include file="public/__footer" /}

@@ -1,0 +1,451 @@
+{include file="public/__head" /}
+<nav class="breadcrumb" xmlns="http://www.w3.org/1999/html">
+    <a class="breadcrumb-item" href="{:url('index/index/index')}">
+        <i class="fa fa-home"></i>首页
+    </a>
+</nav>
+<div class="content" style="height: auto;margin-bottom: 10px;padding-bottom: 20px;">
+    <div class="role_title">
+        <div class="icon_role"></div>
+        <div class="role_word">
+            工资管理
+        </div>
+    </div>
+    <div style="margin-top: 5px;">
+        <button type="button" class="btn btn-sm btn-success"
+                style="margin-top: 5px;margin-left: 2px;margin-bottom: 5px;"
+                data-toggle="modal"
+                data-target="#updateModal">税率维护
+        </button>
+        <button type="button" class="btn btn-sm btn-success"
+                style="margin-top: 5px;margin-left: 2px;margin-bottom: 5px;"
+                data-toggle="modal"
+                data-target="#addModal">工资维护
+        </button>
+    </div>
+    <div style="width: 100%;height: auto; margin-top: 5px;">
+        <table class="table table-bordered table-striped table-sm table-hover table-responsive-sm"
+               style="text-align: center;">
+            <thead>
+            <tr>
+                <th>序号</th>
+                <th>员工姓名</th>
+                <th>所属部门</th>
+                <th>销售提成(元)</th>
+                <th>个人所得税(元)</th>
+                <th>所得工资(元)</th>
+                <th>状态</th>
+                <th>创建时间</th>
+                <td>操作</td>
+            </tr>
+            </thead>
+            <tbody>
+            {volist name="data" id="vo"}
+            <tr>
+                <td>{$i + ($pageinit-1)*2}</td>
+                <td>{$vo.manger_w.manger_name}</td>
+                <td>{$vo.department_w.department_name}</td>
+                <td>{$vo.bonus}</td>
+                <td>{$vo.surplusWage}</td>
+                <td>{$vo.allWage}</td>
+                {if $vo.state == 0}
+                <td class="bg-danger"><span>未审批</span></td>
+                {elseif $vo.state == 1}
+                <td class="bg-success"><span>已审批</span></td>
+                {/if}
+                <td>{$vo.create_date}</td>
+                <td>
+                    <!--<button type="button" class="btn btn-sm btn-success edit"-->
+                            <!--style="margin-top: 5px;margin-left: 2px;margin-bottom: 5px;"-->
+                            <!--data-toggle="modal"-->
+                            <!--data-target="#editModal" data-id="{$vo.id}">编辑-->
+                    <!--</button>-->
+                    <button type="button" class="btn btn-success btn-sm approve" id="approve" data-id="{$vo.id}" {if $vo.state == 1}disabled{/if}>审批</button>
+                    <button type="button" class="btn btn-danger btn-sm delManger" id="delManger" data-approve="{$vo.state}" data-id="{$vo.id}">删除
+                    </button>
+                </td>
+            </tr>
+            {/volist}
+            </tbody>
+        </table>
+    </div>
+    <div class="page" style="margin-top: 10px;">{if $page}{$page}{else}&nbsp;{/if}</div>
+</div>
+<div class="modal fade" id="updateModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title">税率维护</h6>
+                <button type="button" class="close btn btn-sm" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="roleFormAdd">
+                    <table style="text-align: right">
+                        <tr>
+                            <td><label for="tax5">5001-8000:</label></td>
+                            <td class="pl-10">
+                                <div class="input-group-sm">
+                                    <input type="text" hidden value="{$tax.id}" id="id">
+                                    <input type="text" class="form-control changeNum" id="tax5" name="" value="{$tax.tax5}">
+                                </div>
+                            </td>
+                            <td>%</td>
+                        </tr>
+                        <tr>
+                            <td><label for="tax8">8001-17000:</label></td>
+                            <td class="pl-10">
+                                <div class="input-group-sm">
+                                    <input type="text" class="form-control changeNum" id="tax8" name="" value="{$tax.tax8}"
+                                           placeholder="">
+                                </div>
+                            </td>
+                            <td>%</td>
+                        </tr>
+                        <tr>
+                            <td><label for="sale">销售提成:</label></td>
+                            <td class="pl-10">
+                                <div class="input-group-sm">
+                                    <input type="text" class="form-control changeNum" id="sale" name="" value="{$tax.royalty}"
+                                           placeholder="">
+                                </div>
+                            </td>
+                            <td>元</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>
+                                <div style="float: left;margin-left: 10px;">
+                                    <span>每订单提成为{$tax.royalty}元</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success btn-sm" data-dismiss="modal" id="save">保存</button>
+                <button type="button" class="btn btn-warning btn-sm" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--工资维护-->
+<div class="modal fade" id="addModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title">工资维护</h6>
+                <button type="button" class="close btn btn-sm" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="FormAdd">
+                    <table style="text-align: right">
+                        <tr>
+                            <td><label for="name">员工姓名</label></td>
+                            <td class="pl-10">
+                                <div class="input-group-sm">
+                                    <select class="form-control" id="name">
+                                        <option value="0">请选择</option>
+                                        {volist name="manger" id="vo"}
+                                        <option value="{$vo.id}">{$vo.manger_name}</option>
+                                        {/volist}
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="department">所属部门</label></td>
+                            <td class="pl-10">
+                                <div class="input-group-sm">
+                                    <select class="form-control" id="department">
+                                        <option value="0">请选择</option>
+                                        {volist name="department" id="vo"}
+                                        <option value="{$vo.id}">{$vo.department_name}</option>
+                                        {/volist}
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="all">本月工资:</label></td>
+                            <td class="pl-10">
+                                <div class="input-group-sm">
+                                    <input type="text" class="form-control" id="all" name="" value=""
+                                           placeholder="本月工资">
+                                </div>
+                            </td>
+                            <td>（元）</td>
+                        </tr>
+                        <tr>
+                            <td><label for="surplusWage">税款金额:</label></td>
+                            <td class="pl-10">
+                                <div class="input-group-sm">
+                                    <input type="text" class="form-control" id="surplusWage" name="" value="" disabled
+                                           placeholder="税款金额">
+                                </div>
+                            </td>
+                            <td>（元）</td>
+                        </tr>
+                        <tr>
+                            <td><label for="saleNum">所售单数:</label></td>
+                            <td class="pl-10">
+                                <div class="input-group-sm">
+                                    <input type="text" class="form-control" id="saleNum" name="" value="" disabled
+                                           placeholder="所售单数">
+                                </div>
+                            </td>
+                            <td>（单）</td>
+                        </tr>
+                        <tr>
+                            <td><label for="shouldGet">应得提成:</label></td>
+                            <td class="pl-10">
+                                <div class="input-group-sm">
+                                    <input type="text" class="form-control" id="shouldGet" name="" value="" disabled
+                                           placeholder="应得提成">
+                                </div>
+                            </td>
+                            <td>（元）</td>
+                        </tr>
+                        <tr>
+                            <td><label for="allWage">所得工资:</label></td>
+                            <td class="pl-10">
+                                <div class="input-group-sm">
+                                    <input type="text" class="form-control" id="allWage" name="" value="" disabled
+                                           placeholder="所得工资">
+                                </div>
+                            </td>
+                            <td>（元）</td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success btn-sm" data-dismiss="modal" id="submit">提交</button>
+                <button type="button" class="btn btn-warning btn-sm" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        var depart = '';
+        var tax1 = '';
+        var tax2 = '';
+        var sale = '';
+        var allWage = null; // 所得工资
+        var shouldGet = null; // 应得提成
+        var surplusWage = null; //税款
+        var saleNum = null;
+        $('.delManger').click(function (e) {
+            e.preventDefault();
+            var delId = {
+                id: $(this).attr('data-id'),
+                approve: $(this).attr('data-approve')
+            };
+            var state = $(this).attr('data-approve');
+            var message = '';
+            if (state == 0) {
+                message = '该工资单为未审批状态，是否删除？';
+            } else if (state == 1) {
+                message = '该工资单为已审批状态，确定删除？';
+            }
+            layer.confirm(message, { icon: 3, title: '删除' }, function (index) {
+                $.ajax({
+                    type: "post",
+                    url: "{:url('index/index/deleteWage')}",
+                    data: delId,
+                    dataType: "json",
+                    success: function (data) {
+                        if (data.code == 1) {
+                            layer.msg(data.msg, {
+                                icon: 6,
+                                time: 2000,
+                            }, function () {
+                                location.href = data.url;
+                            });
+                        } else {
+                            layer.open({
+                                title: '操作失败',
+                                icon: 2,
+                                content: data.msg,
+                            });
+                        }
+
+                    }
+                });
+                layer.close(index);
+            });
+        });
+        // 审批
+        $('.approve').click(function (e) {
+            e.preventDefault();
+            var approve = {
+                id: $(this).attr('data-id')
+            };
+            $.ajax({
+                type: "post",
+                url: "{:url('index/index/approveWage')}",
+                data: approve,
+                dataType: "json",
+                success: function (data) {
+                    if (data.code == 1) {
+                        layer.msg(data.msg, {
+                            icon: 6,
+                            time: 2000,
+                        }, function () {
+                            location.href = data.url;
+                        });
+                    } else {
+                        layer.open({
+                            title: '操作失败',
+                            icon: 2,
+                            content: data.msg,
+                        });
+                    }
+                }
+            })
+        });
+        // 形成工资单
+        $('#submit').click(function (e) {
+            e.preventDefault();
+            var myDate = new Date();
+            var date = myDate.getDate();
+            if (date != 1) {
+                msg("错误","未到结算日，不能形成上月工资账单");
+                return;
+            }
+            if ($('#name').val() == 0 || $('#name').val() == '') {
+                msg('错误','请选择员工');
+                return;
+            }
+            if ($('#department').val() == 0 || $('#department').val() == '') {
+                msg('错误','请选择员工所属部门!');
+                return;
+            }
+            if ($('#department').val() != depart) {
+                msg("错误","员工所属部门与所选部门不符，请重新选择！");
+                return;
+            }
+            var wageInfo = {
+                manger_id: $('#name').val(),
+                department: $('#department').val(),
+                allWage: allWage,
+                surplusWage: surplusWage,
+                bonus: shouldGet
+            };
+            $.ajax({
+                type: "post",
+                url: "{:url('index/index/saveWage')}",
+                data: wageInfo,
+                dataType: "json",
+                success: function (data) {
+                    if (data.code == 1) {
+                        layer.msg(data.msg, {
+                            icon: 6,
+                            time: 2000,
+                        }, function () {
+                            location.href = data.url;
+                        });
+                    } else {
+                        layer.open({
+                            title: '操作失败',
+                            icon: 2,
+                            content: data.msg,
+                        });
+                    }
+                }
+            })
+        });
+        // 添加工资
+        $('#all').change(function (e) {
+            e.preventDefault();
+            var all = $('#all').val();
+            $(this).val(all + '元');
+            if (all <= 5000) {
+                surplusWage = 0;
+            } else if (5000 < all <= 8000) {
+                surplusWage = (all - 5000) * (tax1 / 100);
+            } else if (8000 < all <= 17000) {
+                surplusWage = 3000 * (tax1 / 100) + (all - 8000) * (tax2 / 100);
+            }
+            $('#surplusWage').val(surplusWage);
+            allWage = all - surplusWage + shouldGet;
+            $('#allWage').val(allWage);
+        });
+        // 维护工资
+        $('#name').change(function (e) {
+            e.preventDefault();
+            if ($(this).val() == 0) {
+                return;
+            }
+            var name = {
+                id: $(this).val()
+            };
+            $.ajax({
+                type: "post",
+                url: "{:url('index/index/getMangerInfo')}",
+                data: name,
+                dataType: "json",
+                success: function (data) {
+                    console.log(data);
+                    if (data) {
+                        depart = data.department.id;
+                        tax1 = data.tax.tax5;
+                        tax2 = data.tax.tax8;
+                        sale = data.tax.royalty;
+                        $('#saleNum').val(data.order);
+                        $('#shouldGet').val(data.order * sale);
+                        saleNum = data.order;
+                        shouldGet = data.order * sale;
+                    } else {
+                        msg("错误","获取数据错误，请联系管理员");
+                    }
+                }
+            })
+        });
+        // 维护税率
+        $('#save').click(function (e) {
+            e.preventDefault();
+            var tax5 = $('#tax5').val();
+            var tax8 = $('#tax8').val();
+            var royalty = $('#sale').val();
+            if (tax5 == '' || tax8 == '') {
+                msg("错误","请填写正确的税率");
+                return;
+            }
+            if (royalty == '') {
+                msg("错误","请填写每单相应的提成");
+                return;
+            }
+            var info = {
+                id: $('#id').val(),
+                tax5: tax5,
+                tax8: tax8,
+                royalty: royalty
+            };
+            $.ajax({
+                type: "post",
+                url: "{:url('index/index/updateTaxRate')}",
+                data: info,
+                dataType: "json",
+                success: function (data) {
+                    if (data.code == 1) {
+                        layer.msg(data.msg, {
+                            icon: 6,
+                            time: 2000,
+                        }, function () {
+                            location.href = data.url;
+                        });
+                    } else {
+                        layer.open({
+                            title: '操作失败',
+                            icon: 2,
+                            content: data.msg,
+                        });
+                    }
+                }
+            })
+        });
+    })
+</script>
+{include file="public/__footer" /}

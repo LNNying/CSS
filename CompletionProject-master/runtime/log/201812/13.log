@@ -1,0 +1,65 @@
+---------------------------------------------------------------
+[ 2018-12-13T17:13:14+08:00 ] 0.0.0.0 GET /tp1/public/index/index/register
+[ info ] localhost/tp1/public/index/index/register [运行时间：0.048466s][吞吐率：20.63req/s] [内存消耗：2,478.30kb] [文件加载：35]
+[ info ] [ LANG ] C:\wamp64\www\tp1\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-13T17:13:27+08:00 ] 0.0.0.0 GET /tp1/public/index/register
+[ info ] localhost/tp1/public/index/register [运行时间：0.056615s][吞吐率：17.66req/s] [内存消耗：2,914.78kb] [文件加载：40]
+[ info ] [ LANG ] C:\wamp64\www\tp1\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'register',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'Webstorm-105cc875=3e466077-539a-4e1c-b87c-b05cc3d37ef4; UM_distinctid=16762f02a17540-08f683c0652b48-594d2a16-e1000-16762f02a18bbc; CNZZDATA1261572618=349544385-1543548616-%7C1543548616; pgv_pvi=8333974528; rememberMe=true; pgv_si=s8683782144',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->register[ C:\wamp64\www\tp1\ems\index\controller\Index.php ]
+[ info ] [ VIEW ] C:\wamp64\www\tp1\public/../ems/index\view\index\register.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-13T17:16:18+08:00 ] 0.0.0.0 GET /tp1/public/index/register
+[ info ] localhost/tp1/public/index/register [运行时间：0.034624s][吞吐率：28.88req/s] [内存消耗：2,914.78kb] [文件加载：40]
+[ info ] [ LANG ] C:\wamp64\www\tp1\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'register',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'Webstorm-105cc875=3e466077-539a-4e1c-b87c-b05cc3d37ef4; UM_distinctid=16762f02a17540-08f683c0652b48-594d2a16-e1000-16762f02a18bbc; CNZZDATA1261572618=349544385-1543548616-%7C1543548616; pgv_pvi=8333974528; rememberMe=true; pgv_si=s8683782144',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->register[ C:\wamp64\www\tp1\ems\index\controller\Index.php ]
+[ info ] [ VIEW ] C:\wamp64\www\tp1\public/../ems/index\view\index\register.html [ array (
+) ]
+[ info ] [ LOG ] INIT File

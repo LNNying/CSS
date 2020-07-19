@@ -1,0 +1,187 @@
+{include file="public/__head" /}
+<nav class="breadcrumb">
+    <a class="breadcrumb-item" href="{:url('index/index/index')}">
+        <i class="fa fa-home"></i>首页
+    </a>
+</nav>
+<div class="content" style="height: auto;margin-bottom: 10px;padding-bottom: 20px;">
+    <div class="role_title">
+        <div class="icon_role"></div>
+        <div class="role_word">
+            盈利管理
+        </div>
+    </div>
+    <div style="margin-top: 5px;">
+        <button type="button" class="btn btn-sm btn-success"
+                style="margin-top: 5px;margin-left: 2px;margin-bottom: 5px;"
+                data-toggle="modal"
+                data-target="#saveModal">盈利账单
+        </button>
+    </div>
+    <div style="width: 100%;height: auto; margin-top: 5px;">
+        <table class="table table-bordered table-striped table-sm table-hover table-responsive-sm"
+               style="text-align: center;">
+            <thead>
+            <tr>
+                <th>序号</th>
+                <th>月份</th>
+                <th>销售金额(元)</th>
+                <th>员工工资(元)</th>
+                <th>产品花销(元)</th>
+                <th>房租费用(元)</th>
+                <th>电费(元)</th>
+                <th>水费(元)</th>
+                <th>总利润(元)</th>
+                <th>创建时间</th>
+                <td>操作</td>
+            </tr>
+            </thead>
+            <tbody>
+            {volist name="data" id="vo"}
+            <tr>
+                <td>{$i + ($pageinit-1)*2}</td>
+                <td>{$vo.months}</td>
+                <td>{$vo.order_wage}</td>
+                <td>{$vo.manger_wage}</td>
+                <td>{$vo.product_wage}</td>
+                <td>{$vo.rent}</td>
+                <td>{$vo.electricity}</td>
+                <td>{$vo.charge_for_water}</td>
+                <td>{$vo.order_wage - $vo.manger_wage - $vo.product_wage - $vo.rent - $vo.electricity - $vo.charge_for_water}</td>
+                <td>{$vo.create_date}</td>
+                <td>
+                    <button type="button" class="btn btn-danger btn-sm delManger" id="delManger"
+                            data-id="{$vo.id}">删除
+                    </button>
+                </td>
+            </tr>
+            {/volist}
+            </tbody>
+        </table>
+    </div>
+    <div class="page" style="margin-top: 10px;">{if $page}{$page}{else}&nbsp;{/if}</div>
+</div>
+</div>
+<div class="modal fade" id="saveModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title">营业额账单</h6>
+                <button type="button" class="close btn btn-sm" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="roleFormAdd">
+                    <table style="text-align: right">
+                        <tr>
+                            <td><label for="rent">房租：</label></td>
+                            <td class="pl-10">
+                                <div class="input-group-sm">
+                                    <input type="text" class="form-control changeNum" id="rent" name="" value="" placeholder="房租费用">
+                                </div>
+                            </td>
+                            <td>元</td>
+                        </tr>
+                        <tr>
+                            <td><label for="electricity">电费：</label></td>
+                            <td class="pl-10">
+                                <div class="input-group-sm">
+                                    <input type="text" class="form-control changeNum" id="electricity" name="" value=""
+                                           placeholder="电费费用">
+                                </div>
+                            </td>
+                            <td>元</td>
+                        </tr>
+                        <tr>
+                            <td><label for="water">水费：</label></td>
+                            <td class="pl-10">
+                                <div class="input-group-sm">
+                                    <input type="text" class="form-control changeNum" id="water" name="" value=""
+                                           placeholder="水费费用">
+                                </div>
+                            </td>
+                            <td>元</td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success btn-sm" data-dismiss="modal" id="save">保存</button>
+                <button type="button" class="btn btn-warning btn-sm" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        $('.delManger').click(function (e) {
+            e.preventDefault();
+            var id = {
+                id: $(this).attr('data-id')
+            };
+            layer.confirm("你确定删除该月账单吗？", { icon: 3, title: '删除' }, function (index) {
+            $.ajax({
+                type: "post",
+                url: "{:url('index/index/deleteProfit')}",
+                data: id,
+                dataType: "json",
+                success: function (data) {
+                    if (data.code == 1) {
+                        layer.msg(data.msg, {
+                            icon: 6,
+                            time: 2000,
+                        }, function () {
+                            location.href = data.url;
+                        });
+                    } else {
+                        layer.open({
+                            title: '操作失败',
+                            icon: 2,
+                            content: data.msg,
+                        });
+                    }
+
+                }
+            });
+                layer.close(index);
+            });
+        });
+        $('#save').click(function (e) {
+            e.preventDefault();
+            var myDate = new Date();
+            var date = myDate.getDate();
+            if (date != 1) {
+                msg("错误","未到结算日，不能形成上月利润账单");
+                return;
+            }
+            var info = {
+                rent: $('#rent').val(),
+                electricity: $('#electricity').val(),
+                water: $('#water').val(),
+            };
+            $.ajax({
+                type: "post",
+                url: "{:url('index/index/saveProfit')}",
+                data: info,
+                dataType: "json",
+                success: function (data) {
+                    if (data.code == 1) {
+                        layer.msg(data.msg, {
+                            icon: 6,
+                            time: 2000,
+                        }, function () {
+                            location.href = data.url;
+                        });
+                    } else {
+                        layer.open({
+                            title: '操作失败',
+                            icon: 2,
+                            content: data.msg,
+                        });
+                    }
+
+                }
+            });
+        });
+    })
+</script>
+{include file="public/__footer" /}

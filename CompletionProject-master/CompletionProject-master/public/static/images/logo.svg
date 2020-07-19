@@ -1,0 +1,8 @@
+<svg width="195" height="30" version="1.1" xmlns="http://www.w3.org/2000/svg">
+
+    <circle cx="15" cy="15" r="14" stroke="#fff" stroke-width="2" fill="#fff"/>
+    <circle cx="10" cy="12" r="2" fill="#fff" stroke="black" stroke-width="2"></circle>
+    <circle cx="20" cy="12" r="2" fill="#fff" stroke="black" stroke-width="2"></circle>
+    <path d="M10 20 A 10 10 0 0 0 20 20" fill="red"></path>
+    <text x="33" y="22" fill="#fff" style="font-weight: bold">柠檬手机公司管理系统</text>
+</svg>

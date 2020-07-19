@@ -1,0 +1,223 @@
+{include file="public/__head" /}
+<nav class="breadcrumb">
+    <a class="breadcrumb-item" href="{:url('index/index/index')}">
+        <i class="fa fa-home"></i>首页
+    </a>
+    <a class="breadcrumb-item" href="{:url('index/index/orderList')}">
+        订单列表
+    </a>
+</nav>
+<div class="content" style="height: auto;margin-bottom: 10px;padding-bottom: 20px;">
+    <div class="role_title">
+        <div class="icon_role"></div>
+        <div class="role_word">
+            生成订单
+        </div>
+    </div>
+    <form id="addForm" class="addForm" style="margin-top: 5px;margin-left: 11px">
+        <div class="row">
+            <div class="col-sm-12">
+                <table>
+                    <tr>
+                        <td><label for="manger_no">订单编号:</label></td>
+                        <td class="pl-10">
+                            <div class="input-group-sm" style="float:left;">
+                                <input type="text" class="form-control" id="manger_no" name="" value="" disabled style="width: 180px;" placeholder="编号">
+                            </div>
+                            <div style="float:left;margin-left: 2px;">
+                                <button type="button" class="btn btn-sm btn-success" id="getNo" style="float:left;">获取</button>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <table>
+                    <tr>
+                        <td><label for="product">产品名称:</label></td>
+                        <td class="pl-10">
+                            <div class="input-group-sm" style="float:left;width: 228px;">
+                                <select class="form-control" id="product">
+                                    <option value="0">请选择</option>
+                                    {volist name="product" id="vo"}
+                                    <option value="{$vo.id}">{$vo.pro_name}</option>
+                                    {/volist}
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <table>
+                    <tr>
+                        <td><label for="client">订单客户:</label></td>
+                        <td class="pl-10">
+                            <div class="input-group-sm" style="float:left;width: 228px;">
+                                <select class="form-control" id="client">
+                                    <option value="0">请选择</option>
+                                    {volist name="client" id="vo"}
+                                    <option value="{$vo.id}">{$vo.client_name}</option>
+                                    {/volist}
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <table>
+                    <tr>
+                        <td><label for="num">库存数量:</label></td>
+                        <td class="pl-10">
+                            <div class="input-group-sm" style="float:left;width: 228px;">
+                                <input type="email" class="form-control" id="num" name="" value="" disabled placeholder="库存数量">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <table>
+                    <tr>
+                        <td><label for="price">销售价格:</label></td>
+                        <td class="pl-10">
+                            <div class="input-group-sm" style="float:left;width: 228px;">
+                                <input type="email" class="form-control" id="price" name="" value="" disabled placeholder="销售价格">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <table>
+                    <tr>
+                        <td><label for="wantNum">预定数量:</label></td>
+                        <td class="pl-10">
+                            <div class="input-group-sm" style="float:left;width: 228px;">
+                                <input type="email" class="form-control" id="wantNum" name="" value="" placeholder="预定数量">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <table>
+                    <tr>
+                        <td><label for="wantPrice">预定价格:</label></td>
+                        <td class="pl-10">
+                            <div class="input-group-sm" style="float:left; width: 228px;">
+                                <input type="email" class="form-control" id="wantPrice" name="" value="" disabled placeholder="预定价格">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-sm-12">
+                <button class="btn btn-sm btn-success" id="save">提交</button>
+                <button type="reset" class="btn btn-sm btn-warning" id="reset">重置</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+    $(function () {
+        var surplusNum = null;
+        var price = null;
+        var wantNum = null;
+        var wantPrice = null;
+        $('#getNo').click(function (e) {
+            e.preventDefault();
+            var number = '';
+            var no = [0,1,2,3,4,5,6,7,8,9];
+            for (var i = 0; i < 6; i++) {
+                var index = Math.round(Math.random()*9);
+                number += no[index];
+            }
+            var mangerNo = "ORN" + number;
+            $('#manger_no').val(mangerNo);
+        });
+        $('#product').change(function (e) {
+            e.preventDefault();
+            var pro = {
+                id: $(this).val()
+            };
+            $.ajax({
+                type: "post",
+                url: "{:url('index/index/getProductInfo')}",
+                data: pro,
+                dataType: "json",
+                success: function (data) {
+                    if (data.id) {
+                        $('#num').val(data.quantity - data.salenumber + '件');
+                        $('#price').val(data.price + '元');
+                        surplusNum = data.quantity - data.salenumber;
+                        price = data.price;
+                    } else {
+                        msg('错误','数据获取异常');
+                    }
+                }
+            });
+        });
+        // 预定数量
+        $('#wantNum').change(function (e) {
+            e.preventDefault();
+            wantNum = $(this).val();
+            $('#wantPrice').val(wantNum * price + '元');
+            wantPrice = wantNum * price;
+            $(this).val(wantNum + '件');
+        });
+        // 提交订单
+        $('#save').click(function (e) {
+            e.preventDefault();
+            if (wantNum > surplusNum) {
+                msg('警告','预定数量大于库存数量，请重新选择！');
+                return;
+            }
+            var orderInfo = {
+              no: $('#manger_no').val(),
+              client: $('#client').val(),
+              product: $('#product').val(),
+              num: wantNum,
+              price: wantPrice
+            };
+            $.ajax({
+                type: "post",
+                url: "{:url('index/index/saveOrderInfo')}",
+                data: orderInfo,
+                dataType: "json",
+                success: function (data) {
+                    if (data.code == 1) {
+                        layer.msg(data.msg, {
+                            icon: 6,
+                            time: 2000,
+                        }, function () {
+                            location.href = data.url;
+                        });
+                    } else {
+                        layer.open({
+                            title: '删除失败',
+                            icon: 2,
+                            content: data.msg,
+                        });
+                    }
+                }
+            });
+        });
+    });
+</script>
+{include file="public/__footer" /}
